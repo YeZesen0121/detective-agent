@@ -1,0 +1,641 @@
+{
+  "fixtureType": "controlled_fixture",
+  "contractVersion": "0.1.0",
+  "disclaimer": "合成契约样例；example.invalid 不是真实检索来源；禁止作为生产调查结果。",
+  "success": {
+    "version": {
+      "id": "00000000-0000-4000-8000-000000000010",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "runId": "00000000-0000-4000-8000-000000000002",
+      "previousVersionId": null,
+      "createdAt": "2026-10-24T08:00:00.000Z",
+      "payloadHash": "efdb7b57f25b27171b730f52aac1d8bd4996f245de1158b045813f0966bc7512",
+      "payload": {
+        "schemaVersion": "0.1.0",
+        "investigationId": "00000000-0000-4000-8000-000000000001",
+        "runId": "00000000-0000-4000-8000-000000000002",
+        "scope": {
+          "objectText": "受控样例活动",
+          "goal": "核对截止日期",
+          "basicMode": "truth",
+          "knownClues": [],
+          "uncertainClues": [],
+          "claimsToCheck": [
+            "报名截至十月三十日"
+          ],
+          "timeScope": null,
+          "region": null,
+          "referenceTime": "2026-10-24T08:00:00.000Z",
+          "userConfirmed": true
+        },
+        "queryTime": "2026-10-24T08:00:00.000Z",
+        "summary": "受控材料中的报名截止日期为十月三十日。",
+        "conditions": [
+          "仅用于契约测试"
+        ],
+        "unknowns": [],
+        "nextSteps": [],
+        "stopReason": "answered",
+        "sources": [
+          {
+            "id": "00000000-0000-4000-8000-000000000003",
+            "url": "https://example.invalid/notice",
+            "canonicalUrl": "https://example.invalid/notice",
+            "title": "受控公告",
+            "publisher": null,
+            "publishedAt": null,
+            "eventAt": null,
+            "fetchedAt": "2026-10-24T08:00:00.000Z",
+            "readStatus": "full",
+            "originGroup": null,
+            "originReason": null,
+            "queryIds": [],
+            "snippet": null,
+            "contentHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "diagnostic": null
+          }
+        ],
+        "evidence": [
+          {
+            "id": "00000000-0000-4000-8000-000000000004",
+            "origin": {
+              "kind": "source",
+              "id": "00000000-0000-4000-8000-000000000003"
+            },
+            "representation": "verbatim",
+            "excerpt": "报名截至十月三十日",
+            "locator": {
+              "kind": "paragraph",
+              "value": "1"
+            },
+            "capturedAt": "2026-10-24T08:00:00.000Z",
+            "contentHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "limitations": []
+          }
+        ],
+        "claims": [
+          {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "statement": "报名截至十月三十日",
+            "conditions": [],
+            "status": "supported",
+            "links": [
+              {
+                "evidenceId": "00000000-0000-4000-8000-000000000004",
+                "relation": "supports",
+                "rationale": "受控公告直接说明"
+              }
+            ],
+            "gaps": [],
+            "reasonSummary": "受控材料直接支持"
+          }
+        ],
+        "candidates": [],
+        "conflicts": [],
+        "answerBlocks": [
+          {
+            "id": "conclusion",
+            "text": "报名截至十月三十日",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000004"
+            ]
+          }
+        ],
+        "attachments": [],
+        "delta": null
+      }
+    }
+  },
+  "conflict": {
+    "version": {
+      "id": "00000000-0000-4000-8000-000000000013",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "runId": "00000000-0000-4000-8000-000000000002",
+      "previousVersionId": null,
+      "createdAt": "2026-10-24T08:00:00.000Z",
+      "payloadHash": "9cdef9a9e830157e7ea9824e0dcc5ecbad231deac230d78d575a1db4bfd3bcdc",
+      "payload": {
+        "schemaVersion": "0.1.0",
+        "investigationId": "00000000-0000-4000-8000-000000000001",
+        "runId": "00000000-0000-4000-8000-000000000002",
+        "scope": {
+          "objectText": "受控样例活动",
+          "goal": "核对截止日期",
+          "basicMode": "truth",
+          "knownClues": [],
+          "uncertainClues": [],
+          "claimsToCheck": [
+            "报名截至十月三十日"
+          ],
+          "timeScope": null,
+          "region": null,
+          "referenceTime": "2026-10-24T08:00:00.000Z",
+          "userConfirmed": true
+        },
+        "queryTime": "2026-10-24T08:00:00.000Z",
+        "summary": "两份受控材料日期冲突，尚不能确定适用的截止日。",
+        "conditions": [
+          "仅用于契约测试"
+        ],
+        "unknowns": [],
+        "nextSteps": [],
+        "stopReason": "answered",
+        "sources": [
+          {
+            "id": "00000000-0000-4000-8000-000000000003",
+            "url": "https://example.invalid/notice",
+            "canonicalUrl": "https://example.invalid/notice",
+            "title": "受控公告",
+            "publisher": null,
+            "publishedAt": null,
+            "eventAt": null,
+            "fetchedAt": "2026-10-24T08:00:00.000Z",
+            "readStatus": "full",
+            "originGroup": null,
+            "originReason": null,
+            "queryIds": [],
+            "snippet": null,
+            "contentHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "diagnostic": null
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "url": "https://example.invalid/correction",
+            "canonicalUrl": "https://example.invalid/correction",
+            "title": "受控修订材料",
+            "publisher": null,
+            "publishedAt": null,
+            "eventAt": null,
+            "fetchedAt": "2026-10-24T08:00:00.000Z",
+            "readStatus": "full",
+            "originGroup": null,
+            "originReason": null,
+            "queryIds": [],
+            "snippet": null,
+            "contentHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "diagnostic": null
+          }
+        ],
+        "evidence": [
+          {
+            "id": "00000000-0000-4000-8000-000000000004",
+            "origin": {
+              "kind": "source",
+              "id": "00000000-0000-4000-8000-000000000003"
+            },
+            "representation": "verbatim",
+            "excerpt": "报名截至十月三十日",
+            "locator": {
+              "kind": "paragraph",
+              "value": "1"
+            },
+            "capturedAt": "2026-10-24T08:00:00.000Z",
+            "contentHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "limitations": []
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "origin": {
+              "kind": "source",
+              "id": "00000000-0000-4000-8000-000000000011"
+            },
+            "representation": "verbatim",
+            "excerpt": "报名改至十月二十九日",
+            "locator": {
+              "kind": "paragraph",
+              "value": "1"
+            },
+            "capturedAt": "2026-10-24T08:00:00.000Z",
+            "contentHash": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+            "limitations": []
+          }
+        ],
+        "claims": [
+          {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "statement": "报名截至十月三十日",
+            "conditions": [],
+            "status": "mixed",
+            "links": [
+              {
+                "evidenceId": "00000000-0000-4000-8000-000000000004",
+                "relation": "supports",
+                "rationale": "受控公告直接说明"
+              },
+              {
+                "evidenceId": "00000000-0000-4000-8000-000000000012",
+                "relation": "contradicts",
+                "rationale": "受控材料给出不同日期"
+              }
+            ],
+            "gaps": [],
+            "reasonSummary": "受控材料直接支持"
+          }
+        ],
+        "candidates": [],
+        "conflicts": [
+          {
+            "description": "截止日期不一致",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000004",
+              "00000000-0000-4000-8000-000000000012"
+            ]
+          }
+        ],
+        "answerBlocks": [
+          {
+            "id": "conclusion",
+            "text": "两份受控材料日期冲突，尚不能确定适用的截止日。",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000004"
+            ]
+          }
+        ],
+        "attachments": [],
+        "delta": null
+      }
+    }
+  },
+  "insufficient": {
+    "version": {
+      "id": "00000000-0000-4000-8000-000000000014",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "runId": "00000000-0000-4000-8000-000000000002",
+      "previousVersionId": null,
+      "createdAt": "2026-10-24T08:00:00.000Z",
+      "payloadHash": "85df659f1d5da637e4bf959f6a51c421b61a1dc05e01fca067a9ecba96b16f14",
+      "payload": {
+        "schemaVersion": "0.1.0",
+        "investigationId": "00000000-0000-4000-8000-000000000001",
+        "runId": "00000000-0000-4000-8000-000000000002",
+        "scope": {
+          "objectText": "受控样例活动",
+          "goal": "核对截止日期",
+          "basicMode": "truth",
+          "knownClues": [],
+          "uncertainClues": [],
+          "claimsToCheck": [
+            "报名截至十月三十日"
+          ],
+          "timeScope": null,
+          "region": null,
+          "referenceTime": "2026-10-24T08:00:00.000Z",
+          "userConfirmed": true
+        },
+        "queryTime": "2026-10-24T08:00:00.000Z",
+        "summary": "现有材料不足，无法确认报名截止日期。",
+        "conditions": [
+          "仅用于契约测试"
+        ],
+        "unknowns": [
+          "截止日期"
+        ],
+        "nextSteps": [
+          "提供主办方公告或活动名称"
+        ],
+        "stopReason": "no_useful_direction",
+        "sources": [],
+        "evidence": [],
+        "claims": [
+          {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "statement": "报名截至十月三十日",
+            "conditions": [],
+            "status": "insufficient",
+            "links": [],
+            "gaps": [
+              "未找到可核对的受控公告"
+            ],
+            "reasonSummary": "没有可判断的材料"
+          }
+        ],
+        "candidates": [],
+        "conflicts": [],
+        "answerBlocks": [
+          {
+            "id": "conclusion",
+            "text": "现有材料不足，无法确认报名截止日期。",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": []
+          }
+        ],
+        "attachments": [],
+        "delta": null
+      }
+    }
+  },
+  "provider-failure": {
+    "run": {
+      "id": "00000000-0000-4000-8000-000000000023",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "trigger": "initial",
+      "previousRunId": null,
+      "budgetWindowId": "00000000-0000-4000-8000-000000000024",
+      "scopeVersion": 1,
+      "status": "failed",
+      "stage": "searching",
+      "epoch": 1,
+      "queuedAt": "2026-10-24T08:00:00.000Z",
+      "startedAt": "2026-10-24T08:00:00.000Z",
+      "endedAt": "2026-10-24T08:00:00.000Z",
+      "activeIntervals": [
+        {
+          "startedAt": "2026-10-24T08:00:00.000Z",
+          "endedAt": "2026-10-24T08:00:00.000Z"
+        }
+      ],
+      "activeMs": 0,
+      "stopReason": "provider_error",
+      "cancelRequestedAt": null,
+      "checkpointRef": null,
+      "createdResultVersionId": null
+    },
+    "failure": {
+      "kind": "auth",
+      "retryable": false,
+      "requestId": null,
+      "usageKnown": false,
+      "safeMessage": "受控鉴权失败"
+    },
+    "version": null
+  },
+  "updated-version": {
+    "before": {
+      "id": "00000000-0000-4000-8000-000000000010",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "runId": "00000000-0000-4000-8000-000000000002",
+      "previousVersionId": null,
+      "createdAt": "2026-10-24T08:00:00.000Z",
+      "payloadHash": "efdb7b57f25b27171b730f52aac1d8bd4996f245de1158b045813f0966bc7512",
+      "payload": {
+        "schemaVersion": "0.1.0",
+        "investigationId": "00000000-0000-4000-8000-000000000001",
+        "runId": "00000000-0000-4000-8000-000000000002",
+        "scope": {
+          "objectText": "受控样例活动",
+          "goal": "核对截止日期",
+          "basicMode": "truth",
+          "knownClues": [],
+          "uncertainClues": [],
+          "claimsToCheck": [
+            "报名截至十月三十日"
+          ],
+          "timeScope": null,
+          "region": null,
+          "referenceTime": "2026-10-24T08:00:00.000Z",
+          "userConfirmed": true
+        },
+        "queryTime": "2026-10-24T08:00:00.000Z",
+        "summary": "受控材料中的报名截止日期为十月三十日。",
+        "conditions": [
+          "仅用于契约测试"
+        ],
+        "unknowns": [],
+        "nextSteps": [],
+        "stopReason": "answered",
+        "sources": [
+          {
+            "id": "00000000-0000-4000-8000-000000000003",
+            "url": "https://example.invalid/notice",
+            "canonicalUrl": "https://example.invalid/notice",
+            "title": "受控公告",
+            "publisher": null,
+            "publishedAt": null,
+            "eventAt": null,
+            "fetchedAt": "2026-10-24T08:00:00.000Z",
+            "readStatus": "full",
+            "originGroup": null,
+            "originReason": null,
+            "queryIds": [],
+            "snippet": null,
+            "contentHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "diagnostic": null
+          }
+        ],
+        "evidence": [
+          {
+            "id": "00000000-0000-4000-8000-000000000004",
+            "origin": {
+              "kind": "source",
+              "id": "00000000-0000-4000-8000-000000000003"
+            },
+            "representation": "verbatim",
+            "excerpt": "报名截至十月三十日",
+            "locator": {
+              "kind": "paragraph",
+              "value": "1"
+            },
+            "capturedAt": "2026-10-24T08:00:00.000Z",
+            "contentHash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "limitations": []
+          }
+        ],
+        "claims": [
+          {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "statement": "报名截至十月三十日",
+            "conditions": [],
+            "status": "supported",
+            "links": [
+              {
+                "evidenceId": "00000000-0000-4000-8000-000000000004",
+                "relation": "supports",
+                "rationale": "受控公告直接说明"
+              }
+            ],
+            "gaps": [],
+            "reasonSummary": "受控材料直接支持"
+          }
+        ],
+        "candidates": [],
+        "conflicts": [],
+        "answerBlocks": [
+          {
+            "id": "conclusion",
+            "text": "报名截至十月三十日",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000004"
+            ]
+          }
+        ],
+        "attachments": [],
+        "delta": null
+      }
+    },
+    "after": {
+      "id": "00000000-0000-4000-8000-000000000016",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "runId": "00000000-0000-4000-8000-000000000015",
+      "previousVersionId": "00000000-0000-4000-8000-000000000010",
+      "createdAt": "2026-10-24T09:00:00.000Z",
+      "payloadHash": "8a4e14bc594d7704629c0319bda485c708d805349e757633ae2c72174e624d30",
+      "payload": {
+        "schemaVersion": "0.1.0",
+        "investigationId": "00000000-0000-4000-8000-000000000001",
+        "runId": "00000000-0000-4000-8000-000000000015",
+        "scope": {
+          "objectText": "受控样例活动",
+          "goal": "核对截止日期",
+          "basicMode": "truth",
+          "knownClues": [],
+          "uncertainClues": [],
+          "claimsToCheck": [
+            "报名截至十月三十日"
+          ],
+          "timeScope": null,
+          "region": null,
+          "referenceTime": "2026-10-24T08:00:00.000Z",
+          "userConfirmed": true
+        },
+        "queryTime": "2026-10-24T09:00:00.000Z",
+        "summary": "受控新版：报名截止日已修订为十月三十一日。",
+        "conditions": [
+          "仅用于契约测试"
+        ],
+        "unknowns": [],
+        "nextSteps": [],
+        "stopReason": "answered",
+        "sources": [
+          {
+            "id": "00000000-0000-4000-8000-000000000003",
+            "url": "https://example.invalid/notice",
+            "canonicalUrl": "https://example.invalid/notice",
+            "title": "受控公告",
+            "publisher": null,
+            "publishedAt": null,
+            "eventAt": null,
+            "fetchedAt": "2026-10-24T09:00:00.000Z",
+            "readStatus": "full",
+            "originGroup": null,
+            "originReason": null,
+            "queryIds": [],
+            "snippet": null,
+            "contentHash": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+            "diagnostic": null
+          }
+        ],
+        "evidence": [
+          {
+            "id": "00000000-0000-4000-8000-000000000004",
+            "origin": {
+              "kind": "source",
+              "id": "00000000-0000-4000-8000-000000000003"
+            },
+            "representation": "verbatim",
+            "excerpt": "报名截至十月三十一日",
+            "locator": {
+              "kind": "paragraph",
+              "value": "1"
+            },
+            "capturedAt": "2026-10-24T09:00:00.000Z",
+            "contentHash": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+            "limitations": []
+          }
+        ],
+        "claims": [
+          {
+            "id": "00000000-0000-4000-8000-000000000005",
+            "statement": "报名截至十月三十一日",
+            "conditions": [],
+            "status": "supported",
+            "links": [
+              {
+                "evidenceId": "00000000-0000-4000-8000-000000000004",
+                "relation": "supports",
+                "rationale": "受控公告直接说明"
+              }
+            ],
+            "gaps": [],
+            "reasonSummary": "受控材料直接支持"
+          }
+        ],
+        "candidates": [],
+        "conflicts": [],
+        "answerBlocks": [
+          {
+            "id": "conclusion",
+            "text": "受控新版：报名截止日已修订为十月三十一日。",
+            "claimIds": [
+              "00000000-0000-4000-8000-000000000005"
+            ],
+            "evidenceIds": [
+              "00000000-0000-4000-8000-000000000004"
+            ]
+          }
+        ],
+        "attachments": [],
+        "delta": {
+          "previousVersionId": "00000000-0000-4000-8000-000000000010",
+          "changes": [
+            {
+              "kind": "conclusion",
+              "description": "受控截止日延长一天",
+              "claimIds": [
+                "00000000-0000-4000-8000-000000000005"
+              ],
+              "evidenceIds": [
+                "00000000-0000-4000-8000-000000000004"
+              ]
+            }
+          ],
+          "checkedAt": "2026-10-24T09:00:00.000Z"
+        }
+      }
+    },
+    "link": {
+      "fromVersionId": "00000000-0000-4000-8000-000000000010",
+      "toVersionId": "00000000-0000-4000-8000-000000000016",
+      "reason": "受控截止日变更",
+      "createdAt": "2026-10-24T09:00:00.000Z"
+    },
+    "oldCompanion": {
+      "id": "00000000-0000-4000-8000-000000000017",
+      "investigationId": "00000000-0000-4000-8000-000000000001",
+      "resultVersionId": "00000000-0000-4000-8000-000000000010",
+      "personaVersion": "default-v1",
+      "status": "ready",
+      "segments": [
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "text": "这份旧版材料写明截止日为十月三十日。",
+          "action": null,
+          "claimIds": [
+            "00000000-0000-4000-8000-000000000005"
+          ],
+          "evidenceIds": [
+            "00000000-0000-4000-8000-000000000004"
+          ]
+        }
+      ],
+      "cursor": 0,
+      "deliveredClaimIds": [],
+      "createdAt": "2026-10-24T08:00:00.000Z"
+    },
+    "notification": {
+      "id": "00000000-0000-4000-8000-000000000019",
+      "sessionId": "00000000-0000-4000-8000-000000000020",
+      "watchId": "00000000-0000-4000-8000-000000000021",
+      "watchCheckId": "00000000-0000-4000-8000-000000000022",
+      "changeKey": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "targetResultVersionId": "00000000-0000-4000-8000-000000000016",
+      "previousVersionId": "00000000-0000-4000-8000-000000000010",
+      "reason": "受控截止日变更",
+      "createdAt": "2026-10-24T09:00:00.000Z",
+      "readAt": null
+    }
+  }
+}

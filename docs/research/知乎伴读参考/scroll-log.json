@@ -1,0 +1,261 @@
+[
+  {
+    "article": 1,
+    "file": "article1-01.png",
+    "bottom": 9459.6015625,
+    "h": 1000,
+    "y": 0
+  },
+  {
+    "article": 1,
+    "file": "article1-02.png",
+    "bottom": 8659.6015625,
+    "h": 1000,
+    "y": 800
+  },
+  {
+    "article": 1,
+    "file": "article1-03.png",
+    "bottom": 7859.6015625,
+    "h": 1000,
+    "y": 1600
+  },
+  {
+    "article": 1,
+    "file": "article1-04.png",
+    "bottom": 7059.6015625,
+    "h": 1000,
+    "y": 2400
+  },
+  {
+    "article": 1,
+    "file": "article1-05.png",
+    "bottom": 6259.5625,
+    "h": 1000,
+    "y": 3200
+  },
+  {
+    "article": 1,
+    "file": "article1-06.png",
+    "bottom": 5459.5625,
+    "h": 1000,
+    "y": 4000
+  },
+  {
+    "article": 1,
+    "file": "article1-07.png",
+    "bottom": 4659.4921875,
+    "h": 1000,
+    "y": 4800
+  },
+  {
+    "article": 1,
+    "file": "article1-08.png",
+    "bottom": 3859.4921875,
+    "h": 1000,
+    "y": 5600
+  },
+  {
+    "article": 1,
+    "file": "article1-09.png",
+    "bottom": 3059.4921875,
+    "h": 1000,
+    "y": 6400
+  },
+  {
+    "article": 1,
+    "file": "article1-10.png",
+    "bottom": 2259.4921875,
+    "h": 1000,
+    "y": 7200
+  },
+  {
+    "article": 1,
+    "file": "article1-11.png",
+    "bottom": 1459.4921875,
+    "h": 1000,
+    "y": 8000
+  },
+  {
+    "article": 1,
+    "file": "article1-12.png",
+    "bottom": 659.4921875,
+    "h": 1000,
+    "y": 8800
+  },
+  {
+    "article": 2,
+    "file": "article2-01.png",
+    "bottom": 19810.6953125,
+    "h": 1000,
+    "y": 0
+  },
+  {
+    "article": 2,
+    "file": "article2-02.png",
+    "bottom": 19010.6953125,
+    "h": 1000,
+    "y": 800
+  },
+  {
+    "article": 2,
+    "file": "article2-03.png",
+    "bottom": 18210.6953125,
+    "h": 1000,
+    "y": 1600
+  },
+  {
+    "article": 2,
+    "file": "article2-04.png",
+    "bottom": 17410.6953125,
+    "h": 1000,
+    "y": 2400
+  },
+  {
+    "article": 2,
+    "file": "article2-05.png",
+    "bottom": 16610.6953125,
+    "h": 1000,
+    "y": 3200
+  },
+  {
+    "article": 2,
+    "file": "article2-06.png",
+    "bottom": 15810.6953125,
+    "h": 1000,
+    "y": 4000
+  },
+  {
+    "article": 2,
+    "file": "article2-07.png",
+    "bottom": 15010.6953125,
+    "h": 1000,
+    "y": 4800
+  },
+  {
+    "article": 2,
+    "file": "article2-08.png",
+    "bottom": 14210.6953125,
+    "h": 1000,
+    "y": 5600
+  },
+  {
+    "article": 2,
+    "file": "article2-09.png",
+    "bottom": 13410.6953125,
+    "h": 1000,
+    "y": 6400
+  },
+  {
+    "article": 2,
+    "file": "article2-10.png",
+    "bottom": 12610.6953125,
+    "h": 1000,
+    "y": 7200
+  },
+  {
+    "article": 2,
+    "file": "article2-11.png",
+    "bottom": 11810.6953125,
+    "h": 1000,
+    "y": 8000
+  },
+  {
+    "article": 2,
+    "file": "article2-12.png",
+    "bottom": 11010.6953125,
+    "h": 1000,
+    "y": 8800
+  },
+  {
+    "article": 2,
+    "file": "article2-13.png",
+    "bottom": 10210.6953125,
+    "h": 1000,
+    "y": 9600
+  },
+  {
+    "article": 2,
+    "file": "article2-14.png",
+    "bottom": 9410.6953125,
+    "h": 1000,
+    "y": 10400
+  },
+  {
+    "article": 2,
+    "file": "article2-15.png",
+    "bottom": 8610.6953125,
+    "h": 1000,
+    "y": 11200
+  },
+  {
+    "article": 2,
+    "file": "article2-16.png",
+    "bottom": 7810.6953125,
+    "h": 1000,
+    "y": 12000
+  },
+  {
+    "article": 2,
+    "file": "article2-17.png",
+    "bottom": 7010.6953125,
+    "h": 1000,
+    "y": 12800
+  },
+  {
+    "article": 2,
+    "file": "article2-18.png",
+    "bottom": 6210.6953125,
+    "h": 1000,
+    "y": 13600
+  },
+  {
+    "article": 2,
+    "file": "article2-19.png",
+    "bottom": 5410.6953125,
+    "h": 1000,
+    "y": 14400
+  },
+  {
+    "article": 2,
+    "file": "article2-20.png",
+    "bottom": 4610.6953125,
+    "h": 1000,
+    "y": 15200
+  },
+  {
+    "article": 2,
+    "file": "article2-21.png",
+    "bottom": 3810.6953125,
+    "h": 1000,
+    "y": 16000
+  },
+  {
+    "article": 2,
+    "file": "article2-22.png",
+    "bottom": 3010.6953125,
+    "h": 1000,
+    "y": 16800
+  },
+  {
+    "article": 2,
+    "file": "article2-23.png",
+    "bottom": 2210.6953125,
+    "h": 1000,
+    "y": 17600
+  },
+  {
+    "article": 2,
+    "file": "article2-24.png",
+    "bottom": 1410.6953125,
+    "h": 1000,
+    "y": 18400
+  },
+  {
+    "article": 2,
+    "file": "article2-25.png",
+    "bottom": 610.6953125,
+    "h": 1000,
+    "y": 19200
+  }
+]

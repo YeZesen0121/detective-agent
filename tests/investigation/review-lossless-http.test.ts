@@ -1,0 +1,29 @@
+import {ScopeSchema} from '../../src/shared/contracts.js';
+import {afterEach,expect,it,vi} from 'vitest';
+import {buildApp,type FoundationOptions} from '../../src/server/app.js';
+import {createTruthRuntime} from '../../src/server/platform/truth-runtime.js';
+import {zeroAmounts} from '../../src/server/platform/budget.js';
+import {WorkingMaterialSchema,type ModelRequest} from '../../src/shared/ports.js';
+import {quoteRange} from '../../src/server/investigation/evidence.js';
+import {inputCost} from '../../src/server/investigation/prompts.js';
+import fixture from './fixtures/ux01-review-input.json' with {type:'json'};
+import {reply} from './f01-discovery-fixture.js';
+
+afterEach(()=>vi.useRealTimers());
+it('persists actual UX01 validated quotes through production runtime plus HTTP and executes independently approved same-goal gap queries',async()=>{
+ const at='2026-10-25T03:59:00.000Z',origin='http://127.0.0.1:5173',requests:ModelRequest[]=[],queries:string[]=[],steps:string[]=[];
+ const funds={...zeroAmounts(),activeMs:10000000,searches:200,reads:200,modelCalls:200,inputTokens:1000000,outputTokens:1000000,moneyMicros:100000000};
+ const runtime=createTruthRuntime({credentials:{search:{kind:'bearer',apiKey:'controlled_fixture'},deepseekKey:'controlled_fixture'},funding:{global:funds,trial:funds,demo:funds},fetch:async()=>{throw Error('controlled_fixture forbids external transport');}}).module;
+ const module={...runtime,prepareInvestigation:async()=>{steps.push('prepare');return {scope:ScopeSchema.parse(structuredClone(fixture.scope)),clarification:null,canInvestigate:true};},runInvestigation:async(input:Parameters<typeof runtime.runInvestigation>[0],services:Parameters<typeof runtime.runInvestigation>[1],signal:AbortSignal)=>{steps.push('run');const checkpoint=WorkingMaterialSchema.parse(structuredClone(fixture.checkpoint));checkpoint.queries=checkpoint.queries.map(q=>({...q,runId:input.run.id,budgetWindowId:input.run.budgetWindowId,scopeVersion:input.run.scopeVersion}));return runtime.runInvestigation({...input,intent:'followup',followupQuestion:'继续核对原来的游客预约进校问题。先复核本案已经保存的原文，保留历史指引的适用日期；如不能说明当前政策，请在同一校区和原目标内补查现行官方依据，不增加新目标。',checkpoint},services,signal).catch(error=>{steps.push(String(error));throw error;});}};
+ const options:FoundationOptions={databasePath:':memory:',allowedOrigin:origin,trialCode:'controlled-trial-code',demoCode:'controlled-demo-code',serviceEndsAt:'2026-10-28T00:00:00.000Z',now:()=>at,secureCookies:false,investigationRuntime:{module,supportedBasicModes:['truth'],enableFollowups:false,enableWatches:false,funding:{global:funds,trial:funds,demo:funds},providers:{search:async request=>{queries.push(request.query);return {items:[],providerRequestId:'controlled_fixture',invalidItemCount:0,warnings:[],usage:null};},read:async()=>{throw Error('controlled_fixture must not reread');},model:async request=>{requests.push(request);if(request.schemaId==='investigation.evaluate.v2')return reply(fixture.evaluation);expect(request.schemaId).toBe('investigation.review.v1');expect(inputCost(request)).toBeLessThanOrEqual(24000);return reply({checks:[0,1,2].map(claimIndex=>({claimIndex,verdict:'insufficient',addressesQuestion:false,reason:'2023指引不能证明2026当前政策，保留历史及缺口'})),goalChecks:[{goalIndex:0,claimIndexes:[],covered:false,reason:'需要现行官方依据'}],queryChecks:fixture.evaluation.nextQueries.map((_q,queryIndex)=>({queryIndex,scopeMatches:true,goalIndex:0,anchors:[{text:'中山大学',evidenceIndex:12,quote:'中山大学'}],reason:'原校区目标的现行政策缺口，非新目标'}))});}},pricing:{quote:(operation,input)=>({provider:'controlled_fixture',purpose:'purpose'in input?input.purpose:operation,priceRevision:'fixture-v1',estimated:{...zeroAmounts(),moneyMicros:1,...('messages'in input?{modelCalls:1,inputTokens:Buffer.byteLength(JSON.stringify(input.messages),'utf8')+512,outputTokens:input.maxOutputTokens}:operation==='search'?{searches:1}:{reads:1})},timeoutMs:1000,attemptNo:1}),actual:()=>null}}};
+ vi.useFakeTimers({toFake:['Date']});vi.setSystemTime(at);
+ const app=buildApp(options);try{
+  const login=await app.inject({method:'POST',url:'/api/v1/sessions',headers:{origin},payload:{code:'controlled-trial-code'}}),headers={origin,cookie:String(login.headers['set-cookie']).split(';')[0]!};
+  const created=await app.inject({method:'POST',url:'/api/v1/investigations',headers:{...headers,'idempotency-key':'controlled-ux01-replay-create'},payload:{originalQuestion:fixture.scope.goal,basicMode:'truth',presentationMode:'evidence'}});expect(created.statusCode).toBe(201);const id=created.json().data.id;
+  const started=await app.inject({method:'POST',url:`/api/v1/investigations/${id}/runs`,headers:{...headers,'idempotency-key':'controlled-ux01-replay-run'},payload:{action:'start',previousRunId:null}});expect(started.statusCode).toBe(202);
+  let run:any;for(let count=0;count<400;count++){run=(await app.inject({url:`/api/v1/runs/${started.json().data.runId}`,headers})).json().data.run;if(['partial','failed','completed','waiting_for_user'].includes(run.status))break;await new Promise(resolve=>setTimeout(resolve,5));}
+  expect(run.status,JSON.stringify({run,requests:requests.map(r=>r.schemaId),queries,steps})).toBe('partial');const saved=(await app.inject({url:`/api/v1/results/${run.createdResultVersionId}`,headers})).json().data.version.payload;
+  expect(requests.map(r=>r.schemaId)).toEqual(['investigation.evaluate.v2','investigation.review.v1']);expect(queries).toEqual(fixture.evaluation.nextQueries.map(q=>q.query));expect(saved.scope).toEqual(fixture.scope);expect(saved.claims.every((c:any)=>c.status==='insufficient')).toBe(true);
+  const links=saved.claims.flatMap((c:any)=>c.links);expect(links.length).toBeGreaterThan(0);for(const link of links){expect(link.quote).toBeTruthy();expect(quoteRange(saved.evidence.find((e:any)=>e.id===link.evidenceId).excerpt,link.quote)).not.toBeNull();}
+ }finally{await app.close();}
+});

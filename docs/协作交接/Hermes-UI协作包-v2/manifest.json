@@ -1,0 +1,53 @@
+{
+  "version": "2",
+  "created_date": "2026-10-24",
+  "repository_base_sha": "02d9b5474075e8a13a00c1748b6fe951029ebcff",
+  "purpose": "Hermes UI collaboration starter with final Codex deliverable requirements; not the actual UI source package",
+  "files": [
+    {
+      "path": "00-协作说明.md",
+      "bytes": 24277,
+      "sha256": "a367a13a9b17c0c0b635c568e8d060b8306a8ef839bc602bd70acf2ca9759f3a"
+    },
+    {
+      "path": "01-发给Hermes.txt",
+      "bytes": 4655,
+      "sha256": "758f79a1cbab096dc25a1e7b9ac6a36806d2c2219cf18552af3c78d492d9416a"
+    },
+    {
+      "path": "02-文件来源与使用.md",
+      "bytes": 4135,
+      "sha256": "ba35ddbcd2b32a14e97eea4c5762ef361cb68250baf002d04ba68830ce200bad"
+    },
+    {
+      "path": "03-最终交付给Codex.md",
+      "bytes": 8029,
+      "sha256": "83ced78868e354279c918a711b90563cd748b9f1ee27760d7ca304367cc363a1"
+    },
+    {
+      "path": "04-发回Codex时的提示词.txt",
+      "bytes": 1417,
+      "sha256": "3efee9450f94b3594d0aff0188d9bef9113833d96964676771fdb020c2269155"
+    },
+    {
+      "path": "README-先读.md",
+      "bytes": 2428,
+      "sha256": "33083280bfd32a7e331c40449da841db8e38874f17d6f65fdc4c00be98315692"
+    },
+    {
+      "path": "references/AI开发需求文档.md",
+      "bytes": 24427,
+      "sha256": "258d0be982329d7e611414534462436d3290554711c11ce0508e4c57e8871e6e"
+    },
+    {
+      "path": "skills/grill-me/LICENSE",
+      "bytes": 1068,
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    {
+      "path": "skills/grill-me/SKILL.md",
+      "bytes": 2297,
+      "sha256": "760a6026cb4cc635da0f5368e25e210170a206a91da1d894f8cd0c62e084134b"
+    }
+  ]
+}

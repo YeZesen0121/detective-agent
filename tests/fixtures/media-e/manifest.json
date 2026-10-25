@@ -1,0 +1,133 @@
+{
+  "classification": "controlled_fixture",
+  "purpose": "Owned synthetic tone, not speech or a TTS listening sample",
+  "imageAuthoring": "Original fictional text rendered using sharp SVG and local Microsoft YaHei font; no external images",
+  "sharpVersions": {
+    "aom": "3.15.1",
+    "archive": "3.8.9",
+    "cairo": "1.18.6",
+    "cgif": "0.5.4",
+    "exif": "0.6.26",
+    "expat": "2.8.5",
+    "ffi": "3.8.0",
+    "fontconfig": "2.18.3",
+    "freetype": "2.14.3",
+    "fribidi": "1.0.17",
+    "glib": "2.90.0",
+    "harfbuzz": "14.5.0",
+    "heif": "1.23.5",
+    "highway": "1.4.0",
+    "imagequant": "2.4.1",
+    "lcms": "2.19.1",
+    "mozjpeg": "0826579",
+    "pango": "1.58.2",
+    "pixman": "0.46.4",
+    "png": "1.6.58",
+    "proxy-libintl": "0.5",
+    "rsvg": "2.63.2",
+    "tiff": "4.7.2",
+    "uhdr": "2.0.2",
+    "vips": "8.18.7",
+    "webp": "1.6.0",
+    "xml2": "2.15.4",
+    "zlib-ng": "2.3.3",
+    "sharp": "0.35.5"
+  },
+  "images": [
+    {
+      "caseId": "three-speakers",
+      "attachmentId": "90000000-0000-4000-8000-000000000010",
+      "path": "images/three-speakers-0.png",
+      "sha256": "244843be90617d11dcc94b72d40d351824227f5d3322130f50756264b02da417",
+      "extractedTextSha256": "3852a1a3e974d3d245625cc766637f611b1e5c5ace984ac7b7d2851eb95b41c2",
+      "width": 960,
+      "height": 400
+    },
+    {
+      "caseId": "three-speakers",
+      "attachmentId": "90000000-0000-4000-8000-000000000011",
+      "path": "images/three-speakers-1.png",
+      "sha256": "a18ee47f80f2086236115b8f37fbfae53a72185add0559049c2bb0ea3f409ca9",
+      "extractedTextSha256": "e75b0c0ef25a3ef8989ccedd32298cfa85cfaea5bbde0af3f43fbefce73ab506",
+      "width": 960,
+      "height": 400
+    },
+    {
+      "caseId": "three-speakers",
+      "attachmentId": "90000000-0000-4000-8000-000000000012",
+      "path": "images/three-speakers-2.png",
+      "sha256": "045bf861416f487574eff9f98807e6c8b63ab9586e08de4c6b94cb0355523807",
+      "extractedTextSha256": "7346ace5a36f06b9050487b9d8ba688ab02164b2014e11a417ce8b7d5cd0892d",
+      "width": 960,
+      "height": 400
+    },
+    {
+      "caseId": "blurred-year",
+      "attachmentId": "90000000-0000-4000-8000-000000000010",
+      "path": "images/blurred-year-0.png",
+      "sha256": "a9a16b4677bcc36439a7b65183a660020e84f145a588bd6f407807489f633e5b",
+      "extractedTextSha256": "1db9f9127dfad4315e93e900fe23c50d01e4257d36b3d16da7f6791aabfd2ac6",
+      "width": 960,
+      "height": 400
+    },
+    {
+      "caseId": "dense-negation",
+      "attachmentId": "90000000-0000-4000-8000-000000000010",
+      "path": "images/dense-negation-0.png",
+      "sha256": "d45185407713096d4b13fd0d145b5be3391fc3dec8b8577291b3699344b21e9d",
+      "extractedTextSha256": "34ac80ba0da772eb71be825f19f582781fb0294d1f7baffa042877406b0408f3",
+      "width": 960,
+      "height": 400
+    }
+  ],
+  "audio": {
+    "path": "audio/offline-tone.mp3",
+    "sha256": "8fbdbe0b411253967b4962ae1cd0a1171866ac209f7be1265b5ed6c961698b2b",
+    "byteLength": 5420,
+    "generatedPcmSeconds": 0.6,
+    "contentType": "audio/mpeg",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "mp3",
+          "sample_rate": "24000",
+          "channels": 1
+        }
+      ],
+      "format": {
+        "format_name": "mp3",
+        "duration": "0.622042"
+      }
+    },
+    "ffmpegVersion": "ffmpeg version N-126404-g818e5d965b-20260904 Copyright (c) 2000-2026 the FFmpeg developers\r",
+    "ffprobeVersion": "ffprobe version N-126404-g818e5d965b-20260904 Copyright (c) 2007-2026 the FFmpeg developers\r",
+    "generationArgs": [
+      "-hide_banner",
+      "-loglevel",
+      "error",
+      "-f",
+      "lavfi",
+      "-i",
+      "sine=frequency=660:sample_rate=24000:duration=0.6",
+      "-af",
+      "afade=t=in:st=0:d=0.03,afade=t=out:st=0.5:d=0.1",
+      "-ac",
+      "1",
+      "-c:a",
+      "libmp3lame",
+      "-b:a",
+      "64k",
+      "-map_metadata",
+      "-1",
+      "-y",
+      "tests/fixtures/media-e/audio/offline-tone.mp3"
+    ],
+    "fullDecode": {
+      "command": "ffmpeg -hide_banner -loglevel error -xerror -i tests/fixtures/media-e/audio/offline-tone.mp3 -f null -",
+      "exitCode": 0
+    },
+    "platform": "win32"
+  }
+}

@@ -1,0 +1,10 @@
+import {expect,test} from '@playwright/test';
+import {randomUUID} from 'node:crypto';
+import {serveMedia} from '../web-model/media-http-fixture.js';
+
+test('controlled_fixture history stays a compact single line at 1440 and 2048 desktop widths',async({page},info)=>{
+ const s=await serveMedia(info.workerIndex);
+ try{await page.context().addCookies([{name:'detective_session',value:s.seed.token,url:s.site,httpOnly:true}]);const title='controlled_fixture 很长的历史问题'.repeat(30);await page.request.post(`${s.site}/api/v1/investigations`,{headers:{origin:s.site,'idempotency-key':randomUUID()},data:{originalQuestion:title,basicMode:'truth',presentationMode:'brief'}});
+  for(const width of [1440,2048]){await page.setViewportSize({width,height:900});await page.goto(`${s.site}/?case=${s.seed.investigationId}&version=${s.seed.version.id}`);await expect(page.locator('.drawer .case:not(.history-open)')).toHaveCount(0);await expect(page.getByRole('button',{name:'打开案卷：controlled_fixture：查询日期',exact:true})).toHaveAttribute('aria-current','page');const row=page.locator('.history-row').filter({has:page.getByRole('button',{name:`打开案卷：${title}`,exact:true})});await expect(row).toBeVisible();const geometry=await row.evaluate(element=>{const r=element.getBoundingClientRect(),title=element.querySelector('.ct')!,status=element.querySelector('small')!,del=element.querySelector('.history-delete')!,t=title.getBoundingClientRect(),s=status.getBoundingClientRect(),d=del.getBoundingClientRect();return{height:r.height,titleHeight:t.height,statusHeight:s.height,overflow:title.scrollWidth>title.clientWidth,inside:d.right<=r.right&&d.left>=r.left,sameLine:Math.abs((t.y+t.height/2)-(s.y+s.height/2))<5};});expect(geometry.height).toBeLessThanOrEqual(40);expect(geometry.statusHeight).toBeLessThanOrEqual(20);expect(geometry.overflow).toBe(true);expect(geometry.inside).toBe(true);expect(geometry.sameLine).toBe(true);await page.screenshot({path:info.outputPath(`history-${width}.png`)});}
+ }finally{try{await page.context().close();}finally{await s.close();}}
+});

@@ -1,0 +1,105 @@
+{
+  "checked_date": "2026-10-24",
+  "method": "GitHub connector repository metadata plus default-branch HEAD commit; stars are not a quality score",
+  "repositories": [
+    {
+      "repo": "langchain-ai/open_deep_research",
+      "default_branch": "main",
+      "archived": true,
+      "stars": 12675,
+      "pushed_at": "2026-08-10T18:13:37Z",
+      "license": "MIT",
+      "sha": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "commit_date": "2026-08-10T18:13:29Z",
+      "commit_message": "Bump h2 from 4.3.0 to 4.4.1 in the uv group across 1 directory (#334)"
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 30261,
+      "pushed_at": "2026-10-10T22:03:53Z",
+      "license": "Apache-2.0",
+      "sha": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "commit_date": "2026-10-10T22:03:51Z",
+      "commit_message": "Merge pull request #2206 from assafelovic/fix/config-isolate-mutable-defaults"
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 31684,
+      "pushed_at": "2025-09-30T18:07:21Z",
+      "license": "MIT",
+      "sha": "fb951af7744dab086e34962e9bc6fe878e145f83",
+      "commit_date": "2025-09-30T18:07:17Z",
+      "commit_message": "Merge pull request #400 from stanford-oval/patch/requirement-change"
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "default_branch": "master",
+      "archived": false,
+      "stars": 37672,
+      "pushed_at": "2026-09-01T14:12:12Z",
+      "license": "MIT",
+      "sha": "348feca3e378fb4157b217724ed508dc707f853f",
+      "commit_date": "2026-09-01T14:12:10Z",
+      "commit_message": "Update README.md"
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 5238,
+      "pushed_at": "2026-05-01T20:59:41Z",
+      "license": "Apache-2.0",
+      "sha": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "commit_date": "2026-05-01T20:59:39Z",
+      "commit_message": "chore: migrate batch-evals model to gemini-3.1-flash-lite-preview (deadline 6/1)"
+    },
+    {
+      "repo": "dgtlmoon/changedetection.io",
+      "default_branch": "master",
+      "archived": false,
+      "stars": 35236,
+      "pushed_at": "2026-10-23T16:15:52Z",
+      "license": "Apache-2.0",
+      "sha": "352b036217e32d3622f282f49bebcdb89592a28c",
+      "commit_date": "2026-10-23T16:15:52Z",
+      "commit_message": "API - Reject broken Jinja2 templates in url, link_to_open, body and headers (shared with the edit form) (#4587)"
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 91573,
+      "pushed_at": "2026-09-16T03:31:50Z",
+      "license": "Apache-2.0",
+      "sha": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "commit_date": "2026-09-16T03:30:53Z",
+      "commit_message": "docs: deduplicate images and streamline repository cloning (#18359)"
+    },
+    {
+      "repo": "princeton-nlp/ALCE",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 527,
+      "pushed_at": "2024-10-09T11:36:02Z",
+      "license": "MIT",
+      "sha": "246c476a4edfc564266b7346b6e29ef4861ae937",
+      "commit_date": "2024-10-09T11:36:02Z",
+      "commit_message": "Update README.md"
+    },
+    {
+      "repo": "xyflow/xyflow",
+      "default_branch": "main",
+      "archived": false,
+      "stars": 38759,
+      "pushed_at": "2026-10-22T13:08:24Z",
+      "license": "MIT",
+      "sha": "8523d8dd9f1551954bc221dccabd6a3119ef9e22",
+      "commit_date": "2026-10-22T08:38:50Z",
+      "commit_message": "Merge pull request #6036 from codechrl/fix-smoothstep-collapsed-bend"
+    }
+  ]
+}

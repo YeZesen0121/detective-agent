@@ -1,0 +1,832 @@
+{
+ "url": "http://127.0.0.1:8123/index.html?view=result&case=supported",
+ "at": "2026-10-24T14:20:41.407Z",
+ "allow": [
+  "palette-cream"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.7
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 900,
+     "screens": 1,
+     "words": 206,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "chars": 17,
+     "lines": 1,
+     "size": 21,
+     "vw": 1.5,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.5,
+     "top": 126,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "lines": 1,
+     "size": 21,
+     "font": "Songti SC"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "PingFang SC",
+       "share": 0.94,
+       "mono": false
+      },
+      {
+       "family": "Songti SC",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      21,
+      24,
+      26
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 26,
+      "vw": 1.8,
+      "font": "Songti SC",
+      "text": "是，公告和现场海报都写一楼中庭。"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.05,
+     "smallText": 12
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efe8da",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.4,
+      "l": 0.9
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fdfbf5",
+       "top": 56,
+       "hsl": {
+        "h": 45,
+        "s": 0.67,
+        "l": 0.98
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#5f5749",
+       "share": 0.73
+      },
+      {
+       "color": "#1d1a15",
+       "share": 0.25
+      },
+      {
+       "color": "#247b50",
+       "share": 0.01
+      },
+      {
+       "color": "#fdfbf5",
+       "share": 0.01
+      },
+      {
+       "color": "#a8382a",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f2ead9",
+      "hsl": {
+       "h": 41,
+       "s": 0.49,
+       "l": 0.9
+      },
+      "fg": "#1d1a15"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 38,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+ 新开一桩",
+      "成 这届旧书市集是不是搬到了一楼中庭 №008",
+      "复制结论 + 出处",
+      "盯住这个说法 每小时检查一次，持续 24 小时，结果只发站内提醒"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 13,
+     "hairlineSamples": [
+      "div.sheet-head 780px",
+      "div#claimBlock.claim 780px",
+      "li.ev.open 780px",
+      "li.ev 780px",
+      "li.ev 780px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 48,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 900,
+    "margins": {
+     "left": 12,
+     "right": 27
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "这届旧书市集是不是搬到了一楼中庭？",
+      "size": 21,
+      "top": 126,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 276,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 1,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.15,
+    "voidBox": {
+     "x": 660,
+     "y": 240,
+     "w": 300,
+     "h": 660
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#efe8da",
+    "sidebar": {
+     "w": 232,
+     "tag": "aside",
+     "links": 5,
+     "share": 0.16
+    },
+    "topbar": {
+     "h": 48
+    },
+    "canvas": {
+     "left": 44,
+     "right": 27
+    },
+    "hero": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "chars": 17,
+     "lines": 1,
+     "size": 21,
+     "vw": 1.5,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.5,
+     "top": 126,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 5,
+     "radii": [
+      [
+       0,
+       4
+      ],
+      [
+       16,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 2,
+     "tabularShare": 0,
+     "kpiMax": 11
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.54,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      20,
+      21,
+      22,
+      26,
+      32
+     ]
+    },
+    "title": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "size": 21,
+     "top": 126
+    },
+    "colourShare": 0
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.83
+   ],
+   "motion": {
+    "elements": 2,
+    "css": 2,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 844,
+     "screens": 1,
+     "words": 196,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "chars": 17,
+     "lines": 1,
+     "size": 20,
+     "vw": 5.1,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.5,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "lines": 1,
+     "size": 20,
+     "font": "Songti SC"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "PingFang SC",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Songti SC",
+       "share": 0.07,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      20
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 20,
+      "vw": 5.1,
+      "font": "Songti SC",
+      "text": "这届旧书市集是不是搬到了一楼中庭？"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.05,
+     "smallText": 11
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efe8da",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.4,
+      "l": 0.9
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#efe8da",
+       "top": 48,
+       "hsl": {
+        "h": 40,
+        "s": 0.4,
+        "l": 0.9
+       }
+      },
+      {
+       "color": "#fdfbf5",
+       "top": 48,
+       "hsl": {
+        "h": 45,
+        "s": 0.67,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#f7f1e4",
+       "top": 855,
+       "hsl": {
+        "h": 41,
+        "s": 0.54,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#5f5749",
+       "share": 0.72
+      },
+      {
+       "color": "#1d1a15",
+       "share": 0.26
+      },
+      {
+       "color": "#247b50",
+       "share": 0.01
+      },
+      {
+       "color": "#fdfbf5",
+       "share": 0.01
+      },
+      {
+       "color": "#a8382a",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f2ead9",
+      "hsl": {
+       "h": 41,
+       "s": 0.49,
+       "l": 0.9
+      },
+      "fg": "#1d1a15"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 2,
+     "radius": 6,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+ 新开一桩",
+      "成 这届旧书市集是不是搬到了一楼中庭 №008"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 15,
+     "hairlineSamples": [
+      "aside#drawer.drawer 280px",
+      "div.dfoot 255px",
+      "div.sheet-head 358px",
+      "div#claimBlock.claim 358px",
+      "li.ev.open 358px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 48,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 844,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [
+     {
+      "sel": "div.verdict",
+      "tag": "div",
+      "top": 209,
+      "height": 147,
+      "words": 7,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 94,
+      "right": 33,
+      "textLeft": 94,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div#claimBlock.claim",
+      "tag": "div",
+      "top": 369,
+      "height": 585,
+      "words": 43,
+      "media": 0,
+      "middle": 18,
+      "heading": null,
+      "left": 16,
+      "right": 25,
+      "textLeft": 16,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "这届旧书市集是不是搬到了一楼中庭？",
+      "size": 20,
+      "top": 113,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 1,
+    "bodySize": 16,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#efe8da",
+    "sidebar": null,
+    "topbar": {
+     "h": 48
+    },
+    "canvas": {
+     "left": 16,
+     "right": 16
+    },
+    "hero": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "words": 1,
+     "chars": 17,
+     "lines": 1,
+     "size": 20,
+     "vw": 5.1,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.5,
+     "top": 113,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 2,
+     "radii": [
+      [
+       0,
+       2
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 2,
+     "tabularShare": 0,
+     "kpiMax": 11
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.52,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      20,
+      22,
+      24
+     ]
+    },
+    "title": {
+     "text": "这届旧书市集是不是搬到了一楼中庭？",
+     "size": 20,
+     "top": 113
+    },
+    "colourShare": 0.001
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "54% of the text is under 13px.",
+   "fix": "Data and labels read at 13–14px; keep 11–12px for sublines and axis ticks.",
+   "alsoAt": [
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "D:\\侦探agent\\docs\\ui\\prototype\\checks\\supported\\desktop-fold.jpg",
+   "pages": [
+    "D:\\侦探agent\\docs\\ui\\prototype\\checks\\supported\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "D:\\侦探agent\\docs\\ui\\prototype\\checks\\supported\\mobile-fold.jpg",
+   "pages": [
+    "D:\\侦探agent\\docs\\ui\\prototype\\checks\\supported\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

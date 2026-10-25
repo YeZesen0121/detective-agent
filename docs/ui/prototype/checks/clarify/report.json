@@ -1,0 +1,824 @@
+{
+ "url": "http://127.0.0.1:8123/index.html?view=clarify",
+ "at": "2026-10-24T14:20:29.683Z",
+ "allow": [
+  "palette-cream"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.83
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 1,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 900,
+     "screens": 1,
+     "words": 100,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "chars": 37,
+     "lines": 1,
+     "size": 22,
+     "vw": 1.5,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.45,
+     "top": 121,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "lines": 1,
+     "size": 22,
+     "font": "Songti SC"
+    },
+    "headings": [],
+    "headingSummary": {
+     "count": 0,
+     "maxLines": 0,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "PingFang SC",
+       "share": 0.87,
+       "mono": false
+      },
+      {
+       "family": "Songti SC",
+       "share": 0.13,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 22,
+      "vw": 1.5,
+      "font": "Songti SC",
+      "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.04,
+     "centerShare": 0.07,
+     "smallText": 4
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efe8da",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.4,
+      "l": 0.9
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fdfbf5",
+       "top": 56,
+       "hsl": {
+        "h": 45,
+        "s": 0.67,
+        "l": 0.98
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#5f5749",
+       "share": 0.72
+      },
+      {
+       "color": "#1d1a15",
+       "share": 0.26
+      },
+      {
+       "color": "#fdfbf5",
+       "share": 0.01
+      },
+      {
+       "color": "#a8382a",
+       "share": 0.01
+      },
+      {
+       "color": "#e2d7c4",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#1d1a15",
+      "hsl": {
+       "h": 38,
+       "s": 0.16,
+       "l": 0.1
+      },
+      "fg": "#fdfbf5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+ 新开一桩",
+      "不确定",
+      "回答并继续",
+      "按现有线索先查"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 4,
+     "hairlineSamples": [
+      "div.sheet-head 780px",
+      "div.known 780px",
+      "aside#rail.rail 331px",
+      "div.budget 294px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 16,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 48,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 900,
+    "margins": {
+     "left": 12,
+     "right": 26
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+      "size": 22,
+      "top": 121,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 276,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0.33,
+    "voidBox": {
+     "x": 0,
+     "y": 600,
+     "w": 1440,
+     "h": 300
+    }
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#efe8da",
+    "sidebar": {
+     "w": 232,
+     "tag": "aside",
+     "links": 5,
+     "share": 0.16
+    },
+    "topbar": {
+     "h": 48
+    },
+    "canvas": {
+     "left": 36,
+     "right": 16
+    },
+    "hero": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "chars": 37,
+     "lines": 1,
+     "size": 22,
+     "vw": 1.5,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.45,
+     "top": 121,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 4,
+     "radii": [
+      [
+       0,
+       3
+      ],
+      [
+       16,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 2,
+     "tabularShare": 0,
+     "kpiMax": 11
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.62,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22,
+      32
+     ]
+    },
+    "title": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "size": 22,
+     "top": 121
+    },
+    "colourShare": 0
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.97
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 1,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 844,
+     "screens": 1,
+     "words": 93,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 22,
+     "vw": 5.6,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.45,
+     "top": 108,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "lines": 2,
+     "size": 22,
+     "font": "Songti SC"
+    },
+    "headings": [
+     {
+      "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+      "words": 5,
+      "chars": 37,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Songti SC",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1.45,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 108,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "PingFang SC",
+       "share": 0.86,
+       "mono": false
+      },
+      {
+       "family": "Songti SC",
+       "share": 0.14,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 22,
+      "vw": 5.6,
+      "font": "Songti SC",
+      "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.07,
+     "smallText": 4
+    },
+    "eyebrows": [
+     {
+      "text": "CASE №007",
+      "above": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+      "upper": true,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 11,
+      "top": 62
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efe8da",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.4,
+      "l": 0.9
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#efe8da",
+       "top": 48,
+       "hsl": {
+        "h": 40,
+        "s": 0.4,
+        "l": 0.9
+       }
+      },
+      {
+       "color": "#fdfbf5",
+       "top": 48,
+       "hsl": {
+        "h": 45,
+        "s": 0.67,
+        "l": 0.98
+       }
+      },
+      {
+       "color": "#f7f1e4",
+       "top": 855,
+       "hsl": {
+        "h": 41,
+        "s": 0.54,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#5f5749",
+       "share": 0.71
+      },
+      {
+       "color": "#1d1a15",
+       "share": 0.27
+      },
+      {
+       "color": "#fdfbf5",
+       "share": 0.01
+      },
+      {
+       "color": "#a8382a",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#1d1a15",
+      "hsl": {
+       "h": 38,
+       "s": 0.16,
+       "l": 0.1
+      },
+      "fg": "#fdfbf5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 4,
+     "radius": 6,
+     "height": 36,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "+ 新开一桩",
+      "不确定",
+      "回答并继续",
+      "按现有线索先查"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 6,
+     "hairlineSamples": [
+      "aside#drawer.drawer 280px",
+      "div.dfoot 255px",
+      "div.sheet-head 358px",
+      "div.known 358px",
+      "aside#rail.rail 390px"
+     ],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 48,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": []
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 844,
+    "margins": {
+     "left": 16,
+     "right": 16
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+      "size": 22,
+      "top": 108,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 2,
+    "bodySize": 14,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#efe8da",
+    "sidebar": null,
+    "topbar": {
+     "h": 48
+    },
+    "canvas": {
+     "left": 14,
+     "right": 14
+    },
+    "hero": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "words": 5,
+     "chars": 37,
+     "lines": 2,
+     "size": 22,
+     "vw": 5.6,
+     "font": "Songti SC",
+     "weight": 600,
+     "tracking": 0,
+     "leading": 1.45,
+     "top": 108,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 1,
+     "radii": [
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 0,
+     "borderSamples": [],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 2,
+     "tabularShare": 0,
+     "kpiMax": 11
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.61,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      22,
+      24
+     ]
+    },
+    "title": {
+     "text": "旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗",
+     "size": 22,
+     "top": 108
+    },
+    "colourShare": 0
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "hero-void",
+   "width": 1440,
+   "message": "33% of the first screen is one empty block (1440×300px at 0,600).",
+   "fix": "Place the void on purpose or fill it: move the picture, the film or one fact into it, grow the headline to meet it, or shrink the screen to its content. A void reads as placed only when something closes it on the far side and it is the screen's one rest."
+  },
+  {
+   "level": "WARN",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "62% of the text is under 13px.",
+   "fix": "Data and labels read at 13–14px; keep 11–12px for sublines and axis ticks.",
+   "alsoAt": [
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "D:\\侦探agent\\docs\\ui\\prototype\\checks\\clarify\\desktop-fold.jpg",
+   "pages": [
+    "D:\\侦探agent\\docs\\ui\\prototype\\checks\\clarify\\desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "D:\\侦探agent\\docs\\ui\\prototype\\checks\\clarify\\mobile-fold.jpg",
+   "pages": [
+    "D:\\侦探agent\\docs\\ui\\prototype\\checks\\clarify\\mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

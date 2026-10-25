@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "created_date": "2026-10-24",
+  "repository_base_sha": "a2e258dda7dfb9b4d0a62b634147ef04b567beab",
+  "purpose": "Hermes UI collaboration starter; not a design source migration",
+  "files": [
+    {
+      "path": "00-协作说明.md",
+      "bytes": 23787,
+      "sha256": "f8f24b50b9931cc2c9c7decd451098ae60f53f3f49e38b70a636076fddda1786"
+    },
+    {
+      "path": "01-发给Hermes.txt",
+      "bytes": 2570,
+      "sha256": "37e74cd48214295059dd0ee4d73b1daacd073854704574b49e38df9b16cb69c3"
+    },
+    {
+      "path": "02-文件来源与使用.md",
+      "bytes": 3122,
+      "sha256": "f785438ce8d586afde8c554ac3ce26b5dcd7909a8ea5e392f316dc84eb56c4f7"
+    },
+    {
+      "path": "references/AI开发需求文档.md",
+      "bytes": 24427,
+      "sha256": "258d0be982329d7e611414534462436d3290554711c11ce0508e4c57e8871e6e"
+    },
+    {
+      "path": "skills/grill-me/LICENSE",
+      "bytes": 1068,
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    {
+      "path": "skills/grill-me/SKILL.md",
+      "bytes": 2297,
+      "sha256": "760a6026cb4cc635da0f5368e25e210170a206a91da1d894f8cd0c62e084134b"
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "checked_date": "2026-10-24",
+  "scope": "Selected source modules and licenses; downloaded for reading, not executed; not full-repository audits",
+  "files": [
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/agent.ts",
+      "blob_sha": "ff68b02e1bdc8ba57028c0eb2be052605d11f796",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/agent.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/agent.ts.txt",
+      "lines": 1213
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/tools/evaluator.ts",
+      "blob_sha": "6443f4d6b7f42f1ec5d8c26ed50c57358ec151cb",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/tools/evaluator.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/tools/evaluator.ts.txt",
+      "lines": 678
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/tools/query-rewriter.ts",
+      "blob_sha": "a9da75779ffebc66a3d5230103ef5684973468a5",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/tools/query-rewriter.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/tools/query-rewriter.ts.txt",
+      "lines": 227
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/tools/read.ts",
+      "blob_sha": "50a733a757a73b17633df05082c3c0dd162c39aa",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/tools/read.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/tools/read.ts.txt",
+      "lines": 68
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/tools/build-ref.ts",
+      "blob_sha": "57bdcc30212a4a24f260c164af1181a4ad519b91",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/tools/build-ref.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/tools/build-ref.ts.txt",
+      "lines": 555
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "src/utils/token-tracker.ts",
+      "blob_sha": "522a77729f7d97ebf390cf2ca087b6cf7c9c8409",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/src/utils/token-tracker.ts",
+      "local_path": "code/jina-ai/node-DeepResearch/src/utils/token-tracker.ts.txt",
+      "lines": 77
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "commit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "path": "gpt_researcher/skills/deep_research.py",
+      "blob_sha": "9866fc7d5fc2a2a16e730b37751b8f90d9462aa9",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/3582a6841fe7dc801e2a34e34ee408641aea9bce/gpt_researcher/skills/deep_research.py",
+      "local_path": "code/assafelovic/gpt-researcher/gpt_researcher/skills/deep_research.py.txt",
+      "lines": 655
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "commit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "path": "tests/skills/test_deep_research_empty_results.py",
+      "blob_sha": "a4b6a8ce68ede1547b69fa7b05b1b11e125f0f2b",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/3582a6841fe7dc801e2a34e34ee408641aea9bce/tests/skills/test_deep_research_empty_results.py",
+      "local_path": "code/assafelovic/gpt-researcher/tests/skills/test_deep_research_empty_results.py.txt",
+      "lines": 56
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "commit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "path": "tests/test_context_compressor_source_url.py",
+      "blob_sha": "e6983bdc469a9ec8f09d589e0c4cfae12b72ff8c",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/3582a6841fe7dc801e2a34e34ee408641aea9bce/tests/test_context_compressor_source_url.py",
+      "local_path": "code/assafelovic/gpt-researcher/tests/test_context_compressor_source_url.py.txt",
+      "lines": 55
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "docs/architecture/WORKING.md",
+      "blob_sha": "aeb9b4bb0d3eb55c614539a1f06ec87d08c2eda3",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/docs/architecture/WORKING.md",
+      "local_path": "code/ItzCrazyKns/Vane/docs/architecture/WORKING.md.txt",
+      "lines": 73
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "src/lib/agents/search/researcher/index.ts",
+      "blob_sha": "0a25d91df8715daeccd86d658813ab2b5335757b",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/src/lib/agents/search/researcher/index.ts",
+      "local_path": "code/ItzCrazyKns/Vane/src/lib/agents/search/researcher/index.ts.txt",
+      "lines": 224
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "src/components/MessageRenderer/Citation.tsx",
+      "blob_sha": "25cc064af7adca2131ef00c7ed540150616beb95",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/src/components/MessageRenderer/Citation.tsx",
+      "local_path": "code/ItzCrazyKns/Vane/src/components/MessageRenderer/Citation.tsx.txt",
+      "lines": 20
+    },
+    {
+      "repo": "princeton-nlp/ALCE",
+      "commit": "246c476a4edfc564266b7346b6e29ef4861ae937",
+      "path": "eval.py",
+      "blob_sha": "4d62b5a7bbfdc14a14226733c768e72f73444a95",
+      "url": "https://github.com/princeton-nlp/ALCE/blob/246c476a4edfc564266b7346b6e29ef4861ae937/eval.py",
+      "local_path": "code/princeton-nlp/ALCE/eval.py.txt",
+      "lines": 540
+    },
+    {
+      "repo": "dgtlmoon/changedetection.io",
+      "commit": "352b036217e32d3622f282f49bebcdb89592a28c",
+      "path": "changedetectionio/llm/evaluator.py",
+      "blob_sha": "7fc8e198ace796d06bf6ad81b2b42ba83cdc02f8",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/352b036217e32d3622f282f49bebcdb89592a28c/changedetectionio/llm/evaluator.py",
+      "local_path": "code/dgtlmoon/changedetection.io/changedetectionio/llm/evaluator.py.txt",
+      "lines": 990
+    },
+    {
+      "repo": "dgtlmoon/changedetection.io",
+      "commit": "352b036217e32d3622f282f49bebcdb89592a28c",
+      "path": "changedetectionio/processors/text_json_diff/processor.py",
+      "blob_sha": "61c6db799d9d7ffe4f798c97be535e9a0aa1015a",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/352b036217e32d3622f282f49bebcdb89592a28c/changedetectionio/processors/text_json_diff/processor.py",
+      "local_path": "code/dgtlmoon/changedetection.io/changedetectionio/processors/text_json_diff/processor.py.txt",
+      "lines": 705
+    },
+    {
+      "repo": "langchain-ai/open_deep_research",
+      "commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "path": "README.md",
+      "blob_sha": "5bfa38ac55fc7a5835b3d5c9a848d71e74c68d60",
+      "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/README.md",
+      "local_path": "code/langchain-ai/open_deep_research/README.md.txt",
+      "lines": 150
+    },
+    {
+      "repo": "langchain-ai/open_deep_research",
+      "commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "path": "src/open_deep_research/deep_researcher.py",
+      "blob_sha": "279dbffd9e49e07962fb4e1cfeff79e45adc43e9",
+      "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/src/open_deep_research/deep_researcher.py",
+      "local_path": "code/langchain-ai/open_deep_research/src/open_deep_research/deep_researcher.py.txt",
+      "lines": 719
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "commit": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "path": "paddleocr/_pipelines/ocr.py",
+      "blob_sha": "a708a0eec0d8d0add5affd2e8102e885bf24658d",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/paddleocr/_pipelines/ocr.py",
+      "local_path": "code/PaddlePaddle/PaddleOCR/paddleocr/_pipelines/ocr.py.txt",
+      "lines": 605
+    },
+    {
+      "repo": "xyflow/xyflow",
+      "commit": "8523d8dd9f1551954bc221dccabd6a3119ef9e22",
+      "path": "examples/react/src/examples/Layouting/index.tsx",
+      "blob_sha": "2371b503a2250b23d9773528bdbf3fb740fecb58",
+      "url": "https://github.com/xyflow/xyflow/blob/8523d8dd9f1551954bc221dccabd6a3119ef9e22/examples/react/src/examples/Layouting/index.tsx",
+      "local_path": "code/xyflow/xyflow/examples/react/src/examples/Layouting/index.tsx.txt",
+      "lines": 121
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "commit": "fb951af7744dab086e34962e9bc6fe878e145f83",
+      "path": "knowledge_storm/storm_wiki/modules/knowledge_curation.py",
+      "blob_sha": "d6b892957e5ef2c68d659c294bf64a02c9135b2e",
+      "url": "https://github.com/stanford-oval/storm/blob/fb951af7744dab086e34962e9bc6fe878e145f83/knowledge_storm/storm_wiki/modules/knowledge_curation.py",
+      "local_path": "code/stanford-oval/storm/knowledge_storm/storm_wiki/modules/knowledge_curation.py.txt",
+      "lines": 394
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "commit": "fb951af7744dab086e34962e9bc6fe878e145f83",
+      "path": "knowledge_storm/collaborative_storm/modules/grounded_question_answering.py",
+      "blob_sha": "4065018b581b9a78200355325725805b4e496e98",
+      "url": "https://github.com/stanford-oval/storm/blob/fb951af7744dab086e34962e9bc6fe878e145f83/knowledge_storm/collaborative_storm/modules/grounded_question_answering.py",
+      "local_path": "code/stanford-oval/storm/knowledge_storm/collaborative_storm/modules/grounded_question_answering.py.txt",
+      "lines": 164
+    },
+    {
+      "repo": "dgtlmoon/changedetection.io",
+      "commit": "352b036217e32d3622f282f49bebcdb89592a28c",
+      "path": "changedetectionio/tests/llm/test_evaluator.py",
+      "blob_sha": "6b55ffac6819c6c05e0feea5c597090b07cf67c4",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/352b036217e32d3622f282f49bebcdb89592a28c/changedetectionio/tests/llm/test_evaluator.py",
+      "local_path": "code/dgtlmoon/changedetection.io/changedetectionio/tests/llm/test_evaluator.py.txt",
+      "lines": 764
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "src/components/AssistantSteps.tsx",
+      "blob_sha": "748463f643ed9e8a9a1045271b33e4cdb23ebe9f",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/src/components/AssistantSteps.tsx",
+      "local_path": "code/ItzCrazyKns/Vane/src/components/AssistantSteps.tsx.txt",
+      "lines": 269
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "src/components/MessageSources.tsx",
+      "blob_sha": "a1db27a294fd361d801845b4751d50e5106c757a",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/src/components/MessageSources.tsx",
+      "local_path": "code/ItzCrazyKns/Vane/src/components/MessageSources.tsx.txt",
+      "lines": 166
+    },
+    {
+      "repo": "langchain-ai/open_deep_research",
+      "commit": "1b7d2e80db9faa586165c60e09096dbbfd483a64",
+      "path": "LICENSE",
+      "blob_sha": "82dc7c43f7ba98b72ac619ebfe7599576dc3ce7f",
+      "url": "https://github.com/langchain-ai/open_deep_research/blob/1b7d2e80db9faa586165c60e09096dbbfd483a64/LICENSE",
+      "local_path": "code/langchain-ai/open_deep_research/LICENSE.txt",
+      "lines": 21
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "commit": "3582a6841fe7dc801e2a34e34ee408641aea9bce",
+      "path": "LICENSE",
+      "blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "url": "https://github.com/assafelovic/gpt-researcher/blob/3582a6841fe7dc801e2a34e34ee408641aea9bce/LICENSE",
+      "local_path": "code/assafelovic/gpt-researcher/LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "repo": "stanford-oval/storm",
+      "commit": "fb951af7744dab086e34962e9bc6fe878e145f83",
+      "path": "LICENSE",
+      "blob_sha": "20df92744b57b9644a5b4351758522b8d49c87b5",
+      "url": "https://github.com/stanford-oval/storm/blob/fb951af7744dab086e34962e9bc6fe878e145f83/LICENSE",
+      "local_path": "code/stanford-oval/storm/LICENSE.txt",
+      "lines": 21
+    },
+    {
+      "repo": "ItzCrazyKns/Vane",
+      "commit": "348feca3e378fb4157b217724ed508dc707f853f",
+      "path": "LICENSE",
+      "blob_sha": "f94c7b0dabce11a8f6c98749125b15a9ced41137",
+      "url": "https://github.com/ItzCrazyKns/Vane/blob/348feca3e378fb4157b217724ed508dc707f853f/LICENSE",
+      "local_path": "code/ItzCrazyKns/Vane/LICENSE.txt",
+      "lines": 22
+    },
+    {
+      "repo": "jina-ai/node-DeepResearch",
+      "commit": "fd323b521a51264d497bec333bfb997da1bf3210",
+      "path": "LICENSE",
+      "blob_sha": "0db6d6cb30633d43de7fa0893a2f292b3821a284",
+      "url": "https://github.com/jina-ai/node-DeepResearch/blob/fd323b521a51264d497bec333bfb997da1bf3210/LICENSE",
+      "local_path": "code/jina-ai/node-DeepResearch/LICENSE.txt",
+      "lines": 194
+    },
+    {
+      "repo": "dgtlmoon/changedetection.io",
+      "commit": "352b036217e32d3622f282f49bebcdb89592a28c",
+      "path": "LICENSE",
+      "blob_sha": "a6e09a45199d495dd9ff687399fb4835acb0b843",
+      "url": "https://github.com/dgtlmoon/changedetection.io/blob/352b036217e32d3622f282f49bebcdb89592a28c/LICENSE",
+      "local_path": "code/dgtlmoon/changedetection.io/LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "repo": "PaddlePaddle/PaddleOCR",
+      "commit": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "path": "LICENSE",
+      "blob_sha": "430edfa0cfcb59f15b7aa5457427d0faf2e40dac",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/LICENSE",
+      "local_path": "code/PaddlePaddle/PaddleOCR/LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "repo": "princeton-nlp/ALCE",
+      "commit": "246c476a4edfc564266b7346b6e29ef4861ae937",
+      "path": "LICENSE",
+      "blob_sha": "3bf435ec0493e58e4c7d2da5f0303a72f6dd00e6",
+      "url": "https://github.com/princeton-nlp/ALCE/blob/246c476a4edfc564266b7346b6e29ef4861ae937/LICENSE",
+      "local_path": "code/princeton-nlp/ALCE/LICENSE.txt",
+      "lines": 22
+    },
+    {
+      "repo": "xyflow/xyflow",
+      "commit": "8523d8dd9f1551954bc221dccabd6a3119ef9e22",
+      "path": "LICENSE",
+      "blob_sha": "072ff46d7c23dd8e18ccba11aa6563f14e524312",
+      "url": "https://github.com/xyflow/xyflow/blob/8523d8dd9f1551954bc221dccabd6a3119ef9e22/LICENSE",
+      "local_path": "code/xyflow/xyflow/LICENSE.txt",
+      "lines": 22
+    }
+  ]
+}

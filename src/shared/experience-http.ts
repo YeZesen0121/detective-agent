@@ -1,0 +1,18 @@
+import { z } from 'zod';
+import { AttachmentPublicSchema, AudioManifestSchema, BudgetSnapshotSchema, CompanionSessionSchema, IdSchema } from './contracts.js';
+import { CompanionReplySchema } from './ports.js';
+import { UpdateNoticeSchema } from './runtime-http.js';
+export const AttachmentsPageSchema=z.strictObject({items:z.array(AttachmentPublicSchema).max(3)});
+export const StartCompanionSchema=z.strictObject({personaId:z.literal('default')});
+export const CompanionAcceptedSchema=z.strictObject({companionSessionId:IdSchema,status:CompanionSessionSchema.shape.status});
+export const CompanionViewSchema=z.strictObject({session:CompanionSessionSchema,voiceId:z.string().nullable(),updateNotice:UpdateNoticeSchema.nullable()});
+export const CompanionPatchSchema=z.strictObject({cursor:z.number().int().nonnegative().optional(),ended:z.boolean().optional()}).refine(p=>p.cursor!==undefined||p.ended!==undefined);
+export const CompanionQuestionSchema=z.strictObject({question:z.string().trim().min(1).max(2000)});
+export const TurnAcceptedSchema=z.strictObject({turnId:IdSchema});
+export const ExperienceErrorSchema=z.strictObject({code:z.string().max(128),message:z.string().max(1000)});
+export const TurnViewSchema=z.strictObject({status:z.enum(['queued','running','completed','partial','failed','cancelled']),reply:CompanionReplySchema.nullable(),newRunId:IdSchema.nullable(),error:ExperienceErrorSchema.nullable()});
+export const VoicesSchema=z.strictObject({items:z.array(z.strictObject({id:z.string().min(1).max(128),label:z.string().min(1).max(128),available:z.boolean()})).max(10)});
+export const RequestAudioSchema=z.strictObject({segmentId:IdSchema,voiceId:z.string().trim().min(1).max(128),speed:z.literal(0)});
+export const AudioAcceptedSchema=z.strictObject({audioJobId:IdSchema});
+export const AudioViewSchema=AudioManifestSchema;
+export const InteractionBudgetViewSchema=z.strictObject({configured:z.boolean(),snapshot:BudgetSnapshotSchema.nullable(),ttsCharacters:z.strictObject({limit:z.number().int().nonnegative().nullable(),used:z.number().int().nonnegative(),reserved:z.number().int().nonnegative(),remaining:z.number().int().nonnegative().nullable()}).nullable()});

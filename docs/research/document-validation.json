@@ -1,0 +1,11 @@
+{
+  "checked_date": "2026-10-24",
+  "source_files": 33,
+  "source_modules": 24,
+  "missing_evidence": 0,
+  "broken_local_links": [],
+  "direction_headings": 9,
+  "sample_rows": 25,
+  "runtime_tests": "not performed",
+  "third_party_code_executed": false
+}

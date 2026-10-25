@@ -1,0 +1,25 @@
+import {expect,it} from 'vitest';
+import {runInvestigation} from '../../src/server/investigation/engine.js';
+import {evaluationRequest,inputCost,reviewRequest} from '../../src/server/investigation/prompts.js';
+import {capturedMaterial,normalizedView,quoteRange} from '../../src/server/investigation/evidence.js';
+import {scenario} from './controlled.js';
+import type {ModelResponse} from '../../src/shared/ports.js';
+const reply=(value:unknown):ModelResponse=>({value:value as ModelResponse['value'],usage:null,providerRequestId:'controlled_fixture',modelId:'controlled_fixture',finishReason:'stop'});
+it('independently reviews all three complete 3196-character paragraphs within the original 24000 allowance',async()=>{
+ const s=scenario();s.input.scope.goal='2026年受控活动是否免费';s.input.scope.claimsToCheck=['2026年受控活动报名费用是什么'];
+ const text=Array.from({length:3},()=> '2026年受控活动报名免费。'+'活动背景资料。'.repeat(150)).join('\n\n');expect(text.length).toBe(3196);
+ const read=s.services.read;s.services.read=async(r,c,a)=>({...await read(r,c,a),text});
+ s.services.model=async request=>{s.models.push(request);const body=JSON.parse(request.messages[1]!.content);return reply(request.schemaId==='investigation.review.v1'?{checks:[{claimIndex:0,verdict:'supported',addressesQuestion:true,reason:'原句明确报名免费且完整条件无例外'}],goalChecks:[{goalIndex:0,claimIndexes:[0],covered:true,reason:'费用得到回答'}]}:{claims:[{statement:'报名免费',status:'supported',links:[{evidenceIndex:body.evidence[0].index,relation:'supports',quote:'2026年受控活动报名免费。'}],conditions:[],gaps:[],reasonSummary:'主办方原句'}],answerBlocks:[]});};
+ const result=await runInvestigation(s.input,s.services,new AbortController().signal);expect(result.completion,JSON.stringify({unknowns:result.draft?.unknowns,models:s.models.map(r=>({cost:inputCost(r),entryBytes:Buffer.byteLength(JSON.stringify(JSON.parse(r.messages[1]!.content).evidence[0])),count:JSON.parse(r.messages[1]!.content).evidence.length}))})).toBe('completed');expect(s.models.map(request=>request.schemaId)).toEqual(['investigation.evaluate.v2','investigation.review.v1']);
+ for(const request of s.models){expect(inputCost(request)).toBeLessThanOrEqual(24000);expect(JSON.parse(request.messages[1]!.content).evidence).toHaveLength(3);}
+ const material=s.checkpoints.at(-1)!;expect(material.evidence.at(-1)?.excerpt).toBe(text);expect(evaluationRequest(s.input,material,s.budget())?.omitted).toBe(false);
+});
+it('deduplicates only an identical raw/view pair while preserving original index, hash, locator, limitations and source',()=>{
+ const s=scenario(),base={purpose:'evaluate' as const,promptVersion:'controlled_fixture',schemaId:'controlled_fixture',maxOutputTokens:1800,messages:[{role:'system' as const,content:'controlled_fixture'},{role:'user' as const,content:JSON.stringify({scope:s.input.scope,evidence:[{index:17,rawExcerpt:'原文完整条件。',view:'原文完整条件。',locator:{kind:'char_range',value:'400:407'},captureHash:'controlled_fixture_hash',limitations:['保留原限制'],source:{id:'controlled_fixture_source',readStatus:'full'}}]})}]};
+ const review=reviewRequest(base,[],s.budget())!;const evidence=JSON.parse(review.messages[1]!.content).evidence[0];expect(evidence).toMatchObject({index:17,view:'原文完整条件。',viewIsRaw:true,locator:{kind:'char_range',value:'400:407'},captureHash:'controlled_fixture_hash',limitations:['保留原限制'],source:{id:'controlled_fixture_source',readStatus:'full'}});expect(evidence).not.toHaveProperty('rawExcerpt');expect(JSON.parse(base.messages[1]!.content).evidence[0].rawExcerpt).toBe('原文完整条件。');
+});
+it('retains the canonical raw from which a nonidentical normalized view can be rebuilt without losing Markdown or code',()=>{
+ const s=scenario(),text='受控活动正文。\\\'原样\\\' `code\\name`';const cap=capturedMaterial({url:'https://example.invalid/raw',title:'controlled_fixture',snippet:'',publisher:null,publishedAt:null,providerScore:null},{sourceId:s.input.context.budgetWindowId!,finalUrl:'https://example.invalid/raw',title:null,text,readStatus:'full',fetchedAt:s.services.clock.now(),contentHash:null,failureCode:null,usage:null},s.input.run.id,s.input.scope);
+ const prepared=evaluationRequest(s.input,{sources:[cap.source],evidence:cap.evidence,claims:[],candidates:[],queries:[]},s.budget())!;const review=reviewRequest(prepared.request,[],s.budget())!;const evidence=JSON.parse(review.messages[1]!.content).evidence[0],original=JSON.parse(prepared.request.messages[1]!.content).evidence[0];expect(evidence.rawExcerpt).toBe(text);expect(evidence.view).toBeUndefined();expect(evidence.viewDerivedFromRaw).toBe(true);expect(normalizedView(evidence.rawExcerpt).text).toBe(original.view);expect(quoteRange(evidence.rawExcerpt,'原样')).not.toBeNull();expect(quoteRange(evidence.rawExcerpt,'不存在…原样')).toBeNull();expect(evidence.locator).toEqual(cap.evidence[0]!.locator);expect(evidence.captureHash).toBe(cap.evidence[0]!.contentHash);expect(evidence.limitations).toEqual(original.limitations);expect(evidence.source).toEqual(original.source);
+ const budget={...s.budget(),remaining:{...s.budget().remaining,inputTokens:inputCost(review)-1}};expect(reviewRequest(prepared.request,[],budget)).toBeNull();
+});

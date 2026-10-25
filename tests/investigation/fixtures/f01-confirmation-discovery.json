@@ -1,0 +1,413 @@
+{
+  "materialKind": "controlled_fixture",
+  "derivedFrom": "Authorized public-sample F01 confirmation quality export; provider identifiers/usage omitted; no live calls.",
+  "scope": {
+    "objectText": "有部动画电影",
+    "goal": "有部动画电影，和音乐有关，主角到了灵魂世界，我想找它叫什么。",
+    "basicMode": "identify",
+    "knownClues": [
+      "和音乐有关",
+      "主角到了灵魂世界",
+      "主角是成年男老师"
+    ],
+    "uncertainClues": [
+      "好像弹钢琴"
+    ],
+    "claimsToCheck": [
+      "确定对象名称"
+    ],
+    "timeScope": null,
+    "region": null,
+    "referenceTime": "2026-10-24T22:12:01.519Z",
+    "userConfirmed": false
+  },
+  "checkpoint": {
+    "sources": [
+      {
+        "id": "2f375ff9-0129-4349-872e-0ebd10211b5f",
+        "url": "https://www.vanityfair.com/hollywood/2020/12/pixars-soul-lets-get-metaphysical",
+        "canonicalUrl": "https://www.vanityfair.com/hollywood/2020/12/pixars-soul-lets-get-metaphysical",
+        "title": "Pixar’s Soul: Let’s Get Metaphysical",
+        "publisher": null,
+        "publishedAt": null,
+        "eventAt": null,
+        "fetchedAt": "2026-10-24T22:12:13.341Z",
+        "readStatus": "full",
+        "originGroup": "capture:6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+        "queryIds": [
+          "de4ce813-3feb-43f3-badb-4891f6c79c98"
+        ],
+        "snippet": "Pixar’s Soul: Let’s Get Metaphysical Vanity Fair。Pixar’s Soul: Let’s Get Metaphysical The premise isn’t as strong as some of the studio’s masterpieces, but this story about music and the afterlife will still turn you inside out. © Walt Disney Co./Everett Collection. On the day middle school music teacher Joe Gardner (Jamie Foxx) gets a plum gig playing piano for a jazz quartet, he falls in a manhole—and dies. In Disney and Pixar’s metaphysical animated film Soul, Joe is stuck in an agonizing conundrum that maybe strikes a little harder for debuting in the midst of the pandemic: the bitter taste of nearly, but not quite, accomplishing a lifelong dream. Joe finds himself shifted from the day-to-day musician’s hustle to facing the great beyond—and refuses to accept. He, or to be exact, his so...",
+        "contentHash": "6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "diagnostic": null
+      },
+      {
+        "id": "8a477e19-fb14-48a1-804b-1f71abc16c72",
+        "url": "https://yps.ppru.cn/resource/r-a9be8a1c0e324e9d8801",
+        "canonicalUrl": "https://yps.ppru.cn/resource/r-a9be8a1c0e324e9d8801",
+        "title": "心灵奇旅 Soul",
+        "publisher": null,
+        "publishedAt": null,
+        "eventAt": null,
+        "fetchedAt": "2026-10-24T22:12:18.047Z",
+        "readStatus": "full",
+        "originGroup": "capture:1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+        "queryIds": [
+          "de4ce813-3feb-43f3-badb-4891f6c79c98"
+        ],
+        "snippet": "心灵奇旅 Soul。《心灵奇旅》(Soul)是皮克斯动画工作室制作、迪士尼发行的动画电影,2020年上映。影片以一位中学音乐教师乔·加德纳为主角,讲述他在即将迎来人生高光时刻时意外坠入灵魂世界,与编号22的灵魂相遇,共同探索生命意义与'火花'的旅程。 作品背景 《心灵奇旅》(Soul)由皮克斯动画工作室制作、华特迪士尼影业发行,于2020年11月20日在美国上映。影片由彼特·道格特(Pete Docter)执导,丹尼尔·谢克特(Daniel Schechter)联合执导,彼特·道格特与迈克·琼斯(Mike Jones)共同编剧。彼特·道格特此前曾执导《怪兽电力公司》《头脑特工队》等作品,擅长以奇幻设定探讨人类情感与心理议题。 故事前提 影片主角乔·加德纳(Joe Gardner)是一位纽约市的中学音乐教师,同时也是一名怀揣爵士乐梦想的钢琴手。他终于获得与知名爵士乐手戴娜·奥里奥莉(Dina Oliva)同台演出的机会,却在登台前意外坠入下水道,灵魂脱离身体,进入一个名为'生之来处'(The Great Before)的维度。在那里,灵魂们需要找到属于自己的'火花'(spark)才能前往地球开始人生。 乔的灵魂被误认为已经找到火花,即将前往地球。他为了回到自己的身体,与一个对地球生活毫无兴趣、编号为22的灵魂结伴同行。22号灵魂在'生之来处'徘徊了数千年,始终无法找到点燃自己的火花,对即将开始的人生充满抗拒。 主题与表达 影片的核心命题围绕'生命的意义'展开。乔一直将登台演出视为人生的终极目标,认为只有实现这个梦想才算真正活过。然而在灵魂世界的旅程中,他逐渐发现,生命的火花并非某个宏大的成就或目标,而是日常生活中那些微小而真实的瞬间——一片飘落的树叶、一块美味的披萨、地铁上的即兴演奏、与朋友的一次闲聊。 22号灵魂最终被地球上的平凡体验所打动,找到了属于自己的火花。影片通过乔...",
+        "contentHash": "1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "diagnostic": null
+      },
+      {
+        "id": "71a380ff-5b43-4b8a-8015-c48f29af6866",
+        "url": "https://fun.dakabang.net/fun/fun/24400",
+        "canonicalUrl": "https://fun.dakabang.net/fun/fun/24400",
+        "title": "周五晓时光放映:《心灵奇旅》",
+        "publisher": null,
+        "publishedAt": null,
+        "eventAt": null,
+        "fetchedAt": "2026-10-24T22:12:21.799Z",
+        "readStatus": "full",
+        "originGroup": "capture:fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+        "queryIds": [
+          "de4ce813-3feb-43f3-badb-4891f6c79c98"
+        ],
+        "snippet": "周五晓时光放映:《心灵奇旅》 FUN青岛。电影 青年 周五晓时光放映:《心灵奇旅》 主办: 青未青年空间 **收费:**免费 日期: 5/15 **时间:**10:00 **地点:**市南区东海中路30号银海大世界帷握空间 报名购票:>>报名购票链接 《心灵奇旅》(Soul)是皮克斯出品、彼特·道格特与凯普·鲍尔斯联合执导的治愈动画电影,2020年12月25日上映,斩获奥斯卡最佳动画长片、最佳配乐大奖。 主角乔伊·高纳是一名热爱爵士乐的中学音乐老师,毕生梦想是成为职业爵士钢琴家。终于,他获得与偶像同台演出的机会,却在演出前意外坠河,灵魂来到灵魂世界“生之来处”。 在这里,灵魂需找到“火花”(生命热情)才能投胎。乔伊遇见厌世、拒绝投胎的灵魂22号 。两人阴差阳错灵魂互换:22号进入乔伊身体体验人间,乔伊则困在一只狸花猫体内。 重返人间后,他们在纽约共同体验生活,逐渐领悟:火花不是人生目标,而是你想要生活的那一刻——生命的意义藏在平凡瞬间:一片落叶、一口披萨、一次街头演奏。 活动 晓时光放映 主题 《心灵奇旅》 时间 2026年5月15日周五上午10:00-12:00 地点 市南区东海中路30号银海大世界帷握空间 主办 崔晓宇 青未义工 形式 放映+分享+讨论 人数 20人 费用 活动免费 流程 9:30-10:00 签到 10:00-11:30 观影 11:30-12:00 分享交流 分享 1.22一直找不到自己的“火花”,你觉得火花=天赋/职业/梦想吗?你理解的“火花”是什么? 2.乔伊一直把「成为爵士音乐家」当作人生唯一目标,实现后却没有想象中快乐,你怎么看待人生必须有宏大理想这件事? 3.我们总是在等“完成目标才开始生活”,但乔伊告诉我们活着本身就是意义。你认同这句话吗?生活的意义到底是什么? 报名方式 分享本文推文到朋友圈,点击粗门小程序上车锁定名额,添加青未义工微信...",
+        "contentHash": "fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "diagnostic": null
+      }
+    ],
+    "evidence": [
+      {
+        "id": "21404ef7-5967-4320-927c-a438c50b00cf",
+        "origin": {
+          "kind": "source",
+          "id": "2f375ff9-0129-4349-872e-0ebd10211b5f"
+        },
+        "representation": "verbatim",
+        "excerpt": "Skip to main content",
+        "locator": {
+          "kind": "char_range",
+          "value": "0:20"
+        },
+        "capturedAt": "2026-10-24T22:12:13.341Z",
+        "contentHash": "6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+        ]
+      },
+      {
+        "id": "f1097d98-cb56-4da4-a9eb-f6bdb9c1bdb7",
+        "origin": {
+          "kind": "source",
+          "id": "2f375ff9-0129-4349-872e-0ebd10211b5f"
+        },
+        "representation": "verbatim",
+        "excerpt": "Reviews",
+        "locator": {
+          "kind": "char_range",
+          "value": "22:29"
+        },
+        "capturedAt": "2026-10-24T22:12:13.341Z",
+        "contentHash": "6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+        ]
+      },
+      {
+        "id": "721ced19-15fc-4b90-b85a-2fb2e2c7ed8a",
+        "origin": {
+          "kind": "source",
+          "id": "2f375ff9-0129-4349-872e-0ebd10211b5f"
+        },
+        "representation": "verbatim",
+        "excerpt": "\\# Pixar’s Soul\\: Let’s Get Metaphysical",
+        "locator": {
+          "kind": "char_range",
+          "value": "31:71"
+        },
+        "capturedAt": "2026-10-24T22:12:13.341Z",
+        "contentHash": "6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+        ]
+      },
+      {
+        "id": "a435363e-cd4a-474f-a5df-611a1f6163e1",
+        "origin": {
+          "kind": "source",
+          "id": "2f375ff9-0129-4349-872e-0ebd10211b5f"
+        },
+        "representation": "verbatim",
+        "excerpt": "Skip to main content\n\nReviews\n\n\\# Pixar’s Soul\\: Let’s Get Metaphysical\n\nThe premise isn’t as strong as some of the studio’s masterpieces\\, but this story about music and the afterlife will still turn you inside out\\.\n\nOn the day middle school music teacher Joe Gardner \\(Jamie Foxx\\) gets a plum gig playing piano for a jazz quartet\\, he falls in a manhole—and dies\\. In Disney and Pixar’s metaphysical animated film Soul\\, Joe is stuck in an agonizing conundrum that maybe strikes a little harder for debuting in the midst of the pandemic\\: the bitter taste of nearly\\, but not quite\\, accomplishing a lifelong dream\\.\n\nKeep Reading\n\nContinue reading with a Vanity Fair subscription and get unlimited access\\, exclusive newsletters\\, and more\\. Your first month is free\\.\n\nAlready a subscriber\\? Sign In\n\nSubscribe to continue\\. Unlock your free month today\\. GET DIGITAL ACCESS",
+        "locator": {
+          "kind": "char_range",
+          "value": "0:880"
+        },
+        "capturedAt": "2026-10-24T22:12:13.341Z",
+        "contentHash": "6fbe75c28810295730afa4f0b1e234f825053523c203622311fb4dc373941eca",
+        "limitations": [
+          "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+          "context_screen_state:{\"revision\":\"e3fbb6a026ecbe37d7ffdf5e65a1fc4e8d77a541894fc61c1b513072cfb1b0f8\",\"done\":[],\"irrelevant\":[],\"pending\":[0,880]}",
+          "direction_plan_state:{\"revision\":\"fe54b4ba0289d1d65e15484dc71ee8ec4d0b0e36d033cb8a21fa2bba2ad77cc7\",\"stage\":\"done\"}"
+        ]
+      },
+      {
+        "id": "9b7823c9-d7f9-481f-9052-3a2c911d11b6",
+        "origin": {
+          "kind": "source",
+          "id": "8a477e19-fb14-48a1-804b-1f71abc16c72"
+        },
+        "representation": "verbatim",
+        "excerpt": "影视动画电影奇幻治愈",
+        "locator": {
+          "kind": "char_range",
+          "value": "0:10"
+        },
+        "capturedAt": "2026-10-24T22:12:18.047Z",
+        "contentHash": "1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "851e80a8-522e-4755-bda0-e7a7ae445d75",
+        "origin": {
+          "kind": "source",
+          "id": "8a477e19-fb14-48a1-804b-1f71abc16c72"
+        },
+        "representation": "verbatim",
+        "excerpt": "《心灵奇旅》（Soul）是皮克斯动画工作室制作、迪士尼发行的动画电影，2020年上映。影片以一位中学音乐教师乔·加德纳为主角，讲述他在即将迎来人生高光时刻时意外坠入灵魂世界，与编号22的灵魂相遇，共同探索生命意义与\\'火花\\'的旅程。",
+        "locator": {
+          "kind": "char_range",
+          "value": "26:143"
+        },
+        "capturedAt": "2026-10-24T22:12:18.047Z",
+        "contentHash": "1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "054c88c0-0d9f-407c-9995-e7c1e62e33a0",
+        "origin": {
+          "kind": "source",
+          "id": "8a477e19-fb14-48a1-804b-1f71abc16c72"
+        },
+        "representation": "verbatim",
+        "excerpt": "音乐在影片中占据重要地位。乔对爵士乐的热爱贯穿全片，影片配乐由迈克·吉亚奇诺（Michael Giacchino）操刀，片中还收录了多首经典爵士曲目。爵士乐不仅是乔的梦想载体，也成为连接人物情感与影片主题的重要纽带。",
+        "locator": {
+          "kind": "char_range",
+          "value": "1063:1171"
+        },
+        "capturedAt": "2026-10-24T22:12:18.047Z",
+        "contentHash": "1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "16a8599b-d0f2-46cb-883e-3974fac3bb28",
+        "origin": {
+          "kind": "source",
+          "id": "8a477e19-fb14-48a1-804b-1f71abc16c72"
+        },
+        "representation": "verbatim",
+        "excerpt": "影视动画电影奇幻治愈\n\n\\# 心灵奇旅 Soul\n\n《心灵奇旅》（Soul）是皮克斯动画工作室制作、迪士尼发行的动画电影，2020年上映。影片以一位中学音乐教师乔·加德纳为主角，讲述他在即将迎来人生高光时刻时意外坠入灵魂世界，与编号22的灵魂相遇，共同探索生命意义与\\'火花\\'的旅程。\n\n收录于 2026\\/10\\/121 个平台1 个资源入口\n\n\\#\\# 作品背景\n\n《心灵奇旅》（Soul）由皮克斯动画工作室制作、华特迪士尼影业发行，于2020年11月20日在美国上映。影片由彼特·道格特（Pete Docter）执导，丹尼尔·谢克特（Daniel Schechter）联合执导，彼特·道格特与迈克·琼斯（Mike Jones）共同编剧。彼特·道格特此前曾执导《怪兽电力公司》《头脑特工队》等作品，擅长以奇幻设定探讨人类情感与心理议题。\n\n\\#\\# 故事前提\n\n影片主角乔·加德纳（Joe Gardner）是一位纽约市的中学音乐教师，同时也是一名怀揣爵士乐梦想的钢琴手。他终于获得与知名爵士乐手戴娜·奥里奥莉（Dina Oliva）同台演出的机会，却在登台前意外坠入下水道，灵魂脱离身体，进入一个名为\\'生之来处\\'（The Great Before）的维度。在那里，灵魂们需要找到属于自己的\\'火花\\'（spark）才能前往地球开始人生。\n\n乔的灵魂被误认为已经找到火花，即将前往地球。他为了回到自己的身体，与一个对地球生活毫无兴趣、编号为22的灵魂结伴同行。22号灵魂在\\'生之来处\\'徘徊了数千年，始终无法找到点燃自己的火花，对即将开始的人生充满抗拒。\n\n\\#\\# 主题与表达\n\n影片的核心命题围绕\\'生命的意义\\'展开。乔一直将登台演出视为人生的终极目标，认为只有实现这个梦想才算真正活过。然而在灵魂世界的旅程中，他逐渐发现，生命的火花并非某个宏大的成就或目标，而是日常生活中那些微小而真实的瞬间——一片飘落的树叶、一块美味的披萨、地铁上的即兴演奏、与朋友的一次闲聊。\n\n22号灵魂最终被地球上的平凡体验所打动，找到了属于自己的火花。影片通过乔与22号的相互映照，传达出一种对当下生活的珍视：人生的价值不在于抵达某个终点，而在于体验沿途的每一个瞬间。\n\n\\#\\# 视觉与音乐\n\n影片在视觉设计上颇具巧思。\\'生之来处\\'被描绘为一个抽象而诗意的空间，灵魂们以光点形态存在，通过\\'火花\\'的点亮获得前往地球的能力。地球上的纽约则以温暖而写实的笔触呈现，爵士乐俱乐部的演出场景与灵魂世界的抽象空间形成鲜明对比。\n\n音乐在影片中占据重要地位。乔对爵士乐的热爱贯穿全片，影片配乐由迈克·吉亚奇诺（Michael Giacchino）操刀，片中还收录了多首经典爵士曲目。爵士乐不仅是乔的梦想载体，也成为连接人物情感与影片主题的重要纽带。\n\n\\#\\# 评价与影响\n\n《心灵奇旅》上映后获得广泛好评，被普遍认为是皮克斯近年来最具哲学深度的作品之一。影片以轻松幽默的叙事方式探讨生死、意义与当下等深刻议题，适合各年龄段观众观看。影片在烂番茄上获得高新鲜度评分，并获得了包括奥斯卡最佳动画长片在内的多项提名与奖项。",
+        "locator": {
+          "kind": "char_range",
+          "value": "0:1306"
+        },
+        "capturedAt": "2026-10-24T22:12:18.047Z",
+        "contentHash": "1f5645b2a8194812fc901676feebdaa94a34ead3e9660b84227211b6c414bf8e",
+        "limitations": [
+          "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+          "context_screen_state:{\"revision\":\"12c93595cccb92f6ba5b932cb0f7c74c7186388b2d90d5761f3d8eca9db91ca4\",\"done\":[[0,1306]],\"irrelevant\":[],\"pending\":null}"
+        ]
+      },
+      {
+        "id": "e75d0dcf-b8e4-4ff5-a419-035af0226e36",
+        "origin": {
+          "kind": "source",
+          "id": "71a380ff-5b43-4b8a-8015-c48f29af6866"
+        },
+        "representation": "verbatim",
+        "excerpt": "《心灵奇旅》（Soul）是皮克斯出品、彼特·道格特与凯普·鲍尔斯联合执导的治愈动画电影，2020年12月25日上映，斩获奥斯卡最佳动画长片、最佳配乐大奖。",
+        "locator": {
+          "kind": "char_range",
+          "value": "102:179"
+        },
+        "capturedAt": "2026-10-24T22:12:21.799Z",
+        "contentHash": "fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "abb5417f-95d2-4942-b392-f72fb6261594",
+        "origin": {
+          "kind": "source",
+          "id": "71a380ff-5b43-4b8a-8015-c48f29af6866"
+        },
+        "representation": "verbatim",
+        "excerpt": "主角乔伊·高纳是一名热爱爵士乐的中学音乐老师，毕生梦想是成为职业爵士钢琴家。终于，他获得与偶像同台演出的机会，却在演出前意外坠河，灵魂来到灵魂世界“生之来处”。",
+        "locator": {
+          "kind": "char_range",
+          "value": "181:261"
+        },
+        "capturedAt": "2026-10-24T22:12:21.799Z",
+        "contentHash": "fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "35fff696-0406-479c-b9eb-3a66dbc3fa5e",
+        "origin": {
+          "kind": "source",
+          "id": "71a380ff-5b43-4b8a-8015-c48f29af6866"
+        },
+        "representation": "verbatim",
+        "excerpt": "本次活动仅为青未青年空间内部交流学习，不用于任何商业用途，影片及相关素材版权归属迪士尼·皮克斯所有。\n近期链接理想后花园 \\| 青未2026年小理想国会员招募招募启事｜青未义工招募：青岛高校棱镜社活动预告 \\| 5\\.15周五青未野孩子：北宅摘樱桃活动预告 \\| 5\\.17周日树洞心理：OH卡职业探索沙龙活动预告 \\| 5\\.12周二玄鹤山房：夏日摄生一日营（免费）活动预告 \\| 5\\.12周二稷下读书会：数・道・仁 —— 跨越千年万里的思想同频活动预告｜5\\.16周六青未法语角：Touve ton talent caché活动预告 \\| 5\\.13周三小麦岛观树Tree Walk：从基因外交到贝氏拟态活动预告 \\| 5\\.13周三晚稷下读书会：《诗经》与天文青未夜校丨周三哲学夜校：马基雅维利——利益冲突中“好人”的意义？活动预告｜5\\.14周四自由职业者聚落：知识咖啡馆——如何更好地花钱？\n登录后可发起邀约 此活动有0个邀约",
+        "locator": {
+          "kind": "char_range",
+          "value": "952:1371"
+        },
+        "capturedAt": "2026-10-24T22:12:21.799Z",
+        "contentHash": "fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "limitations": [
+          "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+          "capture_header_years:2020",
+          "capture_context_risk：完整捕获筛查发现选段遗漏关键条件、反证或区分线索。"
+        ]
+      },
+      {
+        "id": "669f4669-d628-4ec4-91a4-412b49498a44",
+        "origin": {
+          "kind": "source",
+          "id": "71a380ff-5b43-4b8a-8015-c48f29af6866"
+        },
+        "representation": "verbatim",
+        "excerpt": "沙龙\n\n周五晓时光放映：《心灵奇旅》\n\n主办： 青未青年空间\n\n收费：免费\n\n日期： 5\\/15\n\n时间：10\\:00\n\n地点：市南区东海中路30号银海大世界帷握空间\n\n报名购票：\\>\\>报名购票链接\n\n《心灵奇旅》（Soul）是皮克斯出品、彼特·道格特与凯普·鲍尔斯联合执导的治愈动画电影，2020年12月25日上映，斩获奥斯卡最佳动画长片、最佳配乐大奖。\n\n主角乔伊·高纳是一名热爱爵士乐的中学音乐老师，毕生梦想是成为职业爵士钢琴家。终于，他获得与偶像同台演出的机会，却在演出前意外坠河，灵魂来到灵魂世界“生之来处”。\n\n在这里，灵魂需找到“火花”（生命热情）才能投胎。乔伊遇见厌世、拒绝投胎的灵魂22号 。两人阴差阳错灵魂互换：22号进入乔伊身体体验人间，乔伊则困在一只狸花猫体内。\n\n重返人间后，他们在纽约共同体验生活，逐渐领悟：火花不是人生目标，而是你想要生活的那一刻——生命的意义藏在平凡瞬间：一片落叶、一口披萨、一次街头演奏。\n\n主题 《心灵奇旅》\n\n时间 2026年5月15日周五上午10\\:00\\-12\\:00\n\n地点 市南区东海中路30号银海大世界帷握空间\n\n主办 崔晓宇 青未义工\n\n形式 放映\\+分享\\+讨论\n\n报名方式 分享本文推文到朋友圈，点击粗门小程序上车锁定名额，添加青未义工微信好友，进晓时光活动群\n\n1\\.最近感到疲惫、焦虑、需要心灵慰藉和治愈的人。被许多任务或目标裹挟着，需要停下来喘口气、连接当下的人。\n\n2\\.对生活感到倦怠，提不起劲，心情抑郁的人：如果你像灵魂“22”一样，觉得生活乏味、对什么都兴趣缺缺，电影会用一种温柔的方式告诉你，生命的火花就藏在最平凡的瞬间里。\n\n3\\.正在为生活和梦想挣扎的人：如果你像主角 乔伊 一样，为了一个宏大的目标（比如事业、梦想）而奔波，并认为只有实现它人生才算成功，那么这部电影会带你重新思考“成功”与“生活”的定义。\n\n4\\.亲子家庭：家长和孩子一起享受静谧平和的观影时光，在治愈的电影里促进亲子关系，感悟生命美好。\n\n温馨提示\n\n1\\.建议提前签到\n\n这部电影的节奏平缓，适合安安静静、不被打扰地沉浸进去。\n\n2\\.观影期间尽量保持安静\n\n不说话、不剧透、不讨论剧情；迟到轻声入座。\n\n精彩预告\n\n△电影：心灵奇旅\n\n本次活动仅为青未青年空间内部交流学习，不用于任何商业用途，影片及相关素材版权归属迪士尼·皮克斯所有。\n近期链接理想后花园 \\| 青未2026年小理想国会员招募招募启事｜青未义工招募：青岛高校棱镜社活动预告 \\| 5\\.15周五青未野孩子：北宅摘樱桃活动预告 \\| 5\\.17周日树洞心理：OH卡职业探索沙龙活动预告 \\| 5\\.12周二玄鹤山房：夏日摄生一日营（免费）活动预告 \\| 5\\.12周二稷下读书会：数・道・仁 —— 跨越千年万里的思想同频活动预告｜5\\.16周六青未法语角：Touve ton talent caché活动预告 \\| 5\\.13周三小麦岛观树Tree Walk：从基因外交到贝氏拟态活动预告 \\| 5\\.13周三晚稷下读书会：《诗经》与天文青未夜校丨周三哲学夜校：马基雅维利——利益冲突中“好人”的意义？活动预告｜5\\.14周四自由职业者聚落：知识咖啡馆——如何更好地花钱？\n登录后可发起邀约 此活动有0个邀约\n\n发起人 \\| 日期 \\| 主题 \n\n0条评论",
+        "locator": {
+          "kind": "char_range",
+          "value": "0:1395"
+        },
+        "capturedAt": "2026-10-24T22:12:21.799Z",
+        "contentHash": "fd52a805959ac42b895ba813804543d3380f4a6e8736a36561efd9e6c572e5c6",
+        "limitations": [
+          "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+          "context_screen_state:{\"revision\":\"c5f49d9f71d5bb5644d805329df7a5f62ad1ac0a0e8ec2f9ebafffef6c57a7e0\",\"done\":[[0,1395]],\"irrelevant\":[],\"pending\":null}"
+        ]
+      }
+    ],
+    "claims": [
+      {
+        "id": "01d83cf9-b8de-412a-8b84-2fc747273ca3",
+        "statement": "用户要找的动画电影是《心灵奇旅》（Soul）。",
+        "conditions": [],
+        "status": "insufficient",
+        "links": [],
+        "gaps": [
+          "命题[0]引用非法或引句无法定位，整项未采用，不以剩余链接补救。",
+          "正文或证据片段截断/未全部展示关键例外，完整适用条件仍需核对。"
+        ],
+        "reasonSummary": "该命题包含非法或不可定位引用，整项隔离，未作为结论依据。"
+      }
+    ],
+    "candidates": [],
+    "queries": [
+      {
+        "id": "de4ce813-3feb-43f3-badb-4891f6c79c98",
+        "runId": "e21eb9f2-a136-4630-9a0a-377507b501ff",
+        "query": "有部动画电影 和音乐有关 主角到了灵魂世界",
+        "purpose": "核对已确认对象与待核验目标/线索的原始依据",
+        "claimIds": [],
+        "site": null,
+        "freshness": null,
+        "limit": 3,
+        "scopeVersion": 1,
+        "batchNo": 1,
+        "attemptCount": 1,
+        "budgetWindowId": "fc9d5193-cbbc-465e-8df9-efd4cbc349b8"
+      }
+    ]
+  },
+  "screenResponses": [
+    {
+      "screened": true,
+      "relevant": true,
+      "omittedRelevantQuotes": [
+        "影片主角乔·加德纳（Joe Gardner）是一位纽约市的中学音乐教师，同时也是一名怀揣爵士乐梦想的钢琴手。他终于获得与知名爵士乐手戴娜·奥里奥莉（Dina Oliva）同台演出的机会，却在登台前意外坠入下水道，灵魂脱离身体，进入一个名为'生之来处'（The Great Before）的维度。",
+        "《心灵奇旅》（Soul）由皮克斯动画工作室制作、华特迪士尼影业发行，于2020年11月20日在美国上映。影片由彼特·道格特（Pete Docter）执导，丹尼尔·谢克特（Daniel Schechter）联合执导，彼特·道格特与迈克·琼斯（Mike Jones）共同编剧。"
+      ],
+      "reason": "当前chunk与目标对象一致：动画电影《心灵奇旅》，主角为成年男性中学音乐教师，热爱爵士乐并弹钢琴，灵魂坠入'生之来处'灵魂世界，吻合全部已知线索。主核验器摘录已涵盖标题、灵魂世界、音乐主题等，但遗漏了'钢琴手/坠入下水道进入生之来处'的具体情节与上映日期、导演等层级核对信息，故列为遗漏引句。"
+    },
+    {
+      "screened": true,
+      "relevant": true,
+      "omittedRelevantQuotes": [],
+      "reason": "已逐项核对当前chunk：内容完整覆盖目标对象（《心灵奇旅》Soul），并明确给出音乐相关线索（主角乔伊·高纳是热爱爵士乐的中学音乐老师、梦想成为爵士钢琴家）、主角是成年男老师、演出前坠河后灵魂来到灵魂世界“生之来处”、皮克斯动画电影、2020年12月25日上映等条件；同时包含灵魂22号、灵魂互换、火花与生命意义等细节，与“和音乐有关、主角到了灵魂世界、成年男老师、弹钢琴”等线索一致。所选选段均能在当前chunk原文中找到对应文本，未发现当前chunk中有未展示给主核验器且与目标对象名称核验相关的遗漏选段、条件、例外、日期更新或反证。活动时间2026年5月15日仅为放映活动日期，不影响影片识别。"
+    }
+  ],
+  "proposal": {
+    "nextQueries": [
+      {
+        "query": "心灵奇旅 Soul 皮克斯 官方 剧情 简介 音乐老师 灵魂世界",
+        "purpose": "核验已确认对象《心灵奇旅》是否有官方剧情简介支撑用户线索，以确定对象名称",
+        "goalIndex": 0
+      },
+      {
+        "query": "Pixar Soul official synopsis Joe Gardner music teacher afterlife",
+        "purpose": "获取皮克斯或迪士尼官方对Soul的角色与剧情描述以核验名称对应关系",
+        "goalIndex": 0
+      }
+    ]
+  },
+  "audit": {
+    "type": "json_object",
+    "checks": [],
+    "goalChecks": [
+      {
+        "goalIndex": 0,
+        "claimIndexes": [],
+        "covered": false,
+        "reason": "输入中没有任何已核验的 evidence 条目，也没有任何 claim 可供审核；仅有的 leads 全部标记为 unverified_discovery_only，按规则不能当作证据，因此无法确定对象名称，目标未覆盖。"
+      }
+    ],
+    "temporalRelations": [],
+    "queryChecks": [
+      {
+        "queryIndex": 0,
+        "scopeMatches": true,
+        "goalIndex": 0,
+        "anchors": [],
+        "reason": "材料中三条线索均指向皮克斯动画《心灵奇旅》(Soul)：与音乐相关、主角中学音乐教师乔·加德纳进入灵魂世界，与用户对象描述匹配，且用户未解目标正是确定片名；但现有仅为未核验发现线索，仍需检索官方剧情简介核实名称对应关系，故批准该检索方向，不将其当作已确定事实。"
+      },
+      {
+        "queryIndex": 1,
+        "scopeMatches": true,
+        "goalIndex": 0,
+        "anchors": [],
+        "reason": "该查询针对同一对象（Pixar Soul / Joe Gardner）的官方简介，用户线索（音乐、成年男老师、灵魂世界、弹钢琴）可在官方描述中核对，服务于确定对象名称这一未解目标；证据为空，故不提供已证事实，仅批准检索。"
+      }
+    ]
+  }
+}

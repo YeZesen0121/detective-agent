@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-24",
+  "image_occurrences": 27,
+  "unique_image_hashes": 26,
+  "images_decoded": true,
+  "scroll_screenshots": 37,
+  "coverage": {
+    "1": {
+      "screenshots": 12,
+      "start_y": 0,
+      "final_body_bottom": 659.4921875,
+      "covered_to_end": true,
+      "max_scroll_step": 800
+    },
+    "2": {
+      "screenshots": 25,
+      "start_y": 0,
+      "final_body_bottom": 610.6953125,
+      "covered_to_end": true,
+      "max_scroll_step": 800
+    }
+  },
+  "missing_local_links": [],
+  "verification": "已读取正文DOM；连续滚动截图和全部配图联系表已视觉核对；不是逐字OCR校验或软件运行测试。"
+}

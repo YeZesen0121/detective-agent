@@ -1,0 +1,38 @@
+/* Only the new-case form: shared media and companion panels keep their layout. */
+.draft-view form > .label { margin: 20px 0 10px; }
+.draft-view form > .go { margin-top: 16px; }
+.draft-view .draft-uploads {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 240px);
+  align-items: center;
+  gap: 6px 12px;
+  margin-block: 12px;
+  padding: 10px 12px;
+}
+.draft-view .draft-uploads h3 { margin: 0; font: 600 13px/1.4 var(--sans); }
+.draft-view .draft-uploads p { margin: 4px 0 0; font-size: 12px; line-height: 1.5; color: var(--ink2); }
+.draft-view .draft-uploads label { display: block; margin: 0; min-width: 0; }
+.draft-view .draft-uploads input { width: 100%; min-height: 36px; padding: 5px 6px; font-size: 12px; }
+.draft-view .draft-uploads input::file-selector-button { padding: 4px 7px; margin-right: 6px; font: inherit; cursor: pointer; }
+.draft-file-label { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.draft-view .draft-uploads ul { grid-column: 1 / -1; margin: 0; padding: 0; max-height: 56px; overflow-y: auto; list-style: none; }
+.draft-view .draft-uploads ul:empty { display: none; }
+.draft-view .draft-uploads li { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; line-height: 1.4; }
+.draft-view .draft-uploads li button { flex-shrink: 0; min-height: 28px; padding: 3px 6px; font-size: 12px; }
+
+@media (min-width: 821px) and (max-height: 850px) {
+  .draft-view > .hero { padding: 10px 0 12px; }
+  .draft-view .hero .kicker { margin-bottom: 8px; }
+  .draft-view .hero h1 { margin-bottom: 8px; font-size: 32px; line-height: 1.2; }
+  .draft-view .hero p { font-size: 14px; line-height: 1.55; }
+  .draft-view .ask textarea { min-height: 76px; padding: 12px 16px 6px; font-size: 16px; line-height: 1.6; }
+  .draft-view .askbar { padding: 6px 12px 8px; }
+  .draft-view form > .label { margin: 14px 0 8px; }
+  .draft-view .mode { padding: 10px 12px; }
+  .draft-view .mode .mh { margin-bottom: 4px; }
+}
+@media (max-width: 820px) {
+  .draft-view .draft-uploads { grid-template-columns: minmax(0, 1fr); }
+  .draft-view .draft-uploads input { min-height: 44px; }
+  .draft-view .draft-uploads li button { min-height: 44px; }
+}

@@ -1,0 +1,10 @@
+import { z } from 'zod';
+import { IdSchema, WatchPublicSchema, WatchCheckSchema, NotificationPublicSchema } from './contracts.js';
+import { isPublicWebTarget } from './public-urls.js';
+export const CreateWatchRequestSchema=z.strictObject({investigationId:IdSchema,resultVersionId:IdSchema,targetKind:WatchPublicSchema.shape.targetKind,targetUrls:WatchPublicSchema.shape.targetUrls.refine(urls=>urls.every(isPublicWebTarget),'只支持公开网页地址。'),focus:WatchPublicSchema.shape.focus}).refine(v=>v.targetKind!=='page'||v.targetUrls.length>0);
+export const WatchActionSchema=z.strictObject({action:z.enum(['pause','resume','renew'])});
+export const AcceptedCheckSchema=z.strictObject({watchCheckId:IdSchema});
+export const WatchesSchema=z.strictObject({items:z.array(WatchPublicSchema)});
+export const ChecksPageSchema=z.strictObject({items:z.array(WatchCheckSchema).max(100),nextCursor:z.number().int().nonnegative(),hasMore:z.boolean()});
+export const NotificationsPageSchema=z.strictObject({items:z.array(NotificationPublicSchema).max(100),nextCursor:z.number().int().nonnegative(),hasMore:z.boolean(),unreadCount:z.number().int().nonnegative()});
+export const MarkReadSchema=z.strictObject({read:z.literal(true)});

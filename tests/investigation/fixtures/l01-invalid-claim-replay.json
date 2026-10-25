@@ -1,0 +1,712 @@
+{
+  "materialKind": "controlled_fixture",
+  "note": "Offline replay of an authorized public-sample evaluation export. No independent review response was captured; any test review is controlled_fixture and not real quality evidence.",
+  "scope": {
+    "objectText": "DeepSeek Flash API",
+    "goal": "截至今天，DeepSeek Flash API 当前模型 ID 是什么，是否支持图片输入？请区分当前模型与旧别名。",
+    "basicMode": "latest",
+    "knownClues": [
+      "截至今天（当前时点）",
+      "需要区分当前模型与旧别名"
+    ],
+    "uncertainClues": [],
+    "claimsToCheck": [
+      "当前模型 ID 是什么",
+      "是否支持图片输入"
+    ],
+    "timeScope": null,
+    "region": null,
+    "referenceTime": "2026-10-24T22:09:21.324Z",
+    "userConfirmed": false
+  },
+  "sources": [
+    {
+      "id": "823ca99c-06af-4676-af9d-9e5acb6f5a7b",
+      "url": "https://deepseek-usa.ai/guide/deepseek-vision",
+      "canonicalUrl": "https://deepseek-usa.ai/guide/deepseek-vision",
+      "title": "DeepSeek Vision: Image Input, API Examples & Limits",
+      "publisher": null,
+      "publishedAt": null,
+      "eventAt": null,
+      "fetchedAt": "2026-10-24T22:09:34.046Z",
+      "readStatus": "partial",
+      "originGroup": "capture:cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+      "queryIds": [
+        "fcc2dd95-265b-4d77-ab9e-36c6b098bbce"
+      ],
+      "snippet": "DeepSeek Vision: Image Input, API Examples & Limits DeepSeek USA。DeepSeek Vision: How to Use Image Input with DeepSeek admin Last reviewed: October 9, 2026 DeepSeek Vision is best understood as DeepSeek’s current image-input capability in the API, served through deepseek-flash, also known as DeepSeek-V4.1-Flash. It lets you send images with text prompts so the model can describe pictures, read text from screenshots, analyze charts, inspect UI images, and perform OCR-like extraction. It is not a separate model name you should call directly. For new API code, use deepseek-flash for image input. DeepSeek’s change log says the older V4 Flash and V4 Flash Vision Exp models are retired, while deepseek-v4-flash and deepseek-v4-flash-vision-exp temporarily route to V4.1 Flash for compatibility. An...",
+      "contentHash": "cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "diagnostic": "content_truncated"
+    },
+    {
+      "id": "3cb50944-be7c-4fd8-b84d-39ac4cd0dac8",
+      "url": "https://deepseek-v4.io/deepseek-v4-1-flash",
+      "canonicalUrl": "https://deepseek-v4.io/deepseek-v4-1-flash",
+      "title": "DeepSeek V4.1 Flash",
+      "publisher": null,
+      "publishedAt": null,
+      "eventAt": null,
+      "fetchedAt": "2026-10-24T22:09:43.015Z",
+      "readStatus": "full",
+      "originGroup": "capture:2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+      "queryIds": [
+        "fcc2dd95-265b-4d77-ab9e-36c6b098bbce"
+      ],
+      "snippet": "DeepSeek V4.1 Flash DeepSeek V4。DeepSeek V4.1 Flash The current Flash release brings a new official model name, a revised architecture, native multimodal capability, and a one-million-token context. This page separates verified model facts from what this independent API gateway actually supports. Read API documentationRead the migration guide DeepSeek-V4.io is an independent service, not the official DeepSeek website. 552B total MoE parameters 8B / 16B activated for input / output 1M published context window Text + image underlying model input Use the model ID for your provider The release name is not a universal API identifier. Copying the wrong provider slug is the most likely migration failure. ProviderModel valueWhat it means Official DeepSeek APIdeepseek-flashUse the current DeepSeek ...",
+      "contentHash": "2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "diagnostic": null
+    },
+    {
+      "id": "449cbb61-0211-4f34-8287-6afe7892e803",
+      "url": "https://deepseekv4.network/models",
+      "canonicalUrl": "https://deepseekv4.network/models",
+      "title": "Current DeepSeek Models: API IDs & Model Comparison",
+      "publisher": null,
+      "publishedAt": null,
+      "eventAt": null,
+      "fetchedAt": "2026-10-24T22:09:52.508Z",
+      "readStatus": "full",
+      "originGroup": "capture:f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+      "queryIds": [
+        "fcc2dd95-265b-4d77-ab9e-36c6b098bbce"
+      ],
+      "snippet": "Current DeepSeek Models: API IDs & Model Comparison DeepSeek V4 Network。Current DeepSeek models Official direct API models and our service routes are separate. Compare the exact IDs before connecting, then use this site's pricing to estimate credits. Sources last checked October 5, 2026. Current official direct API lineup Official ID Model version Context Migration note deepseek-flash V4.1 Flash 1M Original V4 Flash IDs are compatibility aliases. deepseek-v4-pro V4 Pro 1M Updated changelog confirms continued service. Source: current API model table · Updated changelog · Checked October 5, 2026 Pro and Flash API routes on this site Choose from three DeepSeek models. V4.1 Flash 1017 accepts text and images; original V4 Flash and Pro accept text. These IDs are local service IDs; they do not a...",
+      "contentHash": "f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "diagnostic": null
+    },
+    {
+      "id": "c35b848b-68ec-4968-bc6b-cc62ac2c08d7",
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+      "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/vision",
+      "title": "图像理解",
+      "publisher": null,
+      "publishedAt": null,
+      "eventAt": null,
+      "fetchedAt": "2026-10-24T22:10:12.62Z",
+      "readStatus": "full",
+      "originGroup": "capture:b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+      "queryIds": [
+        "6aef96e7-c610-489e-b9c1-4bc0322cb3fb"
+      ],
+      "snippet": "图像理解 DeepSeek API文档。图像理解 deepseek-flash 模型支持在文本之外输入图片,你可以让模型描述图片、识别截图中的文字、分析图表等。旧模型名 deepseek-v4-flash-vision-exp 仍可调用,但该模型已下线,其请求同样由最新的 Flash 模型承接。 支持的图片格式:JPEG、PNG、GIF、WebP。格式由文件实际内容判断,而非文件名或声明的 MIME 类型。 传入图片​ 共有三种方式向模型提供图片,均使用标准的 OpenAI 兼容对话补全格式,即 content 为一个块(block)数组,而非纯字符串。同样的三种方式也适用于 Responses API,图片以 input_image 内容块承载。 以下示例的 base_url 为 https://api.deepseek.com。 1. Base64 编码图片(内联)​ 将图片编码后以 data: URL 的形式直接嵌入请求。这是本地文件最简单的方式。编码后的数据会计入 48 MiB 请求体大小限制(见 限制)。 import base64 from openai import OpenAI client = OpenAI(api_key=\"\", base_url=\"https://api.deepseek.com\") with open(\"image.jpg\", \"rb\") as f: b64 = base64.b64encode(f.read()).decode(\"utf-8\") response = client.chat.completions.create( model=\"deepseek-flash\", messages=[ { \"role\": \"user\", \"content\": [ {\"type\": \"text\", \"text\": \"这张图片里有什么?\"}...",
+      "contentHash": "b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "diagnostic": null
+    },
+    {
+      "id": "194772ce-da2c-4b2d-95d5-9d7331c293c8",
+      "url": "https://api-docs.deepseek.com/zh-cn/guides/responses_api?wxwork_userid=lyxia",
+      "canonicalUrl": "https://api-docs.deepseek.com/zh-cn/guides/responses_api?wxwork_userid=lyxia",
+      "title": "使用 Responses API",
+      "publisher": null,
+      "publishedAt": null,
+      "eventAt": null,
+      "fetchedAt": "2026-10-24T22:10:15.856Z",
+      "readStatus": "full",
+      "originGroup": "capture:f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "originReason": "捕获正文相同仅视作共同内容组，不按链接数增加独立证明。",
+      "queryIds": [
+        "6aef96e7-c610-489e-b9c1-4bc0322cb3fb"
+      ],
+      "snippet": "使用 Responses API DeepSeek API文档。failed 响应失败时的最后一个事件,携带含error详情的完整response对象 图片输入​ Responses API 支持使用 deepseek-flash 模型传入图片,适用的图片限制与支持格式与对话补全一致。 图片通过 message item 中的 input_image 内容块提供,使用 image_url(http(s) URL 或 base64 data URL)或 file_id(通过 Files API 上传的图片)二者之一: response = client.responses.create( model=\"deepseek-flash\", input=[ { \"role\": \"user\", \"content\": [ {\"type\": \"input_text\", \"text\": \"这张图片里有什么?\"}, {\"type\": \"input_image\", \"image_url\": \"https://example.com/image.jpg\", \"detail\": \"low\"}, ], }, ], ) print(response.output_text) input_image 内容块也可以出现在 function_call_output / custom_tool_call_output item 的 output 中,让模型接收你的工具生成的图片: input=[ {\"role\": \"user\", \"content\": \"读取工具返回的截图。\"}, {\"type\": \"function_call\", \"call_id\": \"fc1\", \"name\": \"take_screenshot\", \"arguments\": \"{}\"}, {\"type\": \"function_call_o...",
+      "contentHash": "f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "diagnostic": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "0368c69f-a792-4ca0-a134-0d617648255f",
+      "origin": {
+        "kind": "source",
+        "id": "823ca99c-06af-4676-af9d-9e5acb6f5a7b"
+      },
+      "representation": "verbatim",
+      "excerpt": "DeepSeek Vision is best understood as DeepSeek’s current image\\-input capability in the API\\, served throughdeepseek\\-flash\\, also known as DeepSeek\\-V4\\.1\\-Flash\\. It lets you send images with text prompts so the model can describe pictures\\, read text from screenshots\\, analyze charts\\, inspect UI images\\, and perform OCR\\-like extraction\\. It is not a separate model name you should call directly\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "105:508"
+      },
+      "capturedAt": "2026-10-24T22:09:34.046Z",
+      "contentHash": "cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "limitations": [
+        "capture_partial：正文截断，可能遗漏适用条件。",
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "50573daf-7c38-4d14-bee2-5d761e6e9042",
+      "origin": {
+        "kind": "source",
+        "id": "823ca99c-06af-4676-af9d-9e5acb6f5a7b"
+      },
+      "representation": "verbatim",
+      "excerpt": "For new API code\\, usedeepseek\\-flash for image input\\. DeepSeek’s change log says the older V4 Flash and V4 Flash Vision Exp models are retired\\, while deepseek\\-v4\\-flash and deepseek\\-v4\\-flash\\-vision\\-exp temporarily route to V4\\.1 Flash for compatibility\\. An accepted legacy name does not mean the retired model is still being served\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "510:852"
+      },
+      "capturedAt": "2026-10-24T22:09:34.046Z",
+      "contentHash": "cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "limitations": [
+        "capture_partial：正文截断，可能遗漏适用条件。",
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "b26eed1f-cb41-424e-9476-84588f4e0b53",
+      "origin": {
+        "kind": "source",
+        "id": "823ca99c-06af-4676-af9d-9e5acb6f5a7b"
+      },
+      "representation": "verbatim",
+      "excerpt": "Question \\| Current answer \n\\-\\-\\-\\|\\-\\-\\-\nWhat is DeepSeek Vision\\? \\| DeepSeek’s hosted image\\-input capability through deepseek\\-flash\\. \nIs there a model called deepseek\\-vision\\? \\| No\\. Use deepseek\\-flash for current Vision API work\\. \nWhich model supports images\\? \\| deepseek\\-flash\\, listed as DeepSeek\\-V4\\.1\\-Flash\\. \nDoes deepseek\\-v4\\-pro support image input\\? \\| No\\, not in the current model table\\. It is listed as text\\-only\\. \nIs deepseek\\-v4\\-flash\\-vision\\-exp current\\? \\| No\\. It is a legacy compatibility name\\; new code should use deepseek\\-flash\\. \nSupported image formats \\| JPEG\\, PNG\\, GIF\\, and WebP\\. \nMain image input methods \\| Base64 data URL\\, external HTTP\\(S\\) URL\\, or Files API file\\_id\\. \nCan it read screenshots\\? \\| Yes\\, DeepSeek’s Vision docs describe screenshot text reading as a supported use case\\. \nIs it the same as DeepSeek\\-OCR\\? \\| No\\. DeepSeek Vision is hosted API image understanding\\; DeepSeek\\-OCR\\/OCR\\-2 are local\\/open\\-weight OCR model routes\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "1451:2456"
+      },
+      "capturedAt": "2026-10-24T22:09:34.046Z",
+      "contentHash": "cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "limitations": [
+        "capture_partial：正文截断，可能遗漏适用条件。",
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "6e4bf658-139b-4b71-a7fd-35700914570f",
+      "origin": {
+        "kind": "source",
+        "id": "823ca99c-06af-4676-af9d-9e5acb6f5a7b"
+      },
+      "representation": "verbatim",
+      "excerpt": "No results\n\n\\# DeepSeek Vision\\: How to Use Image Input with DeepSeek\n\nLast reviewed\\: October 9\\, 2026\n\nDeepSeek Vision is best understood as DeepSeek’s current image\\-input capability in the API\\, served throughdeepseek\\-flash\\, also known as DeepSeek\\-V4\\.1\\-Flash\\. It lets you send images with text prompts so the model can describe pictures\\, read text from screenshots\\, analyze charts\\, inspect UI images\\, and perform OCR\\-like extraction\\. It is not a separate model name you should call directly\\.\n\nFor new API code\\, usedeepseek\\-flash for image input\\. DeepSeek’s change log says the older V4 Flash and V4 Flash Vision Exp models are retired\\, while deepseek\\-v4\\-flash and deepseek\\-v4\\-flash\\-vision\\-exp temporarily route to V4\\.1 Flash for compatibility\\. An accepted legacy name does not mean the retired model is still being served\\.\n\nThe current model list also matters\\:deepseek\\-flash supports text and image input\\, while deepseek\\-v4\\-pro is listed as text\\-only\\. That means deepseek\\-v4\\-pro should not be used for Vision requests unless DeepSeek changes the official model table in the future\\. DeepSeek Lists Models API\n\nThis guide covers Base64\\, external URLs\\, uploaded image IDs\\, detail settings\\, image limits\\, and billing\\. It also separates Chat Completions\\, Responses\\, and Anthropic\\-compatible request formats\\: their message roles and image blocks are not interchangeable\\.\n\n\\#\\# DeepSeek Vision at a glance\n\nQuestion \\| Current answer \n\\-\\-\\-\\|\\-\\-\\-\nWhat is DeepSeek Vision\\? \\| DeepSeek’s hosted image\\-input capability through deepseek\\-flash\\. \nIs there a model called deepseek\\-vision\\? \\| No\\. Use deepseek\\-flash for current Vision API work\\. \nWhich model supports images\\? \\| deepseek\\-flash\\, listed as DeepSeek\\-V4\\.1\\-Flash\\. \nDoes deepseek\\-v4\\-pro support image input\\? \\| No\\, not in the current model table\\. It is listed as text\\-only\\. \nIs deepseek\\-v4\\-flash\\-vision\\-exp current\\? \\| No\\. It is a legacy compatibility name\\; new code should use deepseek\\-flash\\. \nSupported image formats \\| JPEG\\, PNG\\, GIF\\, and WebP\\. \nMain image input methods \\| Base64 data URL\\, external HTTP\\(S\\) URL\\, or Files API file\\_id\\. \nCan it read screenshots\\? \\| Yes\\, DeepSeek’s Vision docs describe screenshot text reading as a supported use case\\. \nIs it the same as DeepSeek\\-OCR\\? \\| No\\. DeepSeek Vision is hosted API image understanding\\; DeepSeek\\-OCR\\/OCR\\-2 are local\\/open\\-weight OCR model routes\\. \n\n\\#\\# What is DeepSeek Vision\\?\n\nDeepSeek Vision is the practical name developers use for DeepSeek’s image\\-input API capability\\. In official docs\\, the actual model ID to use isdeepseek\\-flash\\. With this model\\, you can combine text and images in one request and ask for visual understanding\\, OCR\\-like extraction\\, chart analysis\\, document triage\\, UI inspection\\, and image comparison\\. DeepSeek Vision guide\n\nDo not confuse “Vision” with a standalone model name\\. You do not calldeepseek\\-vision\\. You call deepseek\\-flash through the DeepSeek API and provide image content in the required request shape\\. For creating images rather than analyzing them\\, see whether DeepSeek can generate images\\.\n\n\\#\\# Which DeepSeek model supports image input\\?\n\nThe current model table listsdeepseek\\-flash as DeepSeek\\-V4\\.1\\-Flash with input modalities of text and image\\. It lists deepseek\\-v4\\-pro with input modality text only\\. DeepSeek Lists Models API\n\nModel name \\| Current status \\| Image input\\? \\| Use it for Vision\\? \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\ndeepseek\\-flash \\| Current DeepSeek\\-V4\\.1\\-Flash API model\\. \\| Yes\\. \\| Yes\\. This is the current default for image\\-input work\\. \ndeepseek\\-v4\\-pro \\| Current Pro route in the model table\\. \\| No\\, text\\-only in the current table\\. \\| No\\. \ndeepseek\\-v4\\-flash\\-vision\\-exp \\| Legacy\\/retired compatibility name\\. \\| Requests are served by the latest Flash model according to DeepSeek’s Vision and V4\\.1 Flash notes\\. \\| No\\. Use deepseek\\-flash in new code\\. \nDeepSeek\\-OCR \\/ DeepSeek\\-OCR\\-2 \\| Separate OCR\\/document model route\\. \\| Not the hosted Vision API model name\\. \\| Use only when you specifically want local\\/open\\-weight OCR workflows\\. \n\n\\#\\# What happened todeepseek\\-v4\\-flash\\-vision\\-exp\\?\n\ndeepseek\\-v4\\-flash\\-vision\\-exp was an experimental image\\-input route\\. The Vision guide and change log say its name is still accepted for compatibility\\, but requests are served by the newer Flash model\\. Updating the model ID does not remove the need to use the correct image format for your endpoint\\.\n\nThe practical migration is simple\\:\n\nOld tutorial says \\| Use now \\| Why \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\ndeepseek\\-v4\\-flash\\-vision\\-exp \\| deepseek\\-flash \\| The old Vision experimental model is retired\\; deepseek\\-flash is the current model ID\\. \ndeepseek\\-v4\\-flash \\| deepseek\\-flash \\| The old Flash model name is legacy compatibility context\\. \ndeepseek\\-v4\\-pro for images \\| deepseek\\-flash \\| The current model table lists V4 Pro as text\\-only\\. \n\n\\#\\# What can DeepSeek Vision do\\?\n\nDeepSeek Vision is useful when your task needs the model to inspect visual content\\. Common use cases include\\:\n\n\\- Describe a photo or product image\\.\n\\- Read visible text from a screenshot\\.\n\\- Extract table text from an image\\.\n\\- Analyze a chart\\, graph\\, or slide\\.\n\\- Read labels from diagrams or UI screenshots\\.\n\\- Extract fields from a receipt\\, invoice\\, or form\\.\n\\- Compare two images and list visible differences\\.\n\\- Ask whether a scanned page is legible enough for data extraction\\.\n\nFor OCR\\-like tasks\\, treat the output as model\\-generated extraction\\, not a guaranteed transcript\\. Tables\\, small text\\, handwriting\\, low\\-contrast scans\\, rotated pages\\, dense charts\\, legal clauses\\, medical images\\, and financial records should be reviewed against the source image\\.\n\n\\#\\# Choose the message role and image format for your API\n\nFor a direct image question\\,user is the consistent starting point across these examples\\. The surrounding payload must still match the endpoint\\.\n\nAPI \\| Direct image message \\| Content format \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nChat Completions \\| role\\: \\\"user\\\"\\. Its documented message schema does not include developer\\. \\| text plus image\\_url\\, or a file block\\. \nResponses \\| user or developer\\; DeepSeek treats developer as user\\. \\| input\\_text plus input\\_image\\. \nAnthropic\\-compatible Messages \\| Use role\\: \\\"user\\\" for the direct image example\\. \\| text plus image with a source object\\. \n\nSources\\: Chat Completions schema\\, Responses schema\\, and Anthropic\\-format image examples\\. Changing onlyrole does not convert one API format into another\\. DeepSeek’s acceptance of developer in Responses does not give it a separate\\, higher\\-priority instruction role\\.\n\n\\#\\#\\# Images returned by tools are a separate path\n\nAt this review\\, DeepSeek’s documentation is not fully consistent\\: the Vision guide’s Restrictions section says images are supported only inuser messages\\, while the Chat Completions schema also permits image\\/file content in a tool message with a matching tool\\_call\\_id\\. Keep direct uploads in user\\; test the documented tool\\-result path separately rather than asserting that all image\\-bearing messages must be user messages\\. Vision restrictions\\; tool\\-message schema\\.\n\nResponses explicitly documentsinput\\_image inside function\\_call\\_output and supported custom\\_tool\\_call\\_output items\\. These are tool outputs with call\\-ID pairing\\, not a reason to use developer in Chat Completions\\. See Responses image input\\.\n\n\\#\\# How to send images with Chat Completions\n\nForclient\\.chat\\.completions\\.create\\(\\)\\, use https\\:\\/\\/api\\.deepseek\\.com\\, model\\=\\\"deepseek\\-flash\\\"\\, and a user message whose content is a list of blocks\\. Put the image URL inside an image\\_url object\\; do not use the flat Responses input\\_image shape\\. Chat Completions reference\\.\n\nInstall the OpenAI Python SDK and set a DeepSeek API key in the terminal running your script\\. The SDK is the client\\; DeepSeek receives and bills the requests\\.\npython \\-m pip install openai\nOn macOS or Linux\\:\nexport DEEPSEEK\\_API\\_KEY\\=\\\"YOUR\\_DEEPSEEK\\_API\\_KEY\\\"\nOn Windows PowerShell\\:\n\\$env\\:DEEPSEEK\\_API\\_KEY \\= \\\"YOUR\\_DEEPSEEK\\_API\\_KEY\\\"\nUse a real JPEG namedscreenshot\\.jpg for the local examples\\. Match the MIME type when using another format\\. The examples disable thinking and use a 2\\,048\\-token output budget to keep the first request bounded\\; these are demonstration settings\\, not image limits or guarantees of complete extraction\\. For Chat Completions\\, the OpenAI Python SDK sends the DeepSeek\\-specific thinking field through extra\\_body\\; the other SDK examples use their own request controls\\. Request options\\.\n\n\\#\\#\\# Base64 image example in Python\n\nUse Base64 when the image is local and small enough to fit inside the request body limit\\.\nimport base64\nimport os\nfrom pathlib import Path\nfrom openai import OpenAI\n\nimage\\_path \\= Path\\(\\\"screenshot\\.jpg\\\"\\)\nimage\\_b64 \\= base64\\.b64encode\\(image\\_path\\.read\\_bytes\\(\\)\\)\\.decode\\(\\\"ascii\\\"\\)\n\nwith OpenAI\\(\n    api\\_key\\=os\\.environ\\[\\\"DEEPSEEK\\_API\\_KEY\\\"\\]\\,\n    base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\,\n\\) as client\\:\n    response \\= client\\.chat\\.completions\\.create\\(\n        model\\=\\\"deepseek\\-flash\\\"\\,\n        messages\\=\\[\\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"Read the visible text\\. Preserve line breaks and mark unreadable text as unclear\\.\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"image\\_url\\\"\\,\n                    \\\"image\\_url\\\"\\: \\{\n                        \\\"url\\\"\\: f\\\"data\\:image\\/jpeg\\;base64\\,\\{image\\_b64\\}\\\"\\,\n                        \\\"detail\\\"\\: \\\"original\\\"\\,\n                    \\}\\,\n                \\}\\,\n            \\]\\,\n        \\}\\]\\,\n        max\\_tokens\\=2048\\,\n        extra\\_body\\=\\{\\\"thinking\\\"\\: \\{\\\"type\\\"\\: \\\"disabled\\\"\\}\\}\\,\n    \\)\n\nif not response\\.choices\\:\n    raise RuntimeError\\(\\\"No response choice was returned\\.\\\"\\)\nchoice \\= response\\.choices\\[0\\]\nif choice\\.finish\\_reason \\!\\= \\\"stop\\\" or not choice\\.message\\.content\\:\n    raise RuntimeError\\(\\\"No complete text answer\\; inspect the finish reason before using it\\.\\\"\\)\nprint\\(choice\\.message\\.content\\)\n\n\\#\\#\\# External image URL example\n\nUse a reachable HTTP\\(S\\) URL for an image already approved for external access\\. DeepSeek documents a maximum URL length of 8\\,192 characters and a download timeout of 60 seconds\\. Replace the placeholder below with an actual image URL\\;example\\.com\\/chart\\.png is not a working sample image\\. Do not publish confidential images just to make a URL fetch work\\. External\\-image requirements\\.\nimport os\nfrom openai import OpenAI\n\nimage\\_url \\= \\\"https\\:\\/\\/example\\.com\\/chart\\.png\\\"  \\# Replace with your real image URL\\.\nif image\\_url \\=\\= \\\"https\\:\\/\\/example\\.com\\/chart\\.png\\\"\\:\n    raise ValueError\\(\\\"Replace the placeholder with a reachable image URL\\.\\\"\\)\n\nwith OpenAI\\(\n    api\\_key\\=os\\.environ\\[\\\"DEEPSEEK\\_API\\_KEY\\\"\\]\\,\n    base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\,\n\\) as client\\:\n    response \\= client\\.chat\\.completions\\.create\\(\n        model\\=\\\"deepseek\\-flash\\\"\\,\n        messages\\=\\[\\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"Read the chart title\\, axes\\, legend\\, and labeled values\\. Do not invent unlabeled values\\.\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"image\\_url\\\"\\, \\\"image\\_url\\\"\\: \\{\\\"url\\\"\\: image\\_url\\, \\\"detail\\\"\\: \\\"original\\\"\\}\\}\\,\n            \\]\\,\n        \\}\\]\\,\n        max\\_tokens\\=2048\\,\n        extra\\_body\\=\\{\\\"thinking\\\"\\: \\{\\\"type\\\"\\: \\\"disabled\\\"\\}\\}\\,\n    \\)\n\nif not response\\.choices\\:\n    raise RuntimeError\\(\\\"No response choice was returned\\.\\\"\\)\nchoice \\= response\\.choices\\[0\\]\nif choice\\.finish\\_reason \\!\\= \\\"stop\\\" or not choice\\.message\\.content\\:\n    raise RuntimeError\\(\\\"No complete text answer was returned\\.\\\"\\)\nprint\\(choice\\.message\\.content\\)\n\n\\#\\#\\# Files APIfile\\_id example\n\nUse the Files API when the same image will be reused across multiple requests\\, when an inline Base64 request would exceed the request body limit\\, or when the image is larger than the inline\\/external image limit\\. DeepSeek’s Vision guide says Files API image references can be used through afile content block with a file\\_id like file\\-api\\-\\.\\.\\.\\. DeepSeek Files API\nimport os\nfrom openai import OpenAI\n\nwith OpenAI\\(\n    api\\_key\\=os\\.environ\\[\\\"DEEPSEEK\\_API\\_KEY\\\"\\]\\,\n    base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\,\n\\) as client\\:\n    with open\\(\\\"screenshot\\.jpg\\\"\\, \\\"rb\\\"\\) as image\\:\n        uploaded \\= client\\.files\\.create\\(file\\=image\\, purpose\\=\\\"user\\_data\\\"\\)\n\n    print\\(\\\"Uploaded file ID\\:\\\"\\, uploaded\\.id\\)\n    response \\= client\\.chat\\.completions\\.create\\(\n        model\\=\\\"deepseek\\-flash\\\"\\,\n        messages\\=\\[\\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"Describe this image and list the visible text\\. Mark unreadable text as unclear\\.\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"file\\\"\\, \\\"file\\_id\\\"\\: uploaded\\.id\\}\\,\n            \\]\\,\n        \\}\\]\\,\n        max\\_tokens\\=2048\\,\n        extra\\_body\\=\\{\\\"thinking\\\"\\: \\{\\\"type\\\"\\: \\\"disabled\\\"\\}\\}\\,\n    \\)\n\nif not response\\.choices\\:\n    raise RuntimeError\\(\\\"No response choice was returned\\.\\\"\\)\nchoice \\= response\\.choices\\[0\\]\nif choice\\.finish\\_reason \\!\\= \\\"stop\\\" or not choice\\.message\\.content\\:\n    raise RuntimeError\\(\\\"No complete text answer was returned\\.\\\"\\)\nprint\\(choice\\.message\\.content\\)\nIn DeepSeek’s Chat Completions format\\,file\\_id is directly inside the file block\\, as shown\\. The alternative file\\_data field contains an inline image data URL\\; do not combine it with file\\_id\\. Uploaded files belong to the API key\\. The example omits expiration\\, so the file remains stored until deleted\\; retain the returned ID for reuse and manage its lifecycle\\. Files API reference\\.\n\nAfter all requests using the file have finished\\, delete it withclient\\.files\\.delete\\(file\\_id\\) using an active client and the saved ID\\, or set a documented expiration at upload\\. Reusing a stored file avoids repeated uploads\\; it does not make model inference free\\.\n\n\\#\\# Image input methods\\: which one should you use\\?\n\nMethod \\| Best for \\| Limits and cautions \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nBase64 data URL in image\\_url \\| Local files in quick scripts and backend jobs\\. \\| Counts toward request body size\\. Keep files small enough for inline use\\. \nExternal HTTP\\(S\\) image URL \\| Public images already hosted online\\. \\| URL must be at most 8192 characters\\, and the image must be reachable by DeepSeek\\. \nFiles API file\\_id \\| Reusing the same image across requests or handling larger images\\. \\| Requires an upload step and file lifecycle management\\. \nfile\\_data \\| Inline image data inside a file block\\. \\| Mutually exclusive with file\\_id\\. \n\n\\#\\# Detail levels\\:low\\, high\\, original\\, and auto\n\nThedetail field controls how image URL inputs are processed\\. DeepSeek’s Vision docs define these values\\: low downsamples the image to 512×512 before inference\\; high and original keep the original image\\; auto is currently equivalent to original\\. DeepSeek Vision guide\n\nDetail value \\| Behavior \\| Use it when \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nlow \\| Downscales the image to 512×512\\. \\| You need a broad image description and do not need small text or fine details\\. \nhigh \\| Keeps the original image\\; provided for compatibility\\. \\| You need detail and your code already uses high\\. \noriginal \\| Keeps the original image\\. \\| You need OCR\\-like extraction\\, chart labels\\, UI text\\, forms\\, receipts\\, or dense screenshots\\. \nauto \\| Currently equivalent to original\\. \\| You want the default high\\-detail behavior while keeping the option for future automatic handling\\. \n\nFor dense screenshots or chart labels\\, start withoriginal and check the extracted text\\. This avoids the specific low downsampling step\\, but does not bypass the model’s normal pre\\-inference resizing\\. For broad scene description\\, test whether low is adequate instead of assuming more detail is always necessary\\.\n\n\\#\\# Image limits and token billing\n\nDeepSeek’s Vision docs list shared image limits for Vision requests\\. These limits matter because many image failures are caused by oversized files\\, too many images\\, or sending images in the wrong format\\. DeepSeek Vision guide\n\nLimit \\| Current value \n\\-\\-\\-\\|\\-\\-\\-\nSupported formats \\| JPEG\\, PNG\\, GIF\\, WebP\\. \nExternal URL length \\| 8192 characters\\. \nRequest body size \\| 48 MiB\\. \nMax single image size\\: Base64 \\/ external URL \\| 32 MiB\\. \nMax single image size\\: Files API file\\_id \\| 64 MiB\\. \nMax images per request \\| 600\\. \nMax total image size per request \\| 64 MiB without file\\_id images\\; up to 200 MiB including file\\_id images\\. \nMax image dimension \\| 8192 px per side\\; 4096 px per side when a request contains 15 or more images\\. \n\nAll applicable limits must be satisfied together\\. Base64 increases the serialized body size\\, so the image\\-byte allowance is not the same as the 48 MiB JSON\\-body allowance\\. Afile\\_id avoids embedding the image bytes in that body\\, but does not remove image\\-count\\, dimension\\, aggregate\\-size\\, or context limits\\. Here\\, MiB means 1\\,048\\,576 bytes\\.\n\nDeepSeek says images are converted into tokens based on dimensions and billed together with text tokens\\. The Vision guide also says images are automatically resized before inference and that there is an upper bound of 1024 tokens per image after resizing\\. Each image in a multi\\-image request is counted independently\\. DeepSeek Vision guide\n\nUse the official image token calculator for estimates and response usage for actual billing\\. Smaller files reduce transfer size\\, but images already at the same post\\-resize token cap need not become cheaper merely by reducing their source dimensions\\. Compare detail settings\\, image count\\, and output length\\, using current model prices\\.\n\n\\#\\# Using images with the Responses API\n\nForclient\\.responses\\.create\\(\\)\\, use input\\_text and input\\_image\\. Unlike Chat Completions\\, the image URL is a string directly on the content part\\. The example uses user\\; DeepSeek also accepts developer here and treats it as user\\. Responses compatibility guide\\.\nimport base64\nimport os\nfrom pathlib import Path\nfrom openai import OpenAI\n\nimage\\_b64 \\= base64\\.b64encode\\(Path\\(\\\"screenshot\\.jpg\\\"\\)\\.read\\_bytes\\(\\)\\)\\.decode\\(\\\"ascii\\\"\\)\n\nwith OpenAI\\(\n    api\\_key\\=os\\.environ\\[\\\"DEEPSEEK\\_API\\_KEY\\\"\\]\\,\n    base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\,\n\\) as client\\:\n    response \\= client\\.responses\\.create\\(\n        model\\=\\\"deepseek\\-flash\\\"\\,\n        input\\=\\[\\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"input\\_text\\\"\\, \\\"text\\\"\\: \\\"Describe the main visible elements\\. Do not guess unreadable text\\.\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"input\\_image\\\"\\,\n                    \\\"image\\_url\\\"\\: f\\\"data\\:image\\/jpeg\\;base64\\,\\{image\\_b64\\}\\\"\\,\n                    \\\"detail\\\"\\: \\\"low\\\"\\,\n                \\}\\,\n            \\]\\,\n        \\}\\]\\,\n        reasoning\\=\\{\\\"effort\\\"\\: \\\"none\\\"\\}\\,\n        max\\_output\\_tokens\\=2048\\,\n    \\)\n\nif response\\.status \\!\\= \\\"completed\\\" or not response\\.output\\_text\\:\n    raise RuntimeError\\(\\\"The response is incomplete or has no final text\\; inspect its status\\.\\\"\\)\nprint\\(response\\.output\\_text\\)\nChoose exactly one source perinput\\_image\\: image\\_url or file\\_id\\. DeepSeek documents HTTP 400 when both or neither are supplied\\, or when an image appears in a system or assistant message\\. detail is ignored for file\\_id images\\. Referenced images are supported\\; that does not imply support for a generic PDF input\\_file block\\. Responses request reference\\.\n\n\\#\\# Using images with the Anthropic\\-compatible API\n\nFor the Anthropic SDK\\, usehttps\\:\\/\\/api\\.deepseek\\.com\\/anthropic and a user message with an image block containing source\\. Do not send Chat Completions image\\_url blocks or Responses input\\_image blocks to this interface\\. Official Anthropic\\-format image example\\.\n\nInstallanthropic with python \\-m pip install anthropic\\. This example reuses the same DEEPSEEK\\_API\\_KEY and local JPEG\\. For this SDK’s Base64 image source\\, data contains only the encoded bytes\\, not a data\\:image\\/\\.\\.\\. prefix\\.\nimport base64\nimport os\nfrom pathlib import Path\nimport anthropic\n\nimage\\_b64 \\= base64\\.b64encode\\(Path\\(\\\"screenshot\\.jpg\\\"\\)\\.read\\_bytes\\(\\)\\)\\.decode\\(\\\"ascii\\\"\\)\n\nwith anthropic\\.Anthropic\\(\n    api\\_key\\=os\\.environ\\[\\\"DEEPSEEK\\_API\\_KEY\\\"\\]\\,\n    base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\/anthropic\\\"\\,\n\\) as client\\:\n    message \\= client\\.messages\\.create\\(\n        model\\=\\\"deepseek\\-flash\\\"\\,\n        max\\_tokens\\=2048\\,\n        thinking\\=\\{\\\"type\\\"\\: \\\"disabled\\\"\\}\\,\n        messages\\=\\[\\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"Describe the main visible elements\\. Do not guess unreadable text\\.\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"image\\\"\\,\n                    \\\"source\\\"\\: \\{\n                        \\\"type\\\"\\: \\\"base64\\\"\\,\n                        \\\"media\\_type\\\"\\: \\\"image\\/jpeg\\\"\\,\n                        \\\"data\\\"\\: image\\_b64\\,\n                    \\}\\,\n                \\}\\,\n            \\]\\,\n        \\}\\]\\,\n    \\)\n\nif message\\.stop\\_reason \\!\\= \\\"end\\_turn\\\"\\:\n    raise RuntimeError\\(\\\"The response did not finish normally\\; inspect stop\\_reason\\.\\\"\\)\ntext \\= \\\"\\\\n\\\"\\.join\\(block\\.text for block in message\\.content if block\\.type \\=\\= \\\"text\\\"\\)\nif not text\\:\n    raise RuntimeError\\(\\\"No final text was returned\\.\\\"\\)\nprint\\(text\\)\nThe documentedsource\\.type variants are base64\\, url\\, and file\\. Base64 pairs the encoded string with a MIME type such as image\\/jpeg\\. A file source uses file\\_id and requires anthropic\\-beta\\: files\\-api\\-2025\\-04\\-14\\; add it through extra\\_headers when referencing a stored image\\. Source variants\\; Files API header requirements\\.\n\n\\#\\# DeepSeek Vision vs DeepSeek\\-OCR\n\nDeepSeek Vision and DeepSeek\\-OCR are related but not the same\\. DeepSeek Vision throughdeepseek\\-flash is a hosted image\\-understanding API\\. DeepSeek\\-OCR and DeepSeek\\-OCR\\-2 are separate OCR\\/document\\-understanding model routes used for local or self\\-managed workflows\\. DeepSeek\\-OCR GitHub DeepSeek\\-OCR\\-2 GitHub\n\nUse case \\| Better starting point \\| Why \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nQuick screenshot reading in an API app \\| DeepSeek Vision via deepseek\\-flash\\. \\| Hosted image input without operating a local inference server\\. \nImage description or chart analysis \\| DeepSeek Vision via deepseek\\-flash\\. \\| Built into the current API route\\. \nPrivate document OCR where images cannot leave your environment \\| DeepSeek\\-OCR \\/ DeepSeek\\-OCR\\-2 local workflow\\. \\| Local\\/self\\-managed inference may be preferable after security review\\. \nLarge document\\-to\\-Markdown pipeline \\| DeepSeek\\-OCR\\-2 or a dedicated document\\-OCR stack\\. \\| Better suited to page\\-level OCR\\/document workflows\\. \nLow\\-friction hosted OCR\\-like extraction \\| DeepSeek Vision\\. \\| Good for single images\\, screenshots\\, charts\\, receipts\\, and simple forms\\. \n\nUse careful wording\\: DeepSeek Vision can perform OCR\\-like tasks\\, but it is not the same thing as a dedicated local OCR pipeline\\. For invoices\\, contracts\\, financial statements\\, medical records\\, or regulated documents\\, validate the extracted text against the source image\\.\n\n\\#\\# Best prompts for screenshots\\, OCR\\, charts\\, and documents\n\nSpecify what to extract\\, how to format it\\, and how to report missing or unreadable information\\. These prompt templates are starting points\\, not accuracy guarantees\\.\n\nTask \\| Prompt \\| Best output format \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nImage description \\| Describe this image in one paragraph\\. Mention the main objects\\, setting\\, and any visible text\\. \\| Plain text\\. \nScreenshot OC",
+      "locator": {
+        "kind": "char_range",
+        "value": "0:24000"
+      },
+      "capturedAt": "2026-10-24T22:09:34.046Z",
+      "contentHash": "cf7c79513bd84d253a76e26bc461e1c3eb77ad00d165cda30bddbe28f86b3d3a",
+      "limitations": [
+        "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。"
+      ]
+    },
+    {
+      "id": "873abc3f-70d4-44ee-a0ec-46dd22a05dc8",
+      "origin": {
+        "kind": "source",
+        "id": "3cb50944-be7c-4fd8-b84d-39ac4cd0dac8"
+      },
+      "representation": "verbatim",
+      "excerpt": "\\# DeepSeek V4\\.1 Flash",
+      "locator": {
+        "kind": "char_range",
+        "value": "30:53"
+      },
+      "capturedAt": "2026-10-24T22:09:43.015Z",
+      "contentHash": "2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026"
+      ]
+    },
+    {
+      "id": "ad9c4967-6a64-4d5f-9952-7a60819cec2d",
+      "origin": {
+        "kind": "source",
+        "id": "3cb50944-be7c-4fd8-b84d-39ac4cd0dac8"
+      },
+      "representation": "verbatim",
+      "excerpt": "The current Flash release brings a new official model name\\, a revised architecture\\, native multimodal capability\\, and a one\\-million\\-token context\\. This page separates verified model facts from what this independent API gateway actually supports\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "55:307"
+      },
+      "capturedAt": "2026-10-24T22:09:43.015Z",
+      "contentHash": "2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026"
+      ]
+    },
+    {
+      "id": "236640c2-3eba-469b-b650-4504f5b23dd0",
+      "origin": {
+        "kind": "source",
+        "id": "3cb50944-be7c-4fd8-b84d-39ac4cd0dac8"
+      },
+      "representation": "verbatim",
+      "excerpt": "Official DeepSeek API\ndeepseek\\-flashUse the current DeepSeek API documentation\\.\nOpenRouter\ndeepseek\\/deepseek\\-v4\\.1\\-flashUse this exact upstream route for V4\\.1\\.\nDeepSeek\\-V4\\.io\ndeepseek\\-v4\\-flashStable public alias\\; text requests route to V4\\.1 server\\-side\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "730:998"
+      },
+      "capturedAt": "2026-10-24T22:09:43.015Z",
+      "contentHash": "2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026"
+      ]
+    },
+    {
+      "id": "9f353477-deca-492f-8197-11999c9aa8cd",
+      "origin": {
+        "kind": "source",
+        "id": "3cb50944-be7c-4fd8-b84d-39ac4cd0dac8"
+      },
+      "representation": "verbatim",
+      "excerpt": "Released September 10\\, 2026\n\n\\# DeepSeek V4\\.1 Flash\n\nThe current Flash release brings a new official model name\\, a revised architecture\\, native multimodal capability\\, and a one\\-million\\-token context\\. This page separates verified model facts from what this independent API gateway actually supports\\.\n\nDeepSeek\\-V4\\.io is an independent service\\, not the official DeepSeek website\\.\n\n552B\n\ntotal MoE parameters\n\n8B \\/ 16B\n\nactivated for input \\/ output\n\n1M\n\npublished context window\n\nText \\+ image\n\nunderlying model input\n\n\\#\\# Use the model ID for your provider\n\nThe release name is not a universal API identifier\\. Copying the wrong provider slug is the most likely migration failure\\.\n\nProviderModel valueWhat it means\n\nOfficial DeepSeek API\ndeepseek\\-flashUse the current DeepSeek API documentation\\.\nOpenRouter\ndeepseek\\/deepseek\\-v4\\.1\\-flashUse this exact upstream route for V4\\.1\\.\nDeepSeek\\-V4\\.io\ndeepseek\\-v4\\-flashStable public alias\\; text requests route to V4\\.1 server\\-side\\.\n\n\\#\\# Model capability and gateway support are different\n\n\\#\\#\\# What DeepSeek publishes\n\nThe official release describes text\\-and\\-image input\\, configurable reasoning effort\\, a one\\-million\\-token context\\, and a Causal Encoder\\-Decoder architecture designed to reduce key\\-value cache pressure\\.\n\n\\#\\#\\# What this gateway supports today\n\nDeepSeek\\-V4\\.io currently exposes text requests through Chat Completions\\, Responses\\, and Anthropic Messages\\-compatible endpoints\\. Image input is intentionally not advertised until upload\\, accounting\\, error\\, and billing behavior pass verification\\.\n\n\\#\\# Frequently asked questions\n\n\\#\\#\\# Is DeepSeek V4\\.1 Flash the latest Flash release\\?\n\nYes\\. DeepSeek announced V4\\.1 Flash on September 10\\, 2026\\. The official change log says the previous V4 Flash and V4 Flash Vision Exp models were retired\\, with old names temporarily routed to V4\\.1 Flash\\.\n\n\\#\\#\\# Which model ID should I use\\?\n\nUse deepseek\\-flash with the official DeepSeek API\\, deepseek\\/deepseek\\-v4\\.1\\-flash with OpenRouter\\, and deepseek\\-v4\\-flash with the DeepSeek\\-V4\\.io gateway\\. The provider determines the identifier\\.\n\n\\#\\#\\# Do existing DeepSeek\\-V4\\.io clients need a model rename\\?\n\nNo\\. The public alias remains deepseek\\-v4\\-flash so existing integrations continue working while the upstream route changes server\\-side\\.\n\n\\#\\#\\# Can I send images through this gateway\\?\n\nNot yet\\. V4\\.1 Flash is a multimodal model\\, but DeepSeek\\-V4\\.io currently verifies and documents text input only\\. Image input needs a separate end\\-to\\-end release gate for uploads\\, accounting\\, errors\\, and billing\\.\n\n\\#\\#\\# Should I use V4\\.1 Flash or V4 Pro\\?\n\nStart with V4\\.1 Flash for throughput\\, latency\\, and cost\\-sensitive workloads\\. Evaluate V4 Pro separately when difficult knowledge\\, long\\-context retrieval\\, or complex coding tasks justify a larger model\\.\n\n\\#\\# Migrate without breaking existing clients\n\nKeep the public alias stable\\, update the server\\-side route\\, then verify one text request\\, streaming\\, usage recording\\, cost\\, and balance settlement\\.\n\n\\#\\#\\# Privacy \\& Cookies\n\nWe use cookies and similar technologies to improve your experience\\, analyze usage\\, and support marketing\\. You can change your preferences in your browser settings\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "0:3282"
+      },
+      "capturedAt": "2026-10-24T22:09:43.015Z",
+      "contentHash": "2a5b6c463e0c2fdbc28a6d19f79b60795b7cf9466d33b318fbdb15c8591d6667",
+      "limitations": [
+        "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+        "context_screen_state:{\"revision\":\"4a3d8decfb7881022ead5e17cca56859b1377d88a90c59a49af194db892c0829\",\"done\":[[0,3200],[2900,3282]],\"irrelevant\":[[2900,3282]],\"pending\":null}"
+      ]
+    },
+    {
+      "id": "47481c45-15f9-45d2-bf4f-a4e5ca378b45",
+      "origin": {
+        "kind": "source",
+        "id": "449cbb61-0211-4f34-8287-6afe7892e803"
+      },
+      "representation": "verbatim",
+      "excerpt": "Official direct API models and our service routes are separate\\. Compare the exact IDs before connecting\\, then use this site\\'s pricing to estimate credits\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "28:186"
+      },
+      "capturedAt": "2026-10-24T22:09:52.508Z",
+      "contentHash": "f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "e3f2d871-bc70-4a27-b7c7-7b068f0387db",
+      "origin": {
+        "kind": "source",
+        "id": "449cbb61-0211-4f34-8287-6afe7892e803"
+      },
+      "representation": "verbatim",
+      "excerpt": "Choose from three DeepSeek models\\. V4\\.1 Flash 1017 accepts text and images\\; original V4 Flash and Pro accept text\\. These IDs are local service IDs\\; they do not automatically inherit the direct API’s aliases or limits\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "581:804"
+      },
+      "capturedAt": "2026-10-24T22:09:52.508Z",
+      "contentHash": "f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "d3378b54-1f14-43e5-9b94-c27bb7a41ce1",
+      "origin": {
+        "kind": "source",
+        "id": "449cbb61-0211-4f34-8287-6afe7892e803"
+      },
+      "representation": "verbatim",
+      "excerpt": "Fact \\| Value \\| Source \\/ last checked \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nV4 Pro total parameters \\| 1\\.6T \\| DeepSeek API Docs \nV4 Pro active parameters \\| 49B \\| DeepSeek API Docs \nV4 Pro context \\| 1M \\| DeepSeek API Docs \nV4 Pro preview release \\| 2026\\-04\\-24 \\| DeepSeek API Docs \nOriginal V4 Flash total parameters \\| 284B \\| DeepSeek API Docs \nOriginal V4 Flash active parameters \\| 13B \\| DeepSeek API Docs \nOriginal V4 Flash context \\| 1M \\| DeepSeek API Docs \nOriginal V4 Flash preview release \\| 2026\\-04\\-24 \\| DeepSeek API Docs",
+      "locator": {
+        "kind": "char_range",
+        "value": "1291:1822"
+      },
+      "capturedAt": "2026-10-24T22:09:52.508Z",
+      "contentHash": "f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_header_years:2026",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "2407c9fa-2d76-44f0-9e46-3ed126163692",
+      "origin": {
+        "kind": "source",
+        "id": "449cbb61-0211-4f34-8287-6afe7892e803"
+      },
+      "representation": "verbatim",
+      "excerpt": "\\# Current DeepSeek models\n\nOfficial direct API models and our service routes are separate\\. Compare the exact IDs before connecting\\, then use this site\\'s pricing to estimate credits\\.\n\nSources last checked October 5\\, 2026\\.\n\n\\#\\# Current official direct API lineup\n\nOfficial ID \\| Model version \\| Context \\| Migration note \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\ndeepseek\\-flash \\| V4\\.1 Flash \\| 1M \\| Original V4 Flash IDs are compatibility aliases\\. \ndeepseek\\-v4\\-pro \\| V4 Pro \\| 1M \\| Updated changelog confirms continued service\\. \n\n\\#\\# Pro and Flash API routes on this site\n\nChoose from three DeepSeek models\\. V4\\.1 Flash 1017 accepts text and images\\; original V4 Flash and Pro accept text\\. These IDs are local service IDs\\; they do not automatically inherit the direct API’s aliases or limits\\.\n\n\\#\\#\\# DeepSeek V4\\.1 Flash 1017\n\ndeepseek\\-v4\\.1\\-flash\\-1017\n\nThis site\\'s output cap\\: 16\\,384 tokens\\.\nTry this model\n\n\\#\\#\\# DeepSeek V4 Flash\n\ndeepseek\\-v4\\-flash\n\nThis site\\'s output cap\\: 8\\,192 tokens\\.\nTry this model\n\n\\#\\#\\# DeepSeek V4 Pro\n\ndeepseek\\-v4\\-pro\n\nThis site\\'s output cap\\: 16\\,384 tokens\\.\nTry this model\n\n\\#\\# Verified original V4 specifications\n\nThese are checkpoint specifications\\. Official API aliases and third\\-party deployments can route differently\\.\n\nFact \\| Value \\| Source \\/ last checked \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nV4 Pro total parameters \\| 1\\.6T \\| DeepSeek API Docs \nV4 Pro active parameters \\| 49B \\| DeepSeek API Docs \nV4 Pro context \\| 1M \\| DeepSeek API Docs \nV4 Pro preview release \\| 2026\\-04\\-24 \\| DeepSeek API Docs \nOriginal V4 Flash total parameters \\| 284B \\| DeepSeek API Docs \nOriginal V4 Flash active parameters \\| 13B \\| DeepSeek API Docs \nOriginal V4 Flash context \\| 1M \\| DeepSeek API Docs \nOriginal V4 Flash preview release \\| 2026\\-04\\-24 \\| DeepSeek API Docs \n\nCurrent official Flash ID\\:deepseek\\-flash \\(V4\\.1 Flash\\)\\. The updated official changelog retains V4 Pro\\. Last checked October 5\\, 2026\\.\n\n\\#\\# Earlier and specialist DeepSeek models\n\nThese model pages are reference material\\. Our credits API and Playground offer V4\\.1 Flash 1017\\, V4 Pro and original V4 Flash\\. V3\\.1 is no longer offered in the Playground\\.\n\n\\#\\# DeepSeek V4 vision\\: check the exact route\n\nThe current official direct API lists image input fordeepseek\\-flash \\(V4\\.1 Flash\\)\\, while Pro does not support vision\\. Original V4 checkpoints and this site\\'s API routes are separate products\\; a Flash name alone does not establish image support\\.\n\nSource checked October 5\\, 2026\\: official model features\\. This site supports images on the exact V4\\.1 Flash 1017 route\\; original Flash and Pro remain text\\-only\\.\nFor document extraction\\, see the DeepSeek OCR guide\n\n\\#\\# DeepSeek V4 free access\\: weights\\, chat and API\n\nThe original V4 weights use the MIT license\\; downloading them does not pay for inference hardware\\. Consumer chat access\\, public Playground trials and prepaid API credits have separate limits and terms\\. A chat account does not grant this site\\'s API balance\\.\n\nOur public Playground allows 10 requests per IP per UTC day\\. Paid API usage is charged at the listed service rates\\. Promotional credits\\, when granted\\, follow the account\\'s expiry rules\\.\n\nOpen\\-weight source\\: official model card and license\\, checked October 5\\, 2026\\.",
+      "locator": {
+        "kind": "char_range",
+        "value": "0:3308"
+      },
+      "capturedAt": "2026-10-24T22:09:52.508Z",
+      "contentHash": "f9bf737dcbcad07f8bc8bbe5232fa7c2f04ccbd07575744b20a67cd2a6a6a85f",
+      "limitations": [
+        "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+        "context_screen_state:{\"revision\":\"12b08ee8c8137ed7d56f1c3255b090086f983e336470d6f05f4262e6430c9d37\",\"done\":[],\"irrelevant\":[],\"pending\":[0,3200]}"
+      ]
+    },
+    {
+      "id": "daf341f0-7943-4d3b-ab39-6623b8b468d2",
+      "origin": {
+        "kind": "source",
+        "id": "c35b848b-68ec-4968-bc6b-cc62ac2c08d7"
+      },
+      "representation": "verbatim",
+      "excerpt": "deepseek\\-flash 模型支持在文本之外输入图片，你可以让模型描述图片、识别截图中的文字、分析图表等。旧模型名 deepseek\\-v4\\-flash\\-vision\\-exp 仍可调用，但该模型已下线，其请求同样由最新的 Flash 模型承接。",
+      "locator": {
+        "kind": "char_range",
+        "value": "63:191"
+      },
+      "capturedAt": "2026-10-24T22:10:12.62Z",
+      "contentHash": "b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_header_years:2000"
+      ]
+    },
+    {
+      "id": "53372eff-2df4-4bdc-b160-373bd6f78e01",
+      "origin": {
+        "kind": "source",
+        "id": "c35b848b-68ec-4968-bc6b-cc62ac2c08d7"
+      },
+      "representation": "verbatim",
+      "excerpt": "通过 Files API 上传一次图片，之后在请求中用其file\\_id 引用。当你需要在多个请求中复用同一张图片，或图片会让请求体超过 48 MiB 内联限制时，这是最佳选择。与内联图片不同，通过 Files API file\\_id 引用的图片最大可达 64 MiB，且不受 32 MiB 单图检查限制。",
+      "locator": {
+        "kind": "char_range",
+        "value": "2502:2656"
+      },
+      "capturedAt": "2026-10-24T22:10:12.62Z",
+      "contentHash": "b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_header_years:2000"
+      ]
+    },
+    {
+      "id": "702b05b1-af7e-4f61-b1e6-502eb9bbe8a8",
+      "origin": {
+        "kind": "source",
+        "id": "c35b848b-68ec-4968-bc6b-cc62ac2c08d7"
+      },
+      "representation": "verbatim",
+      "excerpt": "deepseek\\-flash 模型同样支持通过 OpenAI 兼容的 Responses API 传入图片。三种传入方式（base64 data URL、外部 http\\(s\\) URL、Files API file\\_id）与限制均与上文一致，只有内容块的结构不同——图片以 input\\_image 内容块承载，可出现在 user \\/ developer 消息或 function\\_call\\_output \\/ custom\\_tool\\_call\\_output item 的 output 中：\nresponse \\= client\\.responses\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    input\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"input\\_text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"input\\_image\\\"\\, \\\"image\\_url\\\"\\: \\\"https\\:\\/\\/example\\.com\\/image\\.jpg\\\"\\, \\\"detail\\\"\\: \\\"low\\\"\\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.output\\_text\\)",
+      "locator": {
+        "kind": "char_range",
+        "value": "5964:6662"
+      },
+      "capturedAt": "2026-10-24T22:10:12.62Z",
+      "contentHash": "b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_header_years:2000"
+      ]
+    },
+    {
+      "id": "51cece8b-d5d8-4ef9-9353-25f174075931",
+      "origin": {
+        "kind": "source",
+        "id": "c35b848b-68ec-4968-bc6b-cc62ac2c08d7"
+      },
+      "representation": "verbatim",
+      "excerpt": "Search \\/ Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n\\# 图像理解\n\ndeepseek\\-flash 模型支持在文本之外输入图片，你可以让模型描述图片、识别截图中的文字、分析图表等。旧模型名 deepseek\\-v4\\-flash\\-vision\\-exp 仍可调用，但该模型已下线，其请求同样由最新的 Flash 模型承接。\n\n支持的图片格式：JPEG、PNG、GIF、WebP。格式由文件实际内容判断，而非文件名或声明的 MIME 类型。\n\n\\#\\# 传入图片\n\n共有三种方式向模型提供图片，均使用标准的 OpenAI 兼容对话补全格式，即content 为一个块（block）数组，而非纯字符串。同样的三种方式也适用于 Responses API，图片以 input\\_image 内容块承载。\n\n以下示例的base\\_url 为 https\\:\\/\\/api\\.deepseek\\.com。\n\n\\#\\#\\# 1\\. Base64 编码图片（内联）\n\n将图片编码后以data\\: URL 的形式直接嵌入请求。这是本地文件最简单的方式。编码后的数据会计入 48 MiB 请求体大小限制（见 限制）。\nimport base64\nfrom openai import OpenAI\n\nclient \\= OpenAI\\(api\\_key\\=\\\"\\<DeepSeek API Key\\>\\\"\\, base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\)\n\nwith open\\(\\\"image\\.jpg\\\"\\, \\\"rb\\\"\\) as f\\:\n    b64 \\= base64\\.b64encode\\(f\\.read\\(\\)\\)\\.decode\\(\\\"utf\\-8\\\"\\)\n\nresponse \\= client\\.chat\\.completions\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    messages\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"image\\_url\\\"\\,\n                    \\\"image\\_url\\\"\\: \\{\\\"url\\\"\\: f\\\"data\\:image\\/jpeg\\;base64\\,\\{b64\\}\\\"\\}\\,\n                \\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.choices\\[0\\]\\.message\\.content\\)\ncurl https\\:\\/\\/api\\.deepseek\\.com\\/chat\\/completions \\\\\n  \\-H \\\"Content\\-Type\\: application\\/json\\\" \\\\\n  \\-H \\\"Authorization\\: Bearer \\<DeepSeek API Key\\>\\\" \\\\\n  \\-d \\'\\{\n    \\\"model\\\"\\: \\\"deepseek\\-flash\\\"\\,\n    \\\"messages\\\"\\: \\[\n      \\{\n        \\\"role\\\"\\: \\\"user\\\"\\,\n        \\\"content\\\"\\: \\[\n          \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n          \\{\\\"type\\\"\\: \\\"image\\_url\\\"\\, \\\"image\\_url\\\"\\: \\{\\\"url\\\"\\: \\\"data\\:image\\/jpeg\\;base64\\,\\<BASE64\\_DATA\\>\\\"\\}\\}\n        \\]\n      \\}\n    \\]\n  \\}\\'\n\n\\#\\#\\# 2\\. 外部图片 URL\n\n传入一个可公开访问的http\\(s\\) 链接，模型会自动下载图片。URL 长度最多 8192 个字符，图片文件最大 32 MiB，且需在 60 秒内完成下载。如果链接超长，请改用 base64 data URL 或 Files API。\nresponse \\= client\\.chat\\.completions\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    messages\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"描述一下这张图片。\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"image\\_url\\\"\\,\n                    \\\"image\\_url\\\"\\: \\{\\\"url\\\"\\: \\\"https\\:\\/\\/example\\.com\\/image\\.jpg\\\"\\}\\,\n                \\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.choices\\[0\\]\\.message\\.content\\)\n\n\\#\\#\\# 3\\. 引用通过 Files API 上传的文件\n\n通过 Files API 上传一次图片，之后在请求中用其file\\_id 引用。当你需要在多个请求中复用同一张图片，或图片会让请求体超过 48 MiB 内联限制时，这是最佳选择。与内联图片不同，通过 Files API file\\_id 引用的图片最大可达 64 MiB，且不受 32 MiB 单图检查限制。\n\n使用file 内容块，填入返回的 file\\_id（形如 file\\-api\\-\\.\\.\\.）：\nresponse \\= client\\.chat\\.completions\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    messages\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"file\\\"\\, \\\"file\\_id\\\"\\: \\\"file\\-api\\-xxxxxxxxxxxxxxxx\\\"\\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.choices\\[0\\]\\.message\\.content\\)\n\n此外，file 块也可以通过 file\\_data 以 base64 形式内联携带图片（file\\_data 与 file\\_id 二者互斥）：\n\\{\n  \\\"type\\\"\\: \\\"file\\\"\\,\n  \\\"file\\_data\\\"\\: \\\"data\\:image\\/jpeg\\;base64\\,\\<BASE64\\_DATA\\>\\\"\\,\n  \\\"filename\\\"\\: \\\"image\\.jpg\\\"\n\\}\n\n\\#\\# 细节级别（Detail Level）\n\n对于image\\_url 输入，你可以选填 detail 字段来控制图片的处理方式：\n\n取值 \\| 行为 \n\\-\\-\\-\\|\\-\\-\\-\nlow \\| 推理前将图片缩放到 512×512。当不需要精细视觉细节时更快、更省 token。 \nhigh \\| 保留原图。（为兼容性提供，等价于 original。） \noriginal \\| 保留原图。 \nauto \\| 自动选择。当前等价于 original。 \n\n\\{\n  \\\"type\\\"\\: \\\"image\\_url\\\"\\,\n  \\\"image\\_url\\\"\\: \\{\\\"url\\\"\\: \\\"https\\:\\/\\/example\\.com\\/image\\.jpg\\\"\\, \\\"detail\\\"\\: \\\"low\\\"\\}\n\\}\n\n\\#\\# 何时使用 Files API\n\n内联图片（base64 或file\\_data）会计入 48 MiB 的请求体大小限制。以下情况建议使用 Files API：\n\n\\- 单个请求会超过请求体大小限制。\n\\- 图片超过 32 MiB（只有通过 Files API 才能使用）。\n\\- 你在多个请求中引用同一张图片，希望避免每次重复上传。\n\n\\#\\# Token 用量\n\n图片会根据其尺寸换算成 token，并与文本 token 一起计费。\n\n在进入模型前，每张图片都会被自动缩放：\n\n\\- 总像素小于约 544×544 的图片会被保持长宽比放大；\n\\- 更大的图片会被保持长宽比缩小，缩小后的总像素约相当于 1300×1300 的图片。\n\n因此，每张图片消耗的 token 数存在上限（1024 个）：例如 2000×2000 和 5000×5000 的图片，经缩放后消耗的 token 数是相同的。单个请求包含多张图片时，每张图片独立按同一规则计算，不存在额外的计算方式。\n\n如需估算具体尺寸图片的 token 消耗，请使用 Token 与用量计算 页面的图片 Token 计算器。\n\n\\#\\# 限制\n\n限制项 \\| 数值 \n\\-\\-\\-\\|\\-\\-\\-\n支持的格式 \\| JPEG、PNG、GIF、WebP \n外部 URL 长度 \\| 8192 个字符 \n请求体大小 \\| 48 MiB \n单张图片最大大小（base64 \\/ 外部 URL） \\| 32 MiB \n单张图片最大大小（Files API file\\_id） \\| 64 MiB \n单个请求最大图片数 \\| 600 \n单个请求图片总大小 \\| 不含 file\\_id 图片最多 64 MiB；包含 file\\_id 图片最高 200 MiB \n图片最大尺寸 \\| 单边最长 8192 像素；单个请求包含 15 张及以上图片时，降为单边最长 4096 像素 \n\nFiles API 上传文件的存储与上传配额见 Files API：限制。\n\n\\#\\# 使用限制\n\n\\- 图片仅支持出现在user 消息中。system 或 assistant 消息携带图片会返回 400 错误。\n\n\\#\\# 在 Anthropic API 中使用图片\n\n除了上面的 OpenAI 兼容端点，你也可以通过 Anthropic 兼容的\\/messages 端点发送图片（base\\_url 为 https\\:\\/\\/api\\.deepseek\\.com\\/anthropic）。基础配置请参考 Anthropic API。\n\n区别在于图片内容块的结构。Anthropic 不使用image\\_url，而是使用 image 块，其 source 对象的 type 为 base64、url 或 file 之一：\nimport anthropic\n\nclient \\= anthropic\\.Anthropic\\(\\)  \\# ANTHROPIC\\_BASE\\_URL\\=https\\:\\/\\/api\\.deepseek\\.com\\/anthropic\n\nmessage \\= client\\.messages\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    max\\_tokens\\=1024\\,\n    messages\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\n                    \\\"type\\\"\\: \\\"image\\\"\\,\n                    \\\"source\\\"\\: \\{\n                        \\\"type\\\"\\: \\\"base64\\\"\\,\n                        \\\"media\\_type\\\"\\: \\\"image\\/jpeg\\\"\\,\n                        \\\"data\\\"\\: \\\"\\<BASE64\\_DATA\\>\\\"\\,\n                    \\}\\,\n                \\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(message\\.content\\)\n\n三种source 变体与上面的 OpenAI 方式一一对应：\n\nsource\\.type \\| 对应的 OpenAI 方式 \\| 说明 \n\\-\\-\\-\\|\\-\\-\\-\\|\\-\\-\\-\nbase64 \\| Base64 编码图片 \\| 需要 media\\_type 字段（image\\/jpeg、image\\/png、image\\/gif 或 image\\/webp）。 \nurl \\| 外部图片 URL \\| 最多 8192 个字符。 \nfile \\| Files API file\\_id \\| 需要请求头 anthropic\\-beta\\: files\\-api\\-2025\\-04\\-14。 \n\n\\#\\# 在 Responses API 中使用图片\n\ndeepseek\\-flash 模型同样支持通过 OpenAI 兼容的 Responses API 传入图片。三种传入方式（base64 data URL、外部 http\\(s\\) URL、Files API file\\_id）与限制均与上文一致，只有内容块的结构不同——图片以 input\\_image 内容块承载，可出现在 user \\/ developer 消息或 function\\_call\\_output \\/ custom\\_tool\\_call\\_output item 的 output 中：\nresponse \\= client\\.responses\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    input\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"input\\_text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"input\\_image\\\"\\, \\\"image\\_url\\\"\\: \\\"https\\:\\/\\/example\\.com\\/image\\.jpg\\\"\\, \\\"detail\\\"\\: \\\"low\\\"\\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.output\\_text\\)\n\ninput\\_image 内容块支持 detail 字段，语义与上文一致（low \\/ high \\/ original \\/ auto）。通过 file\\_id 传图时 detail 被忽略；image\\_url 与 file\\_id 互斥。\n\n字段语义、使用限制（system \\/ assistant 消息中的图片会返回 400 错误）以及工具输出中的图片，请参阅 Responses API 指南。",
+      "locator": {
+        "kind": "char_range",
+        "value": "0:6867"
+      },
+      "capturedAt": "2026-10-24T22:10:12.62Z",
+      "contentHash": "b4f3f3ba249d853b0a91123f1f841f99318a5e4a06f3a03e8d46f308d066aa3c",
+      "limitations": [
+        "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+        "context_screen_state:{\"revision\":\"b74773ebacefa63058d87aab6a14b0e81cf3f49ff8bea6cdb425325efcb378a0\",\"done\":[[0,3200],[2900,6100],[5800,6867]],\"irrelevant\":[],\"pending\":null}"
+      ]
+    },
+    {
+      "id": "13b9365e-6d4e-47ab-aa55-af21fe901062",
+      "origin": {
+        "kind": "source",
+        "id": "194772ce-da2c-4b2d-95d5-9d7331c293c8"
+      },
+      "representation": "verbatim",
+      "excerpt": "事件 \\| 说明 \n\\-\\-\\-\\|\\-\\-\\-\nresponse\\.created \\| 首个事件；响应已创建，状态为 in\\_progress \nresponse\\.in\\_progress \\| 响应正在生成中 \nresponse\\.output\\_item\\.added \\/ response\\.output\\_item\\.done \\| 一个输出 item（reasoning \\/ message \\/ function\\_call \\/ custom\\_tool\\_call \\/ web\\_search\\_call \\/ tool\\_search\\_call）开始 \\/ 完成 \nresponse\\.content\\_part\\.added \\/ response\\.content\\_part\\.done \\| 输出 item 中的一个内容块开始 \\/ 完成 \nresponse\\.reasoning\\_text\\.delta \\/ response\\.reasoning\\_text\\.done \\| 思维链文本增量 \\/ 完整思维链文本 \nresponse\\.output\\_text\\.delta \\/ response\\.output\\_text\\.done \\| 输出文本增量 \\/ 完整输出文本 \nresponse\\.function\\_call\\_arguments\\.delta \\/ response\\.function\\_call\\_arguments\\.done \\| Function 调用参数增量 \\/ 完整参数 \nresponse\\.custom\\_tool\\_call\\_input\\.delta \\/ response\\.custom\\_tool\\_call\\_input\\.done \\| Custom 工具调用（apply\\_patch）输入增量 \\/ 完整输入 \nresponse\\.web\\_search\\_call\\.in\\_progress \\/ response\\.web\\_search\\_call\\.searching \\/ response\\.web\\_search\\_call\\.completed \\| 服务端 web\\_search 调用开始 \\/ 搜索中 \\/ 完成（仅 deepseek\\-v4\\-pro） \nresponse\\.completed \\| 响应正常完成时的最后一个事件，携带包含 usage 的完整 response 对象 \nresponse\\.incomplete \\| 响应被截断（如达到 max\\_output\\_tokens）时的最后一个事件，携带完整 response 对象 \nresponse\\.failed \\| 响应失败时的最后一个事件，携带含 error 详情的完整 response 对象",
+      "locator": {
+        "kind": "char_range",
+        "value": "1187:2390"
+      },
+      "capturedAt": "2026-10-24T22:10:15.856Z",
+      "contentHash": "f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "e96eb9b3-3b46-4734-97d2-475bf365bae2",
+      "origin": {
+        "kind": "source",
+        "id": "194772ce-da2c-4b2d-95d5-9d7331c293c8"
+      },
+      "representation": "verbatim",
+      "excerpt": "参数 \\| 支持情况 \n\\-\\-\\-\\|\\-\\-\\-\nmodel \\| 支持。deepseek\\-flash 和 deepseek\\-v4\\-pro，见模型 \\& 价格 \ninput \\| 支持。字符串或输入 item 列表；input 与 instructions 至少传一个 \ninstructions \\| 支持。作为第一条 system 消息 \nstream \\| 支持 \ntemperature \\| 支持（范围 \\[0\\.0\\, 2\\.0\\]；思考模式下不生效） \ntop\\_p \\| 支持；行为因模型而异：deepseek\\-flash：思考模式下生效（下限 0\\.95），非思考模式下恒为 1\\.0。deepseek\\-v4\\-pro：思考模式下忽略传入值（有工具时固定为 0\\.95，否则为 1\\.0），非思考模式下生效 \nmax\\_output\\_tokens \\| 支持 \ntop\\_logprobs \\| 支持（范围 \\[0\\, 20\\]） \ntools \\| 部分支持。function 支持；web\\_search 在 deepseek\\-v4\\-pro 下支持；其他类型忽略，见下方 Tools 表 \ntool\\_choice \\| 支持。none \\/ auto \\/ required \\/ 指定某个工具（\\{\\\"type\\\"\\: \\\"function\\\"\\, \\\"name\\\"\\: \\.\\.\\.\\}） \nreasoning \\| 部分支持。effort 支持；summary 可传入但不生成摘要 \ntext \\| 部分支持。format 完整支持；verbosity 可传入但不生效 \nuser \\| 支持。参考限速与用户隔离 \nparallel\\_tool\\_calls \\| 忽略（并行工具调用始终开启） \nmax\\_tool\\_calls \\| 忽略 \nprevious\\_response\\_id \\| 不支持（无状态 API） \nconversation \\| 不支持（无状态 API） \nstore \\| 不支持。响应中恒为 store\\: false \nbackground \\| 不支持 \nmetadata \\| 不支持 \ninclude \\| 不支持 \nprompt \\| 不支持 \ntruncation \\| 不支持。输入超出上下文窗口时返回 400 错误 \nservice\\_tier \\| 不支持 \nsafety\\_identifier \\| 不支持 \nprompt\\_cache\\_key \\/ prompt\\_cache\\_retention \\| 不支持。上下文缓存自动管理，见上下文硬盘缓存 \ncontext\\_management \\| 不支持 \nstream\\_options \\| 不支持",
+      "locator": {
+        "kind": "char_range",
+        "value": "4432:5613"
+      },
+      "capturedAt": "2026-10-24T22:10:15.856Z",
+      "contentHash": "f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "cc0a1d8c-4f92-4228-8d30-abddc0a4f45f",
+      "origin": {
+        "kind": "source",
+        "id": "194772ce-da2c-4b2d-95d5-9d7331c293c8"
+      },
+      "representation": "verbatim",
+      "excerpt": "类型 \\| 支持情况 \n\\-\\-\\-\\|\\-\\-\\-\nmessage \\| 支持。角色支持 user \\/ assistant \\/ system \\/ developer（developer 视同 user）；content 支持字符串和 input\\_text \\/ output\\_text \\/ input\\_image 内容块。input\\_image 内容块会作为真实图片处理（仅允许出现在 user \\/ developer 消息中，system \\/ assistant 消息中的图片会返回 400 错误）。文件输入不支持 \nfunction\\_call \\| 支持。归并到相邻 assistant 消息 \nfunction\\_call\\_output \\| 支持。output 可以是字符串或内容块列表；输出中的 input\\_image 内容块会作为真实图片处理 \nreasoning \\| 支持。明文 content 归并到相邻 assistant 消息；summary、encrypted\\_content 不支持 \ncustom\\_tool\\_call \\/ custom\\_tool\\_call\\_output \\| 支持（配合 apply\\_patch custom 工具使用，含 call\\_id 配对校验）。output 中的 input\\_image 内容块会作为真实图片处理 \n其他类型 \\| 忽略",
+      "locator": {
+        "kind": "char_range",
+        "value": "5685:6303"
+      },
+      "capturedAt": "2026-10-24T22:10:15.856Z",
+      "contentHash": "f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "limitations": [
+        "capture_selection_partial：捕获内另有未展示背景段落，需要语义复核选中材料足够回答。",
+        "capture_context_risk：未能提供全部潜在例外，不能作无条件肯定。",
+        "capture_screen_unverified：该来源完整上下文尚未核验，不作为回答或别名依据。"
+      ]
+    },
+    {
+      "id": "f3caca63-9d6a-497d-9dcc-ec9312e196e6",
+      "origin": {
+        "kind": "source",
+        "id": "194772ce-da2c-4b2d-95d5-9d7331c293c8"
+      },
+      "representation": "verbatim",
+      "excerpt": "Search \\/ Fetch API 已上线，使用自研搜索引擎，支持网页搜索与抓取，点此查看使用指南。\n\n\\# 使用 Responses API\n\n为了满足大家对 Codex 的需求，我们的 API 新增了对 Responses API 格式的支持，其base\\_url 为 https\\:\\/\\/api\\.deepseek\\.com。\n\n通过简单的配置，即可在 Codex 中使用 DeepSeek 模型。\n\n\\#\\# 将 DeepSeek 模型接入 Codex\n\n请参考接入 Codex\n\n\\#\\# 通过 Responses API 调用 DeepSeek 模型\n\\# Please install OpenAI SDK first\\: \\`pip3 install openai\\`\nfrom openai import OpenAI\n\nclient \\= OpenAI\\(api\\_key\\=\\\"\\<your DeepSeek API Key\\>\\\"\\, base\\_url\\=\\\"https\\:\\/\\/api\\.deepseek\\.com\\\"\\)\n\nresponse \\= client\\.responses\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    instructions\\=\\\"You are a helpful assistant\\.\\\"\\,\n    input\\=\\\"Hi\\, how are you\\?\\\"\\,\n\\)\n\nprint\\(response\\.output\\_text\\)\n\n\\#\\# 流式输出\n\n设置stream\\: true，响应将以语义化的流式 SSE 事件序列返回。每个事件带有表示事件类型的 event 字段和递增的 sequence\\_number。流以 response\\.completed \\/ response\\.incomplete \\/ response\\.failed 事件结束，没有 data\\: \\[DONE\\] 消息。\nstream \\= client\\.responses\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    instructions\\=\\\"You are a helpful assistant\\.\\\"\\,\n    input\\=\\\"Hi\\, how are you\\?\\\"\\,\n    stream\\=True\\,\n\\)\n\nfor event in stream\\:\n    if event\\.type \\=\\= \\\"response\\.output\\_text\\.delta\\\"\\:\n        print\\(event\\.delta\\, end\\=\\\"\\\"\\)\n\n完整事件列表：\n\n事件 \\| 说明 \n\\-\\-\\-\\|\\-\\-\\-\nresponse\\.created \\| 首个事件；响应已创建，状态为 in\\_progress \nresponse\\.in\\_progress \\| 响应正在生成中 \nresponse\\.output\\_item\\.added \\/ response\\.output\\_item\\.done \\| 一个输出 item（reasoning \\/ message \\/ function\\_call \\/ custom\\_tool\\_call \\/ web\\_search\\_call \\/ tool\\_search\\_call）开始 \\/ 完成 \nresponse\\.content\\_part\\.added \\/ response\\.content\\_part\\.done \\| 输出 item 中的一个内容块开始 \\/ 完成 \nresponse\\.reasoning\\_text\\.delta \\/ response\\.reasoning\\_text\\.done \\| 思维链文本增量 \\/ 完整思维链文本 \nresponse\\.output\\_text\\.delta \\/ response\\.output\\_text\\.done \\| 输出文本增量 \\/ 完整输出文本 \nresponse\\.function\\_call\\_arguments\\.delta \\/ response\\.function\\_call\\_arguments\\.done \\| Function 调用参数增量 \\/ 完整参数 \nresponse\\.custom\\_tool\\_call\\_input\\.delta \\/ response\\.custom\\_tool\\_call\\_input\\.done \\| Custom 工具调用（apply\\_patch）输入增量 \\/ 完整输入 \nresponse\\.web\\_search\\_call\\.in\\_progress \\/ response\\.web\\_search\\_call\\.searching \\/ response\\.web\\_search\\_call\\.completed \\| 服务端 web\\_search 调用开始 \\/ 搜索中 \\/ 完成（仅 deepseek\\-v4\\-pro） \nresponse\\.completed \\| 响应正常完成时的最后一个事件，携带包含 usage 的完整 response 对象 \nresponse\\.incomplete \\| 响应被截断（如达到 max\\_output\\_tokens）时的最后一个事件，携带完整 response 对象 \nresponse\\.failed \\| 响应失败时的最后一个事件，携带含 error 详情的完整 response 对象 \n\n\\#\\# 图片输入\n\nResponses API 支持使用deepseek\\-flash 模型传入图片，适用的图片限制与支持格式与对话补全一致。\n\n图片通过message item 中的 input\\_image 内容块提供，使用 image\\_url（http\\(s\\) URL 或 base64 data URL）或 file\\_id（通过 Files API 上传的图片）二者之一：\nresponse \\= client\\.responses\\.create\\(\n    model\\=\\\"deepseek\\-flash\\\"\\,\n    input\\=\\[\n        \\{\n            \\\"role\\\"\\: \\\"user\\\"\\,\n            \\\"content\\\"\\: \\[\n                \\{\\\"type\\\"\\: \\\"input\\_text\\\"\\, \\\"text\\\"\\: \\\"这张图片里有什么？\\\"\\}\\,\n                \\{\\\"type\\\"\\: \\\"input\\_image\\\"\\, \\\"image\\_url\\\"\\: \\\"https\\:\\/\\/example\\.com\\/image\\.jpg\\\"\\, \\\"detail\\\"\\: \\\"low\\\"\\}\\,\n            \\]\\,\n        \\}\\,\n    \\]\\,\n\\)\nprint\\(response\\.output\\_text\\)\n\ninput\\_image 内容块也可以出现在 function\\_call\\_output \\/ custom\\_tool\\_call\\_output item 的 output 中，让模型接收你的工具生成的图片：\ninput\\=\\[\n    \\{\\\"role\\\"\\: \\\"user\\\"\\, \\\"content\\\"\\: \\\"读取工具返回的截图。\\\"\\}\\,\n    \\{\\\"type\\\"\\: \\\"function\\_call\\\"\\, \\\"call\\_id\\\"\\: \\\"fc1\\\"\\, \\\"name\\\"\\: \\\"take\\_screenshot\\\"\\, \\\"arguments\\\"\\: \\\"\\{\\}\\\"\\}\\,\n    \\{\\\"type\\\"\\: \\\"function\\_call\\_output\\\"\\, \\\"call\\_id\\\"\\: \\\"fc1\\\"\\,\n     \\\"output\\\"\\: \\[\\{\\\"type\\\"\\: \\\"input\\_image\\\"\\, \\\"image\\_url\\\"\\: \\\"data\\:image\\/png\\;base64\\,\\<BASE64\\_DATA\\>\\\"\\}\\]\\}\\,\n\\]\n\n\\#\\#\\# input\\_image 字段\n\n\\- image\\_url：图片的 http\\(s\\) URL（最多 8192 个字符）或 base64 编码的 data URL（data\\:image\\/jpeg\\;base64\\,\\.\\.\\.）。支持的格式：JPEG、PNG、GIF、WebP。\n\\- file\\_id：通过 Files API 上传的图片文件 ID，形如 file\\-api\\-\\.\\.\\.。\n\\- detail：low \\/ high \\/ original \\/ auto。low 在推理前将图片缩小到 512x512；其余取值保留原图。设置 file\\_id 时被忽略。\n\nimage\\_url 与 file\\_id 互斥：两者都不传返回 400 错误（\\\"input\\_image must have image\\_url or file\\_id\\\"），两者都传返回 400 错误（\\\"input\\_image cannot have both image\\_url and file\\_id\\\"）。\n\n\\#\\#\\# 使用限制\n\n\\- 图片仅允许出现在user \\/ developer 消息 item 以及 function\\_call\\_output \\/ custom\\_tool\\_call\\_output 的输出中；system \\/ assistant 消息中的图片会返回 400 错误。\n\\- deepseek\\-flash 会真正处理 input\\_image 内容块。\n\\- 与对话补全相同的图片限制（内联单张 32 MiB、file\\_id 单张 64 MiB、不含 file\\_id 图片总计 64 MiB，含 file\\_id 图片最高 200 MiB、单请求 600 张等）同样适用，详见图像理解：限制。\n\n\\#\\# 兼容性明细\n\n本小节罗列了 DeepSeek API 对 Responses API 的兼容性细节。Responses API 完整格式定义，请参考 OpenAI 官方 API 手册。\n\n\\#\\#\\# 顶层请求参数\n\n参数 \\| 支持情况 \n\\-\\-\\-\\|\\-\\-\\-\nmodel \\| 支持。deepseek\\-flash 和 deepseek\\-v4\\-pro，见模型 \\& 价格 \ninput \\| 支持。字符串或输入 item 列表；input 与 instructions 至少传一个 \ninstructions \\| 支持。作为第一条 system 消息 \nstream \\| 支持 \ntemperature \\| 支持（范围 \\[0\\.0\\, 2\\.0\\]；思考模式下不生效） \ntop\\_p \\| 支持；行为因模型而异：deepseek\\-flash：思考模式下生效（下限 0\\.95），非思考模式下恒为 1\\.0。deepseek\\-v4\\-pro：思考模式下忽略传入值（有工具时固定为 0\\.95，否则为 1\\.0），非思考模式下生效 \nmax\\_output\\_tokens \\| 支持 \ntop\\_logprobs \\| 支持（范围 \\[0\\, 20\\]） \ntools \\| 部分支持。function 支持；web\\_search 在 deepseek\\-v4\\-pro 下支持；其他类型忽略，见下方 Tools 表 \ntool\\_choice \\| 支持。none \\/ auto \\/ required \\/ 指定某个工具（\\{\\\"type\\\"\\: \\\"function\\\"\\, \\\"name\\\"\\: \\.\\.\\.\\}） \nreasoning \\| 部分支持。effort 支持；summary 可传入但不生成摘要 \ntext \\| 部分支持。format 完整支持；verbosity 可传入但不生效 \nuser \\| 支持。参考限速与用户隔离 \nparallel\\_tool\\_calls \\| 忽略（并行工具调用始终开启） \nmax\\_tool\\_calls \\| 忽略 \nprevious\\_response\\_id \\| 不支持（无状态 API） \nconversation \\| 不支持（无状态 API） \nstore \\| 不支持。响应中恒为 store\\: false \nbackground \\| 不支持 \nmetadata \\| 不支持 \ninclude \\| 不支持 \nprompt \\| 不支持 \ntruncation \\| 不支持。输入超出上下文窗口时返回 400 错误 \nservice\\_tier \\| 不支持 \nsafety\\_identifier \\| 不支持 \nprompt\\_cache\\_key \\/ prompt\\_cache\\_retention \\| 不支持。上下文缓存自动管理，见上下文硬盘缓存 \ncontext\\_management \\| 不支持 \nstream\\_options \\| 不支持 \n\n不支持的参数会被静默忽略、不会报错，因此现有的 Responses API 客户端无需修改即可接入。\n\n\\#\\#\\# 输入 Items\n\n类型 \\| 支持情况 \n\\-\\-\\-\\|\\-\\-\\-\nmessage \\| 支持。角色支持 user \\/ assistant \\/ system \\/ developer（developer 视同 user）；content 支持字符串和 input\\_text \\/ output\\_text \\/ input\\_image 内容块。input\\_image 内容块会作为真实图片处理（仅允许出现在 user \\/ developer 消息中，system \\/ assistant 消息中的图片会返回 400 错误）。文件输入不支持 \nfunction\\_call \\| 支持。归并到相邻 assistant 消息 \nfunction\\_call\\_output \\| 支持。output 可以是字符串或内容块列表；输出中的 input\\_image 内容块会作为真实图片处理 \nreasoning \\| 支持。明文 content 归并到相邻 assistant 消息；summary、encrypted\\_content 不支持 \ncustom\\_tool\\_call \\/ custom\\_tool\\_call\\_output \\| 支持（配合 apply\\_patch custom 工具使用，含 call\\_id 配对校验）。output 中的 input\\_image 内容块会作为真实图片处理 \n其他类型 \\| 忽略 \n\n注：上一次响应返回的web\\_search\\_call item 可以回传到 input，接口会还原对应的搜索结果并拼接到上下文中。\n\n\\#\\#\\# Tools\n\n类型 \\| 支持情况 \n\\-\\-\\-\\|\\-\\-\\-\nfunction \\| 支持 \ncustom \\| 仅支持 \\{\\\"type\\\"\\: \\\"custom\\\"\\, \\\"name\\\"\\: \\\"apply\\_patch\\\"\\}（用于 Codex 兼容）；其他名称返回 400 错误 \nweb\\_search \\| deepseek\\-v4\\-pro 支持。接口会在服务端执行搜索，将结果加入上下文并继续生成响应；deepseek\\-flash 下忽略 \nfile\\_search \\/ code\\_interpreter \\/ computer\\_use \\/ mcp 等内置工具 \\| 忽略 \n\n\\#\\#\\# 响应字段\n\n响应对象与 OpenAI Responses API 的response 结构兼容。依赖未支持能力的字段恒为固定值（如 store\\: false、previous\\_response\\_id\\: null、parallel\\_tool\\_calls\\: true）。\n\nToken 用量在usage 中返回：\n\n\\- input\\_tokens：输入 token 数，其中 input\\_tokens\\_details\\.cached\\_tokens 为命中上下文缓存的 token 数\n\\- output\\_tokens：输出 token 数，其中 output\\_tokens\\_details\\.reasoning\\_tokens 为思维链 token 数",
+      "locator": {
+        "kind": "char_range",
+        "value": "0:7031"
+      },
+      "capturedAt": "2026-10-24T22:10:15.856Z",
+      "contentHash": "f6097fcaf88554dc959469cf6539314cd5f59a08b65488b52a3717ea702d5206",
+      "limitations": [
+        "raw_capture_only：原始捕获存档，不作为额外独立证据，不重复送模型。",
+        "context_screen_state:{\"revision\":\"4c2a97f879bf928316fee88c8a6f9004bdbe4b08ae1c17d50f7c3949be8921b5\",\"done\":[],\"irrelevant\":[],\"pending\":[0,3200]}"
+      ]
+    }
+  ],
+  "selected": [
+    4,
+    5,
+    6,
+    12,
+    13,
+    14
+  ],
+  "value": {
+    "claims": [
+      {
+        "statement": "截至参考时间，DeepSeek Flash API 的当前模型 ID 为 deepseek-flash。",
+        "status": "mixed",
+        "evidenceIndexes": [
+          6,
+          12,
+          14,
+          4
+        ],
+        "links": [
+          {
+            "evidenceIndex": 12,
+            "relation": "supports",
+            "quote": "deepseek-flash 模型支持在文本之外输入图片",
+            "rationale": "官方文档以 deepseek-flash 称呼当前模型，直接给出当前模型 ID。"
+          },
+          {
+            "evidenceIndex": 14,
+            "relation": "supports",
+            "quote": "model=\"deepseek-flash\"",
+            "rationale": "官方示例代码使用 deepseek-flash 作为调用模型名。"
+          },
+          {
+            "evidenceIndex": 6,
+            "relation": "qualifies",
+            "quote": "Official DeepSeek API deepseek-flashUse the current DeepSeek API documentation.",
+            "rationale": "第三方网关页把 deepseek-flash 标为官方 API 名，但同时列出多个别名，并称另有新官方模型名，需区分。"
+          },
+          {
+            "evidenceIndex": 4,
+            "relation": "qualifies",
+            "quote": "# DeepSeek V4.1 Flash",
+            "rationale": "该独立网关页标题指向“V4.1 Flash”，与 deepseek-flash 的名称关系未在摘录中说明，不能当权威模型 ID。"
+          }
+        ],
+        "conditions": [
+          "适用于官方 DeepSeek API",
+          "参考时间为 2026-10-24"
+        ],
+        "gaps": [
+          "证据5提到“a new official model name”却未给出具体名称；展示摘录不足以排除还存在另一官方正式模型 ID（如 deepseek-v4.1-flash）的情况。"
+        ],
+        "reasonSummary": "官方文档与示例一致使用 deepseek-flash，可支持其为当前可用模型 ID；但第三方页提到存在“新官方模型名”，摘录未揭示该名称，故只能判为混合而非完全支持。"
+      },
+      {
+        "statement": "旧别名 deepseek-v4-flash（及 __UNKNOWN__ deepseek-v4.1-flash 等）与当前模型 ID 不同，旧视觉实验模型 deepseek-v4-flash-vision-exp 已下线但仍可调用并转由最新 Flash 承接。",
+        "status": "mixed",
+        "evidenceIndexes": [
+          12,
+          6,
+          4
+        ],
+        "links": [
+          {
+            "evidenceIndex": 12,
+            "relation": "supports",
+            "quote": "旧模型名 deepseek-v4-flash-vision-exp 仍可调用,但该模型已下线,其请求同样由最新的 Flash 模型承接。",
+            "rationale": "官方文档明确旧视觉实验模型名已下线且请求转由最新 Flash 承接，支持“旧别名”判断。"
+          },
+          {
+            "evidenceIndex": 6,
+            "relation": "supports",
+            "quote": "DeepSeek-V4.io deepseek-v4-flashStable public alias; text requests route to V4.1 server-side.",
+            "rationale": "第三方页称 deepseek-v4-flash 为稳定公共别名、文本请求路由到 V4.1，佐证其为别名而非当前主 ID，但仅限文本请求。"
+          },
+          {
+            "evidenceIndex": 4,
+            "relation": "qualifies",
+            "quote": "# DeepSeek V4.1 Flash",
+            "rationale": "网关页以 V4.1 Flash 命名，暗示与别名存在版本差异，但未给出确切 ID 对应关系。"
+          }
+        ],
+        "conditions": [
+          "别名映射信息主要来自第三方网关页，非官方全量说明"
+        ],
+        "gaps": [
+          "摘录未展示官方对 deepseek-v4-flash 等别名的完整说明；别名的图片输入支持情况（证据6称仅文本请求路由）未在官方文档中得到确证。"
+        ],
+        "reasonSummary": "官方文档支持 deepseek-v4-flash-vision-exp 为已下线的旧别名；第三方页支持 deepseek-v4-flash 为公共别名。但对别名与当前 ID 的官方完整映射仍不充分，故为混合。"
+      },
+      {
+        "statement": "deepseek-flash 当前模型支持图片输入（可描述图片、识别截图文字、分析图表），支持 base64 data URL、外部 http(s) URL、Files API file_id 三方式，并可通过 Responses API 以 input_image 内容块传入。",
+        "status": "supported",
+        "evidenceIndexes": [
+          12,
+          13,
+          14
+        ],
+        "links": [
+          {
+            "evidenceIndex": 12,
+            "relation": "supports",
+            "quote": "deepseek-flash 模型支持在文本之外输入图片,你可以让模型描述图片、识别截图中的文字、分析图表等。",
+            "rationale": "官方文档直接陈述当前模型支持图片输入及用途。"
+          },
+          {
+            "evidenceIndex": 13,
+            "relation": "supports",
+            "quote": "通过 Files API 上传一次图片,之后在请求中用其file_id 引用。",
+            "rationale": "官方文档说明图片输入的具体方式之一，佐证多模态支持。"
+          },
+          {
+            "evidenceIndex": 14,
+            "relation": "supports",
+            "quote": "deepseek-flash 模型同样支持通过 OpenAI 兼容的 Responses API 传入图片。",
+            "rationale": "官方文档确认另一接口同样支持图片输入，并以 input_image 内容块承载。"
+          }
+        ],
+        "conditions": [
+          "适用于 deepseek-flash 模型",
+          "存在请求体 48 MiB 内联限制、64 MiB file_id 上限、32 MiB 单图检查等限制"
+        ],
+        "gaps": [
+          "摘录未展示所有例外情况（limitation 标注 capture_context_risk）。"
+        ],
+        "reasonSummary": "官方 api-docs 文档多处明确 deepseek-flash 支持图片输入并给出具体接口与限制，属强支持。"
+      }
+    ],
+    "answerBlocks": [
+      {
+        "text": "当前模型 ID：官方文档与示例代码一致使用 deepseek-flash 作为调用名，可视为当前模型 ID；但第三方网关页提到存在“新的官方模型名”且列出 deepseek-v4.1-flash、deepseek-v4-flash 等别名，摘录未说明其与当前 ID 的完整对应关系。",
+        "claimIndexes": [
+          0,
+          1
+        ],
+        "evidenceIndexes": [
+          6,
+          12,
+          14,
+          4
+        ]
+      },
+      {
+        "text": "旧别名区分：deepseek-v4-flash-vision-exp 是已下线的旧视觉实验模型名，仍可调用但请求由最新 Flash 承接；deepseek-v4-flash 被第三方页描述为稳定公共别名（文本请求路由到 V4.1）。这些均不同于当前 ID deepseek-flash。",
+        "claimIndexes": [
+          1
+        ],
+        "evidenceIndexes": [
+          12,
+          6
+        ]
+      },
+      {
+        "text": "图片输入：deepseek-flash 支持图片输入（描述图片、识别截图文字、分析图表），可通过 base64 data URL、外部 http(s) URL、Files API file_id 三种方式传入，也可经 OpenAI 兼容 Responses API 以 input_image 内容块传入；受内联 48 MiB、file_id 64 MiB、单图 32 MiB 等限制。",
+        "claimIndexes": [
+          2
+        ],
+        "evidenceIndexes": [
+          12,
+          13,
+          14
+        ]
+      }
+    ],
+    "nextQueries": [
+      {
+        "query": "site:api-docs.deepseek.com DeepSeek 新官方模型名 deepseek-flash 模型名称 对应关系",
+        "purpose": "查找官方是否给出当前 Flash 的新官方模型 ID 名称及其与 deepseek-flash 的对应关系",
+        "gap": "证据5提到“a new official model name”却未给出具体名称；展示摘录不足以排除还存在另一官方正式模型 ID（如 deepseek-v4.1-flash）的情况。"
+      },
+      {
+        "query": "site:api-docs.deepseek.com deepseek-v4-flash 别名 图片输入 支持",
+        "purpose": "核实别名模型名是否支持图片输入以及官方别名列表",
+        "gap": "摘录未展示官方对 deepseek-v4-flash 等别名的完整说明；别名的图片输入支持情况（证据6称仅文本请求路由）未在官方文档中得到确证。"
+      }
+    ],
+    "latestFacts": [
+      {
+        "claimIndex": 0,
+        "evidenceIndex": 12,
+        "effectiveAt": null,
+        "quote": "deepseek-flash 模型支持在文本之外输入图片"
+      },
+      {
+        "claimIndex": 0,
+        "evidenceIndex": 14,
+        "effectiveAt": null,
+        "quote": "model=\"deepseek-flash\""
+      },
+      {
+        "claimIndex": 1,
+        "evidenceIndex": 12,
+        "effectiveAt": null,
+        "quote": "旧模型名 deepseek-v4-flash-vision-exp 仍可调用,但该模型已下线,其请求同样由最新的 Flash 模型承接。"
+      }
+    ]
+  }
+}

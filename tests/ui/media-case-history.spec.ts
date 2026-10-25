@@ -1,0 +1,17 @@
+import { expect,test } from '@playwright/test';
+import { randomUUID } from 'node:crypto';
+import { serveMedia } from '../web-model/media-http-fixture.js';
+
+test('controlled_fixture session history paginates and explicitly opens the selected latest report without starting',async({page,browser},info)=>{
+ const s=await serveMedia(info.workerIndex);let starts=0;page.on('request',r=>{if(r.method()==='POST'&&(/\/runs$/.test(r.url())||/\/companions$/.test(r.url())))starts++;});
+ try{await page.context().addCookies([{name:'detective_session',value:s.seed.token,url:s.site,httpOnly:true}]);for(let i=0;i<22;i++){const response=await page.request.post(`${s.site}/api/v1/investigations`,{headers:{origin:s.site,'idempotency-key':randomUUID()},data:{originalQuestion:`controlled_fixture 历史草稿 ${i}`,basicMode:'truth',presentationMode:'brief'}});expect(response.status()).toBe(201);}
+  const other=await browser.newContext();try{await other.request.post(`${s.site}/api/v1/sessions`,{headers:{origin:s.site},data:{code:'controlled-media-trial'}});await other.request.post(`${s.site}/api/v1/investigations`,{headers:{origin:s.site,'idempotency-key':randomUUID()},data:{originalQuestion:'controlled_fixture 他人不可见',basicMode:'truth',presentationMode:'brief'}});}finally{await other.close();}
+  await page.goto(s.site);const history=page.getByRole('region',{name:'案卷历史'});await expect(history.getByRole('button',{name:'更多案卷',exact:true})).toBeVisible();await expect(history.getByRole('button',{name:/打开案卷：/})).toHaveCount(20);await history.getByRole('button',{name:'更多案卷',exact:true}).click();await expect(history.getByRole('button',{name:/打开案卷：/})).toHaveCount(23);await expect(history.getByText('controlled_fixture 他人不可见')).toHaveCount(0);await history.getByRole('button',{name:'打开案卷：controlled_fixture：查询日期',exact:true}).click();await expect(page.getByRole('heading',{name:s.seed.version.payload.summary,exact:true})).toBeVisible();expect(new URL(page.url()).searchParams.get('case')).toBe(s.seed.investigationId);expect(new URL(page.url()).searchParams.get('version')).toBe(s.seed.version.id);expect(starts).toBe(0);expect(s.calls.real).toBe(0);
+ }finally{try{await page.context().close();}finally{await s.close();}}
+});
+
+test('controlled_fixture empty history and read errors recover through an explicit refresh',async({page},info)=>{
+ const s=await serveMedia(info.workerIndex,{configured:false});let fail=true;
+ try{await page.route('**/api/v1/investigations**',async route=>{if(route.request().method()==='GET'&&new URL(route.request().url()).pathname==='/api/v1/investigations'&&fail)await route.fulfill({status:503,json:{error:{code:'PROVIDER_UNAVAILABLE',message:'controlled_fixture 历史暂不可读',retryable:true},meta:{requestId:randomUUID(),contractVersion:'0.1.0'}}});else await route.continue();});await page.goto(s.site);await page.getByLabel('体验码').fill('controlled-media-trial');await page.getByRole('button',{name:'进入事务所'}).click();const history=page.getByRole('region',{name:'案卷历史'});await expect(history.getByRole('alert')).toContainText('案卷历史读取失败');fail=false;await history.getByRole('button',{name:'刷新案卷',exact:true}).click();await expect(history.getByText('当前会话还没有案卷。',{exact:true})).toBeVisible();expect((await(await page.request.get(`${s.site}/api/v1/investigations?limit=20`)).json()).data.items).toEqual([]);expect(s.requests.filter(r=>r.method==='POST'&&r.url.endsWith('/runs'))).toHaveLength(0);
+ }finally{try{await page.unrouteAll({behavior:'wait'});await page.context().close();}finally{await s.close();}}
+});

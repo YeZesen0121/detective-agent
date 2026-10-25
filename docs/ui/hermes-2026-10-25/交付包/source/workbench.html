@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>侦探 Agent · 调查工作台</title>
+<style>
+  :root{
+    --paper:#faf7f0;
+    --drawer:#f3eee2;
+    --card:#fffdf8;
+    --ink:#1d1a15;
+    --ink2:#554d40;
+    --mute:#8e8676;
+    --line:#e5dccb;
+    --line2:#d6cbb5;
+    --seal:#ad3327;
+    --seal-wash:rgba(173,51,39,.07);
+    --ok:#2b6b4f;
+    --warn:#a9752a;
+    --info:#4f6478;
+    --shadow:0 1px 2px rgba(29,26,21,.05),0 14px 34px -22px rgba(29,26,21,.35);
+    --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  [data-theme=dark]{
+    --paper:#141210;
+    --drawer:#0f0d0c;
+    --card:#1b1815;
+    --ink:#f2eade;
+    --ink2:#c2b7a3;
+    --mute:#8b8172;
+    --line:#2b2621;
+    --line2:#3d352c;
+    --seal:#e0574a;
+    --seal-wash:rgba(224,87,74,.10);
+    --ok:#5fb98c;
+    --warn:#d9a34f;
+    --info:#8fa7bd;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -24px #000;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.68;
+    background:
+      radial-gradient(760px 420px at 78% -12%, rgba(173,51,39,.05), transparent 62%),
+      radial-gradient(620px 380px at 4% 102%, rgba(169,117,42,.06), transparent 60%),
+      var(--paper);
+    -webkit-font-smoothing:antialiased;
+    text-wrap:pretty;
+    transition:background .3s,color .3s;
+  }
+  button{font:inherit;color:inherit;cursor:pointer;background:none;border:none}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--seal-wash)}
+
+  /* ── 招牌 ── */
+  .top{
+    height:58px;display:flex;align-items:center;gap:14px;padding:0 22px;
+    border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(12px);position:sticky;top:0;z-index:40;
+  }
+  .mark{display:flex;align-items:baseline;gap:8px}
+  .mark b{font-family:var(--serif);font-size:18px;letter-spacing:.04em}
+  .mark i{font-style:normal;font-size:11px;letter-spacing:.3em;color:var(--mute)}
+  .lamp{
+    width:8px;height:8px;border-radius:50%;background:var(--seal);align-self:center;
+    box-shadow:0 0 10px 2px color-mix(in srgb,var(--seal) 55%,transparent);
+    animation:flick 5.2s infinite;margin-right:2px;
+  }
+  @keyframes flick{0%,88%,100%{opacity:1}91%{opacity:.3}93%{opacity:.85}95%{opacity:.45}}
+  .crumb{font-size:12.5px;color:var(--mute);font-family:var(--mono);letter-spacing:.04em}
+  .grow{flex:1}
+  .tag{
+    display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);
+    border:1px solid var(--line);border-radius:999px;padding:4px 11px;white-space:nowrap;
+  }
+  .tag i{width:5px;height:5px;border-radius:50%;background:var(--ok);box-shadow:0 0 6px color-mix(in srgb,var(--ok) 60%,transparent)}
+  .ghost{
+    font-size:12.5px;border:1px solid var(--line);border-radius:8px;padding:5px 11px;color:var(--ink2);
+    transition:.16s;
+  }
+  .ghost:hover{border-color:var(--line2);background:var(--card)}
+  .code{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.06em}
+
+  /* ── 骨架 ── */
+  .shell{
+    display:grid;height:calc(100vh - 58px);
+    grid-template-columns:232px minmax(0,1fr) 296px;
+    grid-template-areas:"drawer stage ledger";
+  }
+  .drawer,.stage,.ledger{min-width:0}
+  .drawer{grid-area:drawer;background:var(--drawer);border-right:1px solid var(--line);overflow-y:auto;padding:18px 14px 24px}
+  .stage{grid-area:stage;overflow-y:auto;padding:0 clamp(20px,3.2vw,52px) 64px}
+  .ledger{grid-area:ledger;border-left:1px solid var(--line);overflow-y:auto;padding:20px 18px 40px;background:color-mix(in srgb,var(--drawer) 55%,var(--paper))}
+  .drawer::-webkit-scrollbar,.stage::-webkit-scrollbar,.ledger::-webkit-scrollbar{width:9px}
+  .drawer::-webkit-scrollbar-thumb,.stage::-webkit-scrollbar-thumb,.ledger::-webkit-scrollbar-thumb{
+    background:var(--line2);border-radius:9px;border:3px solid transparent;background-clip:content-box}
+
+  /* ── 左：案卷柜 ── */
+  .dhead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;padding:0 4px}
+  .dhead span{font-family:var(--serif);font-size:14.5px;letter-spacing:.12em}
+  .dhead em{font-style:normal;font-size:11.5px;color:var(--mute);font-family:var(--mono)}
+  .newcase{
+    width:100%;border:1px dashed var(--line2);border-radius:10px;padding:10px;font-size:13.5px;
+    color:var(--ink2);background:color-mix(in srgb,var(--card) 60%,transparent);transition:.16s;
+  }
+  .newcase:hover{border-color:var(--seal);color:var(--seal);background:var(--seal-wash)}
+  .dsec{
+    font-size:10.5px;letter-spacing:.24em;color:var(--mute);margin:22px 4px 8px;
+  }
+  .case{
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:7px;
+    padding:9px 9px;border-radius:9px;margin-bottom:2px;transition:.16s;cursor:pointer;
+  }
+  .case:hover{background:color-mix(in srgb,var(--card) 75%,transparent)}
+  .case.on{background:var(--card);box-shadow:var(--shadow)}
+  .cno{font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:.02em}
+  .ct{font-size:12.8px;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .case.on .ct{color:var(--ink)}
+  .cs{
+    font-family:var(--serif);font-size:9px;line-height:1;color:var(--seal);border:1px solid var(--seal);
+    border-radius:3px;padding:2px 2px;letter-spacing:0;opacity:.8;
+  }
+  .cs.g{color:var(--mute);border-color:var(--line2);opacity:.7}
+  /* 盯梢行沿用原样式，见变体 B 左栏 */
+  .watch{
+    display:flex;align-items:center;gap:8px;padding:8px 9px;border-radius:9px;font-size:12.5px;color:var(--ink2);
+  }
+  .watch:hover{background:color-mix(in srgb,var(--card) 70%,transparent)}
+  .pulse{width:5px;height:5px;border-radius:50%;background:var(--warn);flex:none;animation:pulse 2.4s infinite}
+  @keyframes pulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
+  .watch em{margin-left:auto;font-style:normal;font-size:10.5px;color:var(--mute);font-family:var(--mono)}
+  .dfoot{margin-top:26px;padding:12px 8px 0;border-top:1px solid var(--line);font-size:11.5px;color:color-mix(in srgb,var(--ink2) 70%,var(--mute));line-height:1.75}
+
+  /* ── 中：舞台 ── */
+  .stagehead{
+    position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:10px;
+    margin:0 calc(-1 * clamp(20px,3.2vw,52px));padding:14px clamp(20px,3.2vw,52px) 12px;
+    background:linear-gradient(var(--paper) 72%,transparent);
+  }
+  .stagehead .no{font-family:var(--mono);font-size:11.5px;color:var(--mute);letter-spacing:.08em}
+  .stagehead .state{font-size:11.5px;color:var(--seal);letter-spacing:.12em}
+  .stagehead .state::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--seal);margin-right:6px;vertical-align:2px}
+
+  .view{display:none;animation:fade .38s ease both}
+  .view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* 待受理 */
+  .hero{padding:26px 0 24px;max-width:640px}
+  .kicker{font-size:11px;letter-spacing:.26em;color:var(--mute);font-family:var(--mono);margin-bottom:14px}
+  .hero h1{font-family:var(--serif);font-size:clamp(28px,3.6vw,40px);line-height:1.28;margin:0 0 14px;letter-spacing:.01em;font-weight:600}
+  .hero h1 em{font-style:normal;color:var(--seal)}
+  .hero p{margin:0;color:var(--ink2);font-size:15px;line-height:1.8}
+
+  .ask{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    transition:border-color .18s,box-shadow .18s;max-width:760px;
+  }
+  .ask:focus-within{border-color:color-mix(in srgb,var(--seal) 45%,var(--line));box-shadow:var(--shadow),0 0 0 3px var(--seal-wash)}
+  .ask textarea{
+    display:block;width:100%;min-height:104px;resize:vertical;border:none;background:none;outline:none;
+    padding:18px 20px 6px;font-family:var(--serif);font-size:18px;line-height:1.7;color:var(--ink);
+  }
+  .ask textarea::placeholder{color:var(--mute);font-family:var(--sans);font-size:15.5px}
+  .askbar{display:flex;align-items:center;gap:14px;padding:8px 14px 12px;border-top:1px solid transparent}
+  .askbar .attach{
+    display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);
+    border:1px solid var(--line);border-radius:8px;padding:5px 10px;transition:.16s;
+  }
+  .askbar .attach:hover{border-color:var(--line2);background:var(--paper)}
+  .askbar .attach svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.6}
+  .askbar .count{font-family:var(--mono);font-size:11px;color:var(--mute);margin-left:auto}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;max-width:760px;align-items:center}
+  .chips span{font-size:11.5px;color:var(--mute);letter-spacing:.1em}
+  .chip{
+    font-size:12.5px;color:var(--ink2);border:1px solid var(--line);border-radius:999px;padding:5px 12px;
+    background:color-mix(in srgb,var(--card) 70%,transparent);transition:.16s;
+  }
+  .chip:hover{border-color:var(--line2);color:var(--ink);transform:translateY(-1px)}
+
+  .label{font-size:10.5px;letter-spacing:.24em;color:var(--mute);margin:34px 0 12px}
+  .modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:760px}
+  .mode{
+    position:relative;text-align:left;padding:14px 15px 13px;border:1px solid var(--line);border-radius:12px;
+    background:color-mix(in srgb,var(--card) 55%,transparent);transition:.18s;
+  }
+  .mode:hover{border-color:var(--line2);background:var(--card);transform:translateY(-2px)}
+  .mode .mh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+  .mode svg{width:15px;height:15px;stroke:var(--mute);fill:none;stroke-width:1.5}
+  .mode b{font-size:14px;font-weight:600;font-family:var(--serif);letter-spacing:.04em}
+  .mode p{margin:0;font-size:12px;line-height:1.6;color:var(--mute)}
+  .mode.sel{border-color:var(--seal);background:var(--card);box-shadow:0 0 0 1px var(--seal) inset,var(--shadow)}
+  .mode.sel svg{stroke:var(--seal)}
+  .mode.sel p{color:var(--ink2)}
+  .mode .tick{
+    position:absolute;top:10px;right:10px;width:14px;height:14px;border-radius:50%;border:1px solid var(--seal);
+    opacity:0;transition:.16s;
+  }
+  .mode.sel .tick{opacity:1;background:var(--seal);box-shadow:inset 0 0 0 3px var(--card)}
+
+  .seg{display:inline-flex;padding:3px;border:1px solid var(--line);border-radius:10px;background:color-mix(in srgb,var(--drawer) 60%,transparent)}
+  .seg button{font-size:12.5px;padding:6px 14px;border-radius:8px;color:var(--mute);transition:.16s;white-space:nowrap}
+  .seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06);font-weight:500}
+
+  .go{display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap}
+  .primary{
+    background:var(--seal);color:#fff8f2;border-radius:11px;padding:13px 26px;font-size:15px;font-weight:600;
+    letter-spacing:.06em;display:inline-flex;align-items:center;gap:9px;transition:.18s;
+    box-shadow:0 8px 20px -12px var(--seal);
+  }
+  .primary:hover{transform:translateX(3px);box-shadow:0 10px 24px -10px var(--seal)}
+  .primary .arw{transition:transform .18s}
+  .primary:hover .arw{transform:translateX(2px)}
+  .hint{font-size:11.5px;color:var(--mute);line-height:1.6}
+
+  /* 调查中 */
+  .rq{max-width:700px;margin:14px 0 0}
+  .rq q{
+    display:block;font-family:var(--serif);font-size:clamp(20px,2.4vw,26px);line-height:1.6;color:var(--ink);
+    quotes:none;padding-left:16px;border-left:2px solid var(--line2);
+  }
+  .scope{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .sc{font-size:11.5px;color:var(--ink2);border:1px solid var(--line);border-radius:6px;padding:4px 9px;background:color-mix(in srgb,var(--card) 60%,transparent)}
+  .sc b{color:var(--mute);font-weight:400;margin-right:5px;font-size:10.5px;letter-spacing:.1em}
+
+  .pressing{display:flex;align-items:center;gap:26px;margin:44px 0 8px;flex-wrap:wrap}
+  .seal-live{
+    width:96px;height:96px;flex:none;border:2.5px solid var(--seal);border-radius:9px;
+    display:grid;place-items:center;color:var(--seal);font-family:var(--serif);font-size:30px;
+    opacity:.9;animation:pressing 3.6s ease-in-out infinite;mix-blend-mode:multiply;
+  }
+  [data-theme=dark] .seal-live{mix-blend-mode:normal}
+  @keyframes pressing{0%,100%{transform:rotate(-6deg) scale(1)}50%{transform:rotate(-3deg) scale(1.05)}}
+  .live-text{flex:1;min-width:220px}
+  .live-text .now{font-family:var(--serif);font-size:19px;line-height:1.6;min-height:2em}
+  .live-text .meter{display:flex;gap:16px;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.04em}
+  .live-text .meter b{color:var(--ink2);font-weight:500}
+  .dots{display:inline-flex;gap:4px;margin-left:2px}
+  .dots i{width:3px;height:3px;border-radius:50%;background:var(--seal);animation:blink 1.3s infinite}
+  .dots i:nth-child(2){animation-delay:.2s}
+  .dots i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+  .found{margin-top:34px;max-width:700px}
+  .fhead{display:flex;align-items:baseline;gap:9px;padding-bottom:9px;border-bottom:1px solid var(--line);margin-bottom:2px}
+  .fhead span{font-family:var(--serif);font-size:13.5px;letter-spacing:.08em}
+  .fhead em{font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--mute)}
+  #foundList{list-style:none;margin:0;padding:0}
+  #foundList li{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dashed color-mix(in srgb,var(--line) 70%,transparent);animation:slip .4s ease both}
+  #foundList .fid{font-family:var(--mono);font-size:10.5px;color:var(--seal);flex:none}
+  #foundList .ft{font-size:13px;color:var(--ink2);flex:1;line-height:1.55}
+  #foundList .fm{font-size:10.5px;color:var(--mute);font-family:var(--mono);white-space:nowrap}
+  .rfoot{display:flex;align-items:center;gap:14px;margin-top:34px}
+  .stopbtn{font-size:12.5px;color:var(--mute);border-bottom:1px solid transparent;padding-bottom:1px}
+  .stopbtn:hover{color:var(--seal);border-color:var(--seal)}
+
+  /* 结论 */
+  .verdict{
+    display:flex;gap:clamp(18px,3vw,38px);align-items:flex-start;margin:18px 0 0;max-width:800px;
+    padding-bottom:26px;border-bottom:1px solid var(--line);
+  }
+  .sealbig{
+    flex:none;width:112px;height:112px;border:3px solid var(--seal);border-radius:11px;
+    display:grid;grid-template-columns:1fr 1fr;place-items:center;padding:9px;
+    color:var(--seal);font-family:var(--serif);font-size:25px;line-height:1;letter-spacing:.02em;
+    transform:rotate(-8deg);mix-blend-mode:multiply;opacity:.94;
+    animation:stamp .62s cubic-bezier(.2,1.5,.4,1) both;
+  }
+  [data-theme=dark] .sealbig{mix-blend-mode:normal}
+  .sealbig span{display:block;transform:translateY(-1px)}
+  @keyframes stamp{
+    0%{opacity:0;transform:rotate(-16deg) scale(1.9);filter:blur(3px)}
+    62%{opacity:.94;transform:rotate(-6.5deg) scale(.96);filter:blur(0)}
+    100%{opacity:.94;transform:rotate(-8deg) scale(1)}
+  }
+  .vtext{flex:1;min-width:0;padding-top:4px}
+  .vtext h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.5vw,29px);line-height:1.5;margin:0 0 14px;
+  }
+  .vtext h2 em{font-style:normal;color:var(--seal)}
+  .vmeta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11.5px;color:var(--mute);font-family:var(--mono);letter-spacing:.02em}
+  .tally{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .t{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;border:1px solid var(--line);border-radius:6px;padding:3px 9px;color:var(--ink2);background:color-mix(in srgb,var(--card) 60%,transparent)}
+  .t b{font-family:var(--mono);font-size:11px}
+  .t.up{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 30%,var(--line))}
+  .t.down{color:var(--seal);border-color:color-mix(in srgb,var(--seal) 28%,var(--line))}
+  .t.nil{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 30%,var(--line))}
+
+  .chainhead{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px}
+  .chainhead h3{font-family:var(--serif);font-size:15px;font-weight:600;letter-spacing:.06em;margin:0}
+  .chainhead span{font-size:11px;color:var(--mute);font-family:var(--mono)}
+  .claim{
+    border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow);
+    padding:16px 18px 6px;max-width:800px;
+  }
+  .claimtop{display:flex;align-items:flex-start;gap:12px;padding-bottom:13px;border-bottom:1px dashed var(--line)}
+  .claimtop p{margin:0;font-size:15px;line-height:1.65;flex:1;font-family:var(--serif);font-size:16px}
+  .st{flex:none;font-size:11px;letter-spacing:.08em;border-radius:5px;padding:3px 8px;border:1px solid}
+  .st.mixed{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 35%,var(--line));background:color-mix(in srgb,var(--warn) 8%,transparent)}
+  .ev{
+    display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:start;
+    padding:13px 4px;border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent);
+    cursor:pointer;transition:.15s;border-radius:6px;
+  }
+  .ev:last-child{border-bottom:none}
+  .ev:hover{background:color-mix(in srgb,var(--paper) 70%,transparent)}
+  .mark{font-size:13px;line-height:1.5;text-align:center;font-family:var(--mono)}
+  .mark.up{color:var(--ok)}
+  .mark.down{color:var(--seal)}
+  .mark.ref{color:var(--info)}
+  .evbody{min-width:0}
+  .evt{font-size:13.5px;line-height:1.55;color:var(--ink);margin:0 0 3px}
+  .evt .src{font-size:11px;color:var(--mute);font-family:var(--mono);margin-right:7px}
+  .evq{margin:0;font-size:12.5px;line-height:1.6;color:var(--mute);font-family:var(--serif);font-style:italic}
+  .evr{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex:none}
+  .rd{font-size:10px;letter-spacing:.06em;color:var(--mute);border:1px solid var(--line);border-radius:4px;padding:1px 5px;white-space:nowrap}
+  .rd.full{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 28%,var(--line))}
+  .rd.part{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 28%,var(--line))}
+  .go2{font-size:10.5px;color:var(--seal);opacity:0;transition:.15s;white-space:nowrap}
+  .ev:hover .go2{opacity:1}
+
+  .unknown{
+    display:flex;gap:12px;margin:18px 0 0;max-width:800px;padding:14px 16px;border:1px dashed var(--line2);
+    border-radius:12px;background:color-mix(in srgb,var(--warn) 4%,transparent);
+  }
+  .unknown .dia{width:9px;height:9px;flex:none;border:1.5px solid var(--warn);transform:rotate(45deg);margin-top:7px}
+  .unknown b{font-size:11px;letter-spacing:.16em;color:var(--warn);display:block;margin-bottom:3px}
+  .unknown p{margin:0;font-size:13px;line-height:1.7;color:var(--ink2)}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;max-width:800px;align-items:center}
+  .btn{font-size:13px;border:1px solid var(--line);border-radius:9px;padding:9px 16px;color:var(--ink2);background:var(--card);transition:.16s}
+  .btn:hover{border-color:var(--line2);color:var(--ink);transform:translateY(-1px)}
+  .btn.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .btn.dark:hover{opacity:.88}
+  .footnote{margin-top:22px;font-size:11.5px;color:var(--mute);letter-spacing:.02em}
+
+  /* ── 右：台账 ── */
+  .lhead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px}
+  .lhead span{font-family:var(--serif);font-size:14px;letter-spacing:.12em}
+  .lhead em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--mute)}
+  .lsub{font-size:11.5px;color:var(--mute);line-height:1.65;margin:0 0 16px}
+  .log{list-style:none;margin:0;padding:0;position:relative}
+  .log::before{content:"";position:absolute;left:4.5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+  .log li{position:relative;padding:0 0 15px 19px;animation:slip .34s ease both}
+  @keyframes slip{from{opacity:0;transform:translateX(-5px)}to{opacity:1;transform:none}}
+  .log li::before{
+    content:"";position:absolute;left:1px;top:8px;width:8px;height:8px;border-radius:50%;
+    background:var(--paper);border:1.5px solid var(--line2);
+  }
+  .log li.hot::before{border-color:var(--seal);box-shadow:0 0 0 3px var(--seal-wash)}
+  .log li.search::before{border-color:var(--seal);background:var(--seal)}
+  .lt{font-family:var(--mono);font-size:10px;color:var(--mute);letter-spacing:.04em;display:block;margin-bottom:1px}
+  .lx{font-size:12.5px;line-height:1.6;color:var(--ink2)}
+  .lx b{color:var(--ink);font-weight:500}
+
+  .srcs{list-style:none;margin:0;padding:0}
+  .srcs li{display:flex;gap:9px;padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent);font-size:12px;line-height:1.55}
+  .srcs li:last-child{border-bottom:none}
+  .sid{font-family:var(--mono);font-size:10.5px;color:var(--seal);flex:none;padding-top:2px}
+  .srcs a{color:var(--ink2);border-bottom:1px solid transparent}
+  .srcs li:hover a{border-color:var(--line2);color:var(--ink)}
+  .srcs small{display:block;color:var(--mute);font-size:10.5px;margin-top:2px;font-family:var(--mono)}
+  .empty{
+    border:1px dashed var(--line2);border-radius:12px;padding:26px 16px;text-align:center;color:var(--mute);
+    font-size:12px;line-height:1.8;
+  }
+  .empty .glass{width:24px;height:24px;margin:0 auto 10px;border:1.5px solid var(--line2);border-radius:50%;position:relative}
+  .empty .glass::after{content:"";position:absolute;right:-6px;bottom:-3px;width:9px;height:1.5px;background:var(--line2);transform:rotate(45deg)}
+  .usage{margin-top:20px;padding-top:14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--mute);line-height:1.9}
+  .usage b{color:var(--ink2);font-weight:500}
+  .steps{margin-top:20px;padding-top:2px}
+  .steps-h{font-size:10.5px;letter-spacing:.22em;color:var(--mute);margin-bottom:9px}
+  .step{display:flex;gap:9px;font-size:12px;line-height:1.6;color:var(--mute);padding:5px 0}
+  .step em{font-style:normal;font-family:var(--serif);font-size:11px;color:var(--seal);opacity:.65;flex:none;padding-top:1px}
+
+  /* 伴读浮卡 */
+  .companion{
+    position:fixed;right:24px;bottom:24px;width:min(340px,calc(100vw - 32px));z-index:60;
+    background:var(--card);border:1px solid var(--line2);border-radius:14px;box-shadow:0 24px 60px -28px rgba(0,0,0,.5);
+    padding:15px 16px 14px;opacity:0;transform:translateY(14px) scale(.98);pointer-events:none;transition:.28s cubic-bezier(.2,.9,.3,1);
+  }
+  .companion.on{opacity:1;transform:none;pointer-events:auto}
+  .cwho{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .avatar{
+    width:26px;height:26px;flex:none;border-radius:5px;border:1.5px solid var(--seal);color:var(--seal);
+    display:grid;place-items:center;font-family:var(--serif);font-size:12px;transform:rotate(-3deg);
+  }
+  .cwho b{font-family:var(--serif);font-size:13px;letter-spacing:.06em}
+  .cwho em{font-style:normal;font-size:10.5px;color:var(--mute);font-family:var(--mono);margin-left:auto}
+  .companion p{margin:0;font-size:13px;line-height:1.75;color:var(--ink2)}
+  .companion p q{quotes:"「" "」";font-style:normal;color:var(--ink);font-family:var(--serif)}
+  .cctrl{display:flex;gap:8px;margin-top:11px}
+  .cctrl button{font-size:11.5px;color:var(--mute);border:1px solid var(--line);border-radius:7px;padding:4px 9px}
+  .cctrl button:hover{color:var(--ink);border-color:var(--line2)}
+  .cctrl .x{margin-left:auto;border:none;font-size:14px;line-height:1;padding:2px 4px}
+
+  @media (max-width:1240px){
+    .shell{grid-template-columns:200px minmax(0,1fr);grid-template-areas:"drawer stage" "ledger stage";}
+    .ledger{border-left:none;border-top:1px solid var(--line);max-height:none}
+    .shell{overflow-y:auto;height:auto;min-height:calc(100vh - 58px)}
+    .stage{overflow:visible}
+    .drawer{max-height:calc(100vh - 58px);position:sticky;top:58px;align-self:start}
+    .ledger{grid-area:ledger;padding:18px}
+  }
+  @media (max-width:820px){
+    .shell{grid-template-columns:1fr;grid-template-areas:"drawer" "stage" "ledger"}
+    .drawer{position:static;border-right:none;border-bottom:1px solid var(--line);max-height:none;padding:14px}
+    .drawer .dsec{margin:14px 4px 6px}
+    .modes{grid-template-columns:1fr}
+    .verdict{flex-direction:column;gap:18px}
+    .sealbig{width:88px;height:88px;font-size:20px}
+    .top{gap:9px;padding:0 14px}
+    .mark i,.crumb,.code{display:none}
+    .stagehead{margin:0}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+  .tabs{display:flex;gap:16px;margin-left:16px;font-size:12.5px}
+  .tabs button{padding:5px 0 4px;color:var(--mute);background:none;border:0;border-bottom:1.5px solid transparent;font-size:12.5px;letter-spacing:.02em}
+  .tabs button:hover{color:var(--ink2)}
+  .tabs button.on{color:var(--ink);border-bottom-color:var(--seal)}
+  .tabs .n{margin-left:5px;font-family:var(--mono);font-size:9.5px;color:var(--seal)}
+  .wlist{margin-top:26px;display:grid;gap:14px;max-width:760px}
+  .wbig{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px 16px;box-shadow:var(--shadow)}
+  .wbig h3{margin:0;font-family:var(--serif);font-size:17px;letter-spacing:.02em;font-weight:500}
+  .wbig .wtop{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+  .wbig .wq{margin:0 0 12px;font-size:13.5px;color:var(--ink2);line-height:1.7}
+  .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+  .wgrid div{font-size:11px;color:var(--mute);letter-spacing:.04em}
+  .wgrid b{display:block;margin-top:3px;font-size:12.5px;color:var(--ink2);font-family:var(--mono);font-weight:400;letter-spacing:0}
+  .wgrid span{display:block;margin-top:2px;font-size:11px;color:var(--mute)}
+  .wchg{flex:none;font-family:var(--mono);font-size:9.5px;color:var(--seal);
+    border:1px solid var(--seal);border-radius:3px;padding:1px 3px;opacity:.85;letter-spacing:0}
+  .wfoot{display:flex;align-items:center;gap:14px;padding-top:11px;border-top:1px solid var(--line);font-size:12px;color:var(--mute)}
+  .wfoot button{background:none;border:0;padding:0;font-size:12px;color:var(--ink2);cursor:pointer}
+  .wfoot button:hover{color:var(--seal)}
+  .wfoot .grow{flex:1}
+  .wempty{border:1px dashed var(--line2);border-radius:12px;padding:18px 20px;font-size:12.5px;color:var(--mute)}
+  .wsum{display:flex;align-items:center;gap:8px;padding:8px 9px;font-size:12.3px;color:var(--ink2);
+    border-radius:9px;cursor:pointer}
+  .wsum:hover{background:color-mix(in srgb,var(--card) 78%,transparent)}
+  .wsum .go{margin-left:auto;font-size:11px;color:var(--mute)}
+  .wsum:hover .go{color:var(--seal)}
+  #watchNote{color:var(--ok)}
+  .wbig.paused .pulse{background:var(--mute);animation:none}
+  .wbig.paused h3{color:var(--mute)}
+  .wbig.paused .wq{opacity:.6}
+  .wbig-state{font-family:var(--mono);font-size:9.5px;color:var(--mute);
+    border:1px solid var(--line2);border-radius:3px;padding:1px 3px}
+  [data-act="del"].danger{color:var(--seal)}
+  .wbig.removed{opacity:0;transform:translateY(-4px);transition:opacity .18s,transform .18s}
+  .st.nil{color:var(--mute);border-color:var(--line2);background:transparent}
+  .st.fail{color:var(--seal);border-color:color-mix(in srgb,var(--seal) 35%,var(--line));background:var(--seal-wash)}
+  .mark.fail{color:var(--seal)}
+  .rd.none{color:var(--mute);border-style:dashed}
+  .rd.fail{color:var(--seal);border-color:color-mix(in srgb,var(--seal) 30%,var(--line))}
+  .vnote{margin:16px 0 2px;padding:11px 14px;border-radius:9px;font-size:12.5px;line-height:1.7;
+    border:1px solid var(--line2);background:color-mix(in srgb,var(--card) 55%,transparent);color:var(--ink2)}
+  .vnote[hidden]{display:none}
+  .vnote.warn{border-color:color-mix(in srgb,var(--warn) 42%,var(--line));
+    background:color-mix(in srgb,var(--warn) 7%,transparent)}
+  .vnote.info{border-color:color-mix(in srgb,var(--info) 38%,var(--line));
+    background:color-mix(in srgb,var(--info) 6%,transparent)}
+  .vnote a{color:var(--seal);text-decoration:none;margin-left:8px;white-space:nowrap}
+  .vnote a:hover{text-decoration:underline}
+  .vnote b{font-weight:600;color:var(--ink)}
+  .sealbig.short{grid-template-columns:1fr}
+  .st.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 32%,var(--line));
+    background:color-mix(in srgb,var(--ok) 7%,transparent)}
+  .askbox{margin:22px 0 4px;max-width:640px}
+  .askbox label{display:block;font-size:11px;color:var(--mute);letter-spacing:.16em;margin-bottom:8px}
+  .askbox textarea{width:100%;border:1px solid var(--line2);background:var(--card);border-radius:10px;
+    padding:12px 14px;font-family:inherit;font-size:14px;line-height:1.65;color:var(--ink);resize:vertical}
+  .askbox textarea:focus{outline:none;border-color:var(--seal);box-shadow:0 0 0 3px var(--seal-wash)}
+  .askrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .got{border:1px solid var(--line);border-radius:11px;background:color-mix(in srgb,var(--card) 65%,transparent);
+    padding:14px 16px;margin:20px 0 26px;max-width:720px}
+  .ghead{display:flex;align-items:baseline;justify-content:space-between;font-size:11px;
+    color:var(--mute);letter-spacing:.16em;margin-bottom:10px}
+  .ghead em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:0}
+  .gotlist{list-style:none;margin:0;padding:0}
+  .gotlist li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line)}
+  .gotlist li:first-child{border-top:none}
+  .gotlist .src{flex:none;font-family:var(--mono);font-size:10px;color:var(--mute);border:1px solid var(--line2);
+    border-radius:3px;padding:1px 4px;margin-top:2px}
+  .gotlist b{display:block;font-weight:400;font-size:13px;color:var(--ink2);line-height:1.55}
+  .gotlist small{display:block;margin-top:2px;font-size:10.5px;color:var(--mute);font-family:var(--mono)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="mark"><span class="lamp"></span><b>侦探 Agent</b><i>事务所</i></div>
+  <div class="tabs"><button class="on">调查台</button><button>盯梢<span class="n">1</span></button></div>
+  <div class="grow"></div>
+  <span class="tag"><i></i>体验码已激活</span>
+  <button class="ghost" id="themeBtn">暗房</button>
+  <span class="code">№ 2026-1024</span>
+</header>
+
+<div class="shell">
+
+  <!-- 案卷柜 -->
+  <aside class="drawer">
+    <div class="dhead"><span>案卷柜</span><em>04</em></div>
+    <button class="newcase">＋ 新开一桩</button>
+
+    <div class="dsec">最近</div>
+    <div class="case on">
+      <span class="cno">№007</span><span class="ct">旧书市集截止日期</span><span class="cs">查</span>
+    </div>
+    <div class="case">
+      <span class="cno">№006</span><span class="ct">地铁末班车是否提前</span><span class="cs">真</span>
+    </div>
+    <div class="case">
+      <span class="cno">№005</span><span class="ct">"免费领"链接靠谱吗</span><span class="cs g">无</span>
+    </div>
+    <div class="case">
+      <span class="cno">№004</span><span class="ct">小区停水通知是哪一天</span><span class="cs g">新</span>
+    </div>
+
+    <div class="dsec">盯梢中</div>
+    <div class="wsum"><i class="pulse"></i>正在盯 2 桩<span class="go">全部 →</span></div>
+
+    <div class="dfoot">同一浏览器可找回本案卷。<br>换设备或清理浏览器数据后不保证恢复。</div>
+  </aside>
+
+  <!-- 舞台 -->
+  <main class="stage">
+    <div class="stagehead">
+      <span class="no">CASE №007</span>
+      <span class="grow"></span>
+      <span class="state" id="stateWord">待受理</span>
+    </div>
+
+    <!-- ② 盯梢（变体 B） -->
+    <section class="view" id="vWatch">
+      <div class="kicker">盯梢 · 2 项在跑 · 最多 3 项</div>
+      <h1>有变化，<em>我再叫你</em>。</h1>
+      <p class="lede">盯梢不是替你刷新页面。它按你定的节奏去查，只有结论变了、或者出现了能补上缺口的新材料，才记一条通知。</p>
+
+      <div class="wlist">
+        <article class="wbig">
+          <div class="wtop"><i class="pulse"></i><h3>旧书市集 10/26 截止是真的吗</h3><span class="wchg">1 处变化</span></div>
+          <p class="wq">基线结论：市集延到 10/26，但收书 10/25 傍晚停。现在盯的是「街道办是否再发延期公告」。</p>
+          <div class="wgrid">
+            <div>频率<b>每小时</b><span>下次 45 分后</span></div>
+            <div>已跑<b>3 次 · 6h</b><span>到期还剩 18h</span></div>
+            <div>上次变化<b>10-24 21:12</b><span>来源 S1 更新</span></div>
+          </div>
+          <div class="wfoot">
+            <button data-act="diff">看变化</button><button data-act="pause">暂停</button><button data-act="del">删除</button>
+            <span class="grow"></span><span>首次建基线不报变化</span>
+          </div>
+        </article>
+
+        <article class="wbig">
+          <div class="wtop"><i class="pulse"></i><h3>报名小程序收书时间</h3></div>
+          <p class="wq">只盯报名页的「收书截止」这一栏，页面装饰和报名人数变化不算。</p>
+          <div class="wgrid">
+            <div>频率<b>每日</b><span>下次 6 小时后</span></div>
+            <div>已跑<b>1 次 · 2h</b><span>到期还剩 22h</span></div>
+            <div>上次变化<b>—</b><span>基线已建立</span></div>
+          </div>
+          <div class="wfoot">
+            <button data-act="check">立即查一次</button><button data-act="pause">暂停</button><button data-act="del">删除</button>
+            <span class="grow"></span><span>上次检查成功 21:40</span>
+          </div>
+        </article>
+
+        <div class="wempty">还能再开 1 项。开盯梢在结论页：查完一桩，点「盯住这桩」。</div>
+      </div>
+    </section>
+
+    <!-- 澄清等待 -->
+    <section class="view" id="vClarify">
+      <div class="kicker">还需要一句 · 不问也能查</div>
+      <h1>这一句，<em>你指的是哪一个</em>？</h1>
+      <p class="lede">「旧书市集」在三个区都有记录。缺主办方或活动全称，检索会分叉。你也可以让我按现有线索先查——未知保持未知。</p>
+
+      <div class="askbox">
+        <label for="clarifyInput">补充一句（可选）</label>
+        <textarea id="clarifyInput" rows="2" placeholder="例如：越秀区 · 街道办主办的那个"></textarea>
+      </div>
+
+      <div class="askrow">
+        <button class="primary" id="clarifyGo">补充后开查 <span class="arw">→</span></button>
+        <button class="btn" id="clarifySkip">按现有线索先查</button>
+        <span class="hint">在等你回答时，没有调用检索，也不计时。</span>
+      </div>
+    </section>
+
+    <!-- ① 待受理 -->
+    <section class="view on" id="vIdle">
+      <div class="hero">
+        <div class="kicker">第 007 号案卷 · 尚未开查</div>
+        <h1>这一桩，<em>查还是不查</em>？</h1>
+        <p>把拿不准的那句话丢进来。我只查，不猜——<br>查不到就直说，哪句话站不住也直说。</p>
+      </div>
+
+      <div class="ask">
+        <textarea id="q" maxlength="500" spellcheck="false">旧书市集海报上说 10 月 26 日截止，是真的吗？我想明天再去还来得及吗</textarea>
+        <div class="askbar">
+          <button class="attach">
+            <svg viewBox="0 0 24 24"><path d="M4 16V6a2 2 0 0 1 2-2h9l5 5v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke-linejoin="round"/><path d="M15 4v5h5"/></svg>
+            截图 · 最多 3 张
+          </button>
+          <span class="count" id="count">42 / 500</span>
+        </div>
+      </div>
+
+      <div class="chips">
+        <span>换一桩试试</span>
+        <button class="chip">社区说下周三停水，是吗</button>
+        <button class="chip">这个"免费领"要填身份证号</button>
+      </div>
+
+      <div class="label">查什么</div>
+      <div class="modes" id="modes">
+        <button class="mode sel" data-m="true">
+          <span class="tick"></span>
+          <span class="mh">
+            <svg viewBox="0 0 24 24"><path d="M9 3h6v3H9z"/><path d="M9 6h6v15H9z"/><path d="M9 11h6" /></svg>
+            <b>查真假</b>
+          </span>
+          <p>这句话有出处吗，站不站得住</p>
+        </button>
+        <button class="mode" data-m="latest">
+          <span class="tick"></span>
+          <span class="mh">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <b>查最新</b>
+          </span>
+          <p>截至现在，最新的说法是什么</p>
+        </button>
+        <button class="mode" data-m="fuzzy">
+          <span class="tick"></span>
+          <span class="mh">
+            <svg viewBox="0 0 24 24"><path d="M5 6h5l2 6 2-6h5"/><path d="M12 12v6"/><path d="M8 21h8"/></svg>
+            <b>查模糊</b>
+          </span>
+          <p>记不清是哪一个，帮我分开</p>
+        </button>
+      </div>
+
+      <div class="label">怎么呈现</div>
+      <div class="seg" id="present">
+        <button data-p="brief">简答</button>
+        <button data-p="chain" class="on">证据链</button>
+        <button data-p="read">侦探伴读</button>
+      </div>
+
+      <div class="go">
+        <button class="primary" id="startBtn">开查 <span class="arw">→</span></button>
+        <span class="hint">最多约 7 分钟、12 次检索。<br>查不完就交已有的，并告诉你缺什么。</span>
+      </div>
+    </section>
+
+    <!-- ② 调查中 -->
+    <section class="view" id="vRun">
+      <div class="rq">
+        <q id="runQ">旧书市集海报上说 10 月 26 日截止，是真的吗？</q>
+        <div class="scope">
+          <span class="sc"><b>对象</b>社区旧书市集</span>
+          <span class="sc"><b>命题</b>收书截止 10/26</span>
+          <span class="sc"><b>时间</b>2026 秋季场</span>
+          <span class="sc"><b>未知</b>届次 · 收书口径</span>
+        </div>
+      </div>
+
+      <div class="pressing">
+        <div class="seal-live">阅</div>
+        <div class="live-text">
+          <div class="now" id="nowLine">拆出可核验命题<span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="meter">
+            <span>已用 <b id="mCalls">0</b> / 12 次检索</span>
+            <span>用时 <b id="mTime">00:00</b></span>
+            <span>预算内</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="found">
+        <div class="fhead"><span>已翻到的材料</span><em id="fcount">0 份</em></div>
+        <ul id="foundList"></ul>
+      </div>
+
+      <div class="rfoot">
+        <button class="stopbtn" id="stopBtn">停止调查</button>
+        <span class="hint">停手后已发出的请求可能仍在计费；已找到的材料会保留。</span>
+      </div>
+    </section>
+
+    <!-- ③ 结果 -->
+    <!-- 已取消 -->
+    <section class="view" id="vCancelled">
+      <div class="kicker">已停止 · 不是查完了</div>
+      <h1>停在这里，<em>材料都留着</em>。</h1>
+      <p class="lede" id="cancelMeta">已用 3 次检索、1 分 12 秒。已发出的请求可能仍会完成并计费；已找到的材料保留在案卷里。</p>
+
+      <div class="got">
+        <div class="ghead"><span>已找到的材料</span><em id="gotCount">2 份</em></div>
+        <ul class="gotlist">
+          <li><span class="src">S1</span><div><b>街道办 10-18 推送：市集延至 10 月 26 日</b><small>gov 官方 · 已读全文</small></div></li>
+          <li><span class="src">S2</span><div><b>现场海报（你上传的截图）</b><small>用户材料 · 截图</small></div></li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button class="btn dark" id="resumeBtn">继续调查</button>
+        <button class="btn" id="copyPartialBtn">复制已查到的</button>
+        <button class="btn" id="newCaseBtn">新开一桩</button>
+        <span class="hint" id="resumeNote"></span>
+      </div>
+
+      <p class="footnote">停止不等于查明。继续会接着用已有材料，不从头再查。</p>
+    </section>
+
+    <section class="view" id="vDone">
+      <div class="verdict">
+        <div class="sealbig"><span>部</span><span>分</span><span>成</span><span>立</span></div>
+        <div class="vtext">
+          <h2>市集确实延到 10 月 26 日，<br>但<em>收书 25 日傍晚就停了</em>。</h2>
+          <div class="vmeta">
+            <span>截至 2026-10-24 21:40</span>
+            <span>元宝检索 2 次</span>
+            <span>读到全文 2 篇</span>
+          </div>
+          <div class="tally">
+            <span class="t up">↑ 支持 <b>2</b></span>
+            <span class="t down">↓ 限定 <b>1</b></span>
+            <span class="t">· 背景 <b>1</b></span>
+            <span class="t nil">？ 未知 <b>1</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vnote" id="vnote" hidden></div>
+
+      <div class="chainhead">
+        <h3>证据链</h3>
+        <span>命题 01 / 共 1 项</span>
+      </div>
+
+      <div class="claim">
+        <div class="claimtop">
+          <p>「旧书市集的收书截止日期是 10 月 26 日」</p>
+          <span class="st mixed">部分成立</span>
+        </div>
+
+        <div class="ev">
+          <div class="mark up">↑</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S1</span>街道办 10-18 推送：秋季旧书市集延期至 10 月 26 日（周日）</p>
+            <p class="evq">「……应居民要求，本届市集延至 10 月 26 日（周日）17:00 收摊。」</p>
+          </div>
+          <div class="evr"><span class="rd full">已读全文</span><span class="go2">打开原文 →</span></div>
+        </div>
+
+        <div class="ev">
+          <div class="mark up">↑</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S2</span>现场海报（你上传的截图）：10/26 周日 · 一楼中庭</p>
+            <p class="evq">与公告同为「秋季场」，届次一致；海报未写收书时间。</p>
+          </div>
+          <div class="evr"><span class="rd part">截图</span><span class="go2">看原图 →</span></div>
+        </div>
+
+        <div class="ev">
+          <div class="mark down">↓</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S4</span>报名小程序：10 月 25 日 18:00 停止收书</p>
+            <p class="evq">「收书截止 10/25 18:00，26 日仅现场派发与交换。」——这是收书与派发的区别，不是日期冲突。</p>
+          </div>
+          <div class="evr"><span class="rd full">已读全文</span><span class="go2">打开原文 →</span></div>
+        </div>
+
+        <div class="ev">
+          <div class="mark ref">·</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S3</span>去年同活动公告（2025-10-20 截止）</p>
+            <p class="evq">旧届次，仅作背景，已排除，不计入本次判断。</p>
+          </div>
+          <div class="evr"><span class="rd part">已读摘要</span><span class="go2">打开原文 →</span></div>
+        </div>
+      </div>
+
+      <div class="unknown">
+        <span class="dia"></span>
+        <div>
+          <b>还没确认的</b>
+          <p>26 日当天是否延长到晚间：公告与报名页都只写到 17:00 收摊，没有更晚的说法。若你打算傍晚去，建议先问一句社区。</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn dark" id="watchBtn">盯住这桩</button>
+        <button class="btn" id="companionBtn">开伴读</button>
+        <button class="btn" id="copyBtn">复制结论 + 出处</button>
+        <button class="btn" id="followBtn">接着问</button>
+        <span class="hint" id="copyNote"></span>
+        <span class="hint" id="watchNote"></span>
+      </div>
+
+      <p class="footnote">说不知道不扣分，瞎编才扣分。</p>
+    </section>
+  </main>
+
+  <!-- 台账 -->
+  <aside class="ledger">
+    <div class="lhead"><span>调查台账</span><em id="lcount">—</em></div>
+    <p class="lsub" id="lsub">开查后，这里逐条写我实际做了什么。不是进度条。</p>
+
+    <div id="ledgerBody">
+      <div class="empty">
+        <div class="glass"></div>
+        还没有记录。<br>这一桩会留下每一句话的来路。
+      </div>
+      <div class="steps">
+        <div class="steps-h">开查之后</div>
+        <div class="step"><em>壹</em>把问题拆成能核对的句子</div>
+        <div class="step"><em>贰</em>去元宝搜原始出处，读原文</div>
+        <div class="step"><em>叁</em>对齐时间与条件，落印</div>
+      </div>
+    </div>
+
+    <div id="usage" style="display:none">
+      <div class="lhead" style="margin-top:22px"><span>来源</span><em>4</em></div>
+      <ul class="srcs">
+        <li><span class="sid">S1</span><div><a href="#">街道办公众号 · 10-18</a><small>gov 官方 · 全文</small></div></li>
+        <li><span class="sid">S2</span><div><a href="#">你上传的海报截图</a><small>用户材料 · 1 张</small></div></li>
+        <li><span class="sid">S3</span><div><a href="#">2025 秋季场公告</a><small>旧届次 · 摘要</small></div></li>
+        <li><span class="sid">S4</span><div><a href="#">报名小程序</a><small>官方页 · 全文</small></div></li>
+      </ul>
+      <div class="usage">
+        检索 <b>2</b> / 12　·　全文读取 <b>2</b><br>
+        用时 <b>01:12</b>　·　停止原因 <b>证据已足</b>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- 伴读浮卡 -->
+<div class="companion" id="companion">
+  <div class="cwho">
+    <span class="avatar">周</span>
+    <b>老周 · 伴读</b>
+    <em>同一份结果</em>
+  </div>
+  <p>这桩的关节不在日期，在两件事抢了同一个名字——<q>收书</q>和<q>市集</q>。公告没说谎，海报也没说谎，是它们各说了一半。<br>明天要去的话：书别带了，人去就行。</p>
+  <div class="cctrl">
+    <button>下一段</button>
+    <button>直接收尾</button>
+    <button>听</button>
+    <button class="x" id="companionX">×</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const views = {idle:$('#vIdle'), run:$('#vRun'), done:$('#vDone'),
+                 clarify:$('#vClarify'), cancelled:$('#vCancelled')};
+  const stateWord = $('#stateWord');
+  let timer=null, t0=0, cancelled=false, running=false;
+
+  /* 字数 */
+  const q = $('#q'), count = $('#count');
+  const syncCount = () => { count.textContent = q.value.length + ' / 500'; };
+  q.addEventListener('input', syncCount); syncCount();
+
+  /* 模式选择 */
+  document.querySelectorAll('.mode').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.mode').forEach(x=>x.classList.remove('sel'));
+      b.classList.add('sel');
+    });
+  });
+  document.querySelectorAll('#present button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('#present button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+    });
+  });
+  document.querySelectorAll('.chip').forEach(c=>{
+    c.addEventListener('click',()=>{ q.value = c.textContent; syncCount(); q.focus(); });
+  });
+
+  /* 主题 */
+  $('#themeBtn').addEventListener('click',()=>{
+    const d = document.documentElement.dataset.theme === 'dark';
+    document.documentElement.dataset.theme = d ? 'light' : 'dark';
+    $('#themeBtn').textContent = d ? '暗房' : '亮灯';
+  });
+
+  /* ── 盯梢页：本地交互，无后端；卡片数据为合成示例 ── */
+  const watchView = $('#vWatch'), tabs = document.querySelectorAll('.tabs button');
+  const stageNo = document.querySelector('.stagehead .no');
+  const ledgerEl = document.querySelector('.ledger');
+  const ledgerKids = Array.from(ledgerEl.childNodes);
+  const watchLedger = document.createElement('div');
+  watchLedger.innerHTML = `
+    <div class="lhead"><span>盯梢记录</span><em>4</em></div>
+    <p class="lsub">每次检查都记一行；没变化也记，只是不提醒你。</p>
+    <ul class="log">
+      <li class="hot"><span class="lt">10-24 21:12 · 社区公告</span><span class="lx">读到新版本：新增「10/26 正常收书」一句，<b>结论未变</b>，与 10/25 收书截止不冲突。</span></li>
+      <li><span class="lt">10-24 20:40 · 报名页</span><span class="lx">比对正文：无变化（只换了页头图）。</span></li>
+      <li><span class="lt">10-24 19:40 · 社区公告</span><span class="lx">无变化。</span></li>
+      <li><span class="lt">10-24 18:12 · 首次检查</span><span class="lx">建立基线，不提醒。</span></li>
+    </ul>`;
+  const setTab = i => tabs.forEach((b,k)=>b.classList.toggle('on', k===i));
+  function goWatch(){
+    Object.values(views).forEach(v=>v.classList.remove('on'));
+    watchView.classList.add('on');
+    stageNo.textContent = 'ORG · 盯梢';
+    stateWord.textContent = '2 项在跑';
+    ledgerEl.replaceChildren(watchLedger);
+    setTab(1); window.scrollTo({top:0});
+  }
+  function goDesk(){
+    watchView.classList.remove('on');
+    show('idle','待受理');
+    stageNo.textContent = 'CASE №007';
+    ledgerEl.replaceChildren(...ledgerKids);
+    setTab(0); window.scrollTo({top:0});
+  }
+  tabs[0].addEventListener('click', goDesk);
+  tabs[1].addEventListener('click', goWatch);
+  document.querySelector('.wsum').addEventListener('click', goWatch);
+
+  /* 暂停/恢复：本地状态，仅当前页面有效 */
+  function syncWatchCount(){
+    const all = Array.from(document.querySelectorAll('.wbig'));
+    const paused = all.filter(c=>c.classList.contains('paused')).length;
+    const running = all.length - paused;
+    stateWord.textContent = paused ? running + ' 项在跑 · ' + paused + ' 项已暂停' : running + ' 项在跑';
+    const kicker = document.querySelector('#vWatch .kicker');
+    if (kicker) kicker.textContent = '盯梢 · ' + running + ' 项在跑' + (paused ? ' · ' + paused + ' 项暂停' : '') + ' · 最多 3 项';
+  }
+  document.querySelectorAll('.wbig').forEach(card=>{
+    const btn = card.querySelector('[data-act="pause"]');
+    btn.addEventListener('click', function(){
+      const paused = card.classList.toggle('paused');
+      this.textContent = paused ? '恢复' : '暂停';
+      const old = card.querySelector('.wbig-state');
+      if (old) old.remove();
+      if (paused){
+        const s = document.createElement('span');
+        s.className = 'wbig-state';
+        s.textContent = '已暂停';
+        card.querySelector('.wtop').appendChild(s);
+      }
+      syncWatchCount();
+    });
+  });
+
+  /* 删除：行内二次确认，3 秒不点回退 */
+  document.querySelectorAll('[data-act="del"]').forEach(function(btn){
+    let t = null;
+    btn.addEventListener('click', function(){
+      const card = btn.closest('.wbig');
+      if (btn.dataset.confirm === '1'){
+        clearTimeout(t);
+        card.classList.add('removed');
+        setTimeout(function(){ card.remove(); syncWatchCount(); }, 200);
+        return;
+      }
+      btn.dataset.confirm = '1';
+      btn.textContent = '确认删除？';
+      btn.classList.add('danger');
+      t = setTimeout(function(){
+        delete btn.dataset.confirm;
+        btn.textContent = '删除';
+        btn.classList.remove('danger');
+      }, 3000);
+    });
+  });
+
+
+  /* ── 结果状态：result.status → 五种呈现，同一套 DOM ── */
+  const RESULT_STATES = {
+  "empty": {
+    "seal": "未查出",
+    "h2": "没找到能支持或反驳这句话的材料。",
+    "meta": "<span>截至 2026-10-24 21:40</span><span>元宝检索 4 次</span><span>读到全文 0 篇</span>",
+    "tally": "<span class=\"t nil\">？ 未知 <b>3</b></span><span class=\"t\">↑ 支持 <b>0</b></span><span class=\"t down\">↓ 反驳 <b>0</b></span>",
+    "chainLabel": "命题 01 / 共 0 项",
+    "claim": "\n        <div class=\"claimtop\">\n          <p>「旧书市集 10 月 26 日截止」</p>\n          <span class=\"st nil\">未找到依据</span>\n        </div>\n        <div class=\"ev\">\n          <div class=\"mark ref\">·</div>\n          <div class=\"evbody\">\n            <p class=\"evt\">试过的方向：原句检索、主办方定向、届次比对</p>\n            <p class=\"evq\">四次检索都没有返回这条活动的主办方页面或公告。搜不到不等于没有，只等于这次没找到。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd none\">无来源</span></div>\n        </div>\n      ",
+    "unknown": "\n        <span class=\"dia\"></span>\n        <div>\n          <b>还缺什么</b>\n          <p>缺主办方名称或活动全称。只凭「旧书市集」这四个字，同名活动在三个区都有记录，无法确定你指的是哪一场。</p>\n        </div>\n      ",
+    "watch": "换个说法再查",
+    "companion": "开伴读",
+    "companionHidden": true,
+    "copy": "复制这次的结论",
+    "follow": "接着问"
+  },
+  "partial": {
+    "seal": "材料不全",
+    "h2": "查到的部分支持这句话，但<em>有一份材料没打开</em>。",
+    "meta": "<span>截至 2026-10-24 21:40</span><span>元宝检索 5 次</span><span>读到全文 2 篇 · 打不开 1 篇</span>",
+    "tally": "<span class=\"t up\">↑ 支持 <b>1</b></span><span class=\"t down\">↓ 限定 <b>1</b></span><span class=\"t nil\">？ 未知 <b>2</b></span>",
+    "chainLabel": "命题 01 / 共 1 项",
+    "claim": "\n        <div class=\"claimtop\">\n          <p>「旧书市集的收书截止日期是 10 月 26 日」</p>\n          <span class=\"st nil\">证据不足</span>\n        </div>\n\n        <div class=\"ev\">\n          <div class=\"mark up\">↑</div>\n          <div class=\"evbody\">\n            <p class=\"evt\"><span class=\"src\">S1</span>街道办 10-18 推送：市集延期至 10 月 26 日</p>\n            <p class=\"evq\">「……本届市集延至 10 月 26 日（周日）17:00 收摊。」</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd full\">已读全文</span><span class=\"go2\">打开原文 →</span></div>\n        </div>\n\n        <div class=\"ev\">\n          <div class=\"mark down\">↓</div>\n          <div class=\"evbody\">\n            <p class=\"evt\"><span class=\"src\">S4</span>报名小程序：10 月 25 日 18:00 停止收书</p>\n            <p class=\"evq\">收书与市集不是同一件事，不能直接当日期冲突。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd full\">已读全文</span><span class=\"go2\">打开原文 →</span></div>\n        </div>\n\n        <div class=\"ev\">\n          <div class=\"mark fail\">!</div>\n          <div class=\"evbody\">\n            <p class=\"evt\"><span class=\"src\">S2</span>现场海报（你上传的截图）· <b>读取失败</b></p>\n            <p class=\"evq\">图片解析连续两次超时，已隔离这一条。它有没有写收书时间，目前不知道。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd fail\">未读</span><span class=\"go2\">重试读取 →</span></div>\n        </div>\n      ",
+    "unknown": "\n        <span class=\"dia\"></span>\n        <div>\n          <b>还缺什么</b>\n          <p>S2 打不开。如果海报上写了「26 日当天收书」，结论会从「证据不足」变成「成立」。要我重试读取，还是按现有两份材料收工？</p>\n        </div>\n      ",
+    "watch": "补读 S2",
+    "companion": "开伴读",
+    "companionHidden": false,
+    "copy": "按现有证据收工",
+    "follow": "接着问"
+  },
+  "limit": {
+    "seal": "到限未完",
+    "h2": "查到一半，<em>次数用完了</em>。",
+    "meta": "<span>已用 12 / 12 次检索</span><span>用时 7 分 02 秒</span><span>读到全文 1 篇</span>",
+    "tally": "<span class=\"t up\">↑ 支持 <b>1</b></span><span class=\"t\">· 背景 <b>1</b></span><span class=\"t nil\">？ 未知 <b>3</b></span>",
+    "chainLabel": "命题 01 / 共 1 项",
+    "claim": "\n        <div class=\"claimtop\">\n          <p>「旧书市集的收书截止日期是 10 月 26 日」</p>\n          <span class=\"st nil\">待核</span>\n        </div>\n\n        <div class=\"ev\">\n          <div class=\"mark up\">↑</div>\n          <div class=\"evbody\">\n            <p class=\"evt\"><span class=\"src\">S1</span>街道办 10-18 推送：市集延期至 10 月 26 日</p>\n            <p class=\"evq\">只写了市集时间，没写收书时间。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd full\">已读全文</span><span class=\"go2\">打开原文 →</span></div>\n        </div>\n\n        <div class=\"ev\">\n          <div class=\"mark ref\">·</div>\n          <div class=\"evbody\">\n            <p class=\"evt\"><span class=\"src\">S3</span>去年同活动公告（2025-10-20 截止）</p>\n            <p class=\"evq\">旧届次，只能说明往年惯例，不能证明今年。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd part\">已读摘要</span><span class=\"go2\">打开原文 →</span></div>\n        </div>\n      ",
+    "unknown": "\n        <span class=\"dia\"></span>\n        <div>\n          <b>还没查的</b>\n          <p>还剩三个缺口：报名页的收书截止、街道办是否再发公告、2024 届的收书时间。到限停止不是查完了，是没次数了。</p>\n        </div>\n      ",
+    "watch": "追加一轮 +6 次",
+    "companion": "开伴读",
+    "companionHidden": true,
+    "copy": "按现在的收工",
+    "follow": "接着问"
+  },
+  "failed": {
+    "seal": "没查成",
+    "h2": "这次<em>没查成</em>，不是「没有问题」。",
+    "meta": "<span>截至 2026-10-24 21:40</span><span>元宝检索 3 次 · 均失败</span><span>未读到任何来源</span>",
+    "tally": "<span class=\"t down\">服务失败</span><span class=\"t nil\">？ 事实状态未知</span>",
+    "chainLabel": "3 次重试全部超时",
+    "claim": "\n        <div class=\"claimtop\">\n          <p>「旧书市集 10 月 26 日截止」</p>\n          <span class=\"st fail\">未开始核查</span>\n        </div>\n        <div class=\"ev\">\n          <div class=\"mark fail\">!</div>\n          <div class=\"evbody\">\n            <p class=\"evt\">检索接口连续 3 次超时（每次 20 秒），已按规则停止重试</p>\n            <p class=\"evq\">这是服务故障，不是这句话有问题。等接口恢复后重试即可，不需要你改问题。</p>\n          </div>\n          <div class=\"evr\"><span class=\"rd fail\">无结果</span></div>\n        </div>\n      ",
+    "unknown": "\n        <span class=\"dia\"></span>\n        <div>\n          <b>你的输入还在</b>\n          <p>问题、模式和截图都没丢。重试会重新走一遍完整流程，不会接着刚才那次跑。</p>\n        </div>\n      ",
+    "watch": "重试一次",
+    "companion": "开伴读",
+    "companionHidden": true,
+    "copy": "复制失败说明",
+    "follow": "换个问法"
+  }
+};
+
+  function snapshotNormal(){
+    const vtext = document.querySelector('.verdict .vtext');
+    return {
+      seal: Array.from(document.querySelectorAll('.sealbig span')).map(s=>s.textContent).join(''),
+      h2: vtext.querySelector('h2').innerHTML,
+      meta: vtext.querySelector('.vmeta').innerHTML,
+      tally: vtext.querySelector('.tally').innerHTML,
+      chainLabel: document.querySelector('.chainhead span').textContent.trim(),
+      claim: document.querySelector('.claim').innerHTML,
+      unknown: document.querySelector('.unknown').innerHTML,
+      watch: document.getElementById('watchBtn').textContent.trim(),
+      companion: document.getElementById('companionBtn').textContent.trim(),
+      companionHidden: document.getElementById('companionBtn').style.display === 'none',
+      copy: document.getElementById('copyBtn').textContent.trim(),
+      follow: document.getElementById('followBtn').textContent.trim(),
+      state: '已出结论'
+    };
+  }
+  const NORMAL = snapshotNormal();
+
+  function renderResult(status){
+    const c = (status === 'normal' || !RESULT_STATES[status]) ? NORMAL : RESULT_STATES[status];
+    const sealEl = document.querySelector('.sealbig');
+    sealEl.innerHTML = c.seal.split('').map(ch=>'<span>'+ch+'</span>').join('');
+    sealEl.classList.toggle('short', c.seal.length <= 2);
+    const vtext = document.querySelector('.verdict .vtext');
+    vtext.querySelector('h2').innerHTML = c.h2;
+    vtext.querySelector('.vmeta').innerHTML = c.meta;
+    vtext.querySelector('.tally').innerHTML = c.tally;
+    document.querySelector('.chainhead span').textContent = c.chainLabel;
+    document.querySelector('.claim').innerHTML = c.claim;
+    document.querySelector('.unknown').innerHTML = c.unknown;
+    const note = document.getElementById('vnote');
+    if (c.note){ note.hidden = false; note.className = 'vnote ' + (c.noteKind || ''); note.innerHTML = c.note; }
+    else { note.hidden = true; note.className = 'vnote'; note.innerHTML = ''; }
+    const set = (id, label, hidden) => {
+      const b = document.getElementById(id);
+      b.textContent = label;
+      b.style.display = hidden ? 'none' : '';
+    };
+    set('watchBtn', c.watch, false);
+    set('companionBtn', c.companion, c.companionHidden);
+    set('copyBtn', c.copy, false);
+    set('followBtn', c.follow, false);
+    if (document.getElementById('watchNote')) document.getElementById('watchNote').textContent = '';
+    document.getElementById('watchBtn').dataset.on = '';
+    if (c.state) stateWord.textContent = c.state;
+    window.__resultStatus = status;
+    return status;
+  }
+  window.renderResult = renderResult;
+
+  /* 评审用：?state=empty|partial|limit|failed 直接看对应状态 */
+
+
+  /* ── 历史版本：old（已有更新）/ v2（新报告） ── */
+  Object.assign(RESULT_STATES, {
+    old: {
+      seal: '部分成立',
+      h2: NORMAL.h2,
+      meta: '<span>截至 2026-10-24 20:10</span><span>元宝检索 2 次</span><span>读到全文 2 篇</span>',
+      tally: NORMAL.tally,
+      chainLabel: '命题 01 / 共 1 项',
+      claim: NORMAL.claim,
+      unknown: NORMAL.unknown,
+      noteKind: 'warn',
+      note: '这份报告<b>已有更新</b> · 10-24 21:40 街道办追加公告，收书时间改为 26 日 17:00。下面是 20:10 时的判断，未做改写。<a href="#" data-act="open-new">打开新报告 →</a>',
+      watch: '打开新报告',
+      companion: '开伴读',
+      companionHidden: false,
+      copy: '复制这份旧版',
+      follow: '接着问',
+      state: '旧版 · 已有更新'
+    },
+    v2: {
+      seal: '成立',
+      h2: '市集延到 10 月 26 日，<em>收书也延到当天 17:00</em>。',
+      meta: '<span>截至 2026-10-24 21:40</span><span>元宝检索 3 次</span><span>读到全文 3 篇</span>',
+      tally: '<span class="t up">↑ 支持 <b>3</b></span><span class="t">· 背景 <b>1</b></span><span class="t nil">？ 未知 <b>1</b></span>',
+      chainLabel: '命题 01 / 共 1 项',
+      claim: `
+        <div class="claimtop">
+          <p>「旧书市集的收书截止日期是 10 月 26 日」</p>
+          <span class="st ok">成立</span>
+        </div>
+
+        <div class="ev">
+          <div class="mark up">↑</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S5</span>街道办 10-24 21:12 追加公告：收书延至 10 月 26 日 17:00</p>
+            <p class="evq">「……应居民要求，收书截止由 10 月 25 日 18:00 调整为 10 月 26 日 17:00。」这是本次结论改变的唯一条新证据。</p>
+          </div>
+          <div class="evr"><span class="rd full">已读全文</span><span class="go2">打开原文 →</span></div>
+        </div>
+
+        <div class="ev">
+          <div class="mark up">↑</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S1</span>街道办 10-18 推送：市集延期至 10 月 26 日</p>
+            <p class="evq">与 S5 同一主办方、同一届次，时间关系一致。</p>
+          </div>
+          <div class="evr"><span class="rd full">已读全文</span><span class="go2">打开原文 →</span></div>
+        </div>
+
+        <div class="ev">
+          <div class="mark ref">·</div>
+          <div class="evbody">
+            <p class="evt"><span class="src">S4</span>报名小程序：10 月 25 日 18:00 停止收书</p>
+            <p class="evq"><b>已被 S5 更新</b>，保留在案卷里，不再作为当前依据。</p>
+          </div>
+          <div class="evr"><span class="rd full">已读全文</span><span class="go2">打开原文 →</span></div>
+        </div>`,
+      unknown: `<span class="dia"></span><div><b>还悬着的</b><p>26 日 17:00 之后是否继续收书，三份材料都没写。要更晚去的话，仍然建议先问一句社区。</p></div>`,
+      noteKind: 'info',
+      note: '相比 20:10 那版：<b>新增 S5</b>（街道办 21:12 公告），收书截止由 10/25 18:00 改为 10/26 17:00；旧结论「收书 25 日傍晚就停」不再成立。旧版原样保留。<a href="#" data-act="back-old">回到旧版 v1 →</a>',
+      watch: '盯住这桩',
+      companion: '开伴读',
+      companionHidden: false,
+      copy: '复制新结论 + 出处',
+      follow: '接着问',
+      state: '已更新 · v2'
+    }
+  });
+
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('[data-act]');
+    if (!a) return;
+    const act = a.dataset.act;
+    if (act === 'open-new' || act === 'back-old'){
+      e.preventDefault();
+      renderResult(act === 'open-new' ? 'v2' : 'old');
+    }
+  });
+
+  $('#watchBtn').addEventListener('click', function(){
+    if (window.__resultStatus === 'old'){ renderResult('v2'); return; }
+    if(this.dataset.on) return;
+    this.dataset.on = '1';
+    this.textContent = '已盯住 · 每小时';
+    $('#watchNote').textContent = '已加入盯梢：每小时查一次，首次只建基线，不报变化。';
+  });
+
+  function show(name, word){
+    Object.values(views).forEach(v=>v.classList.remove('on'));
+    views[name].classList.add('on');
+    stateWord.textContent = word;
+  }
+
+  /* 台账条目 */
+  const FLOW = [
+    {t:'拆出可核验命题：截止日期 × 1', s:0},
+    {t:'检索 ①「旧书市集 10 月 26 日 截止」', s:1, search:true},
+    {t:'找到街道办 10-18 推送，读到<b>全文</b>', s:1,
+     found:{id:'S1', title:'街道办 10-18 推送：延期至 10/26', meta:'全文'}},
+    {t:'比对了海报届次与公告届次：同为秋季场 ✓', s:1,
+     found:{id:'S2', title:'你上传的现场海报（1 张）', meta:'截图'}},
+    {t:'检索 ② 定向「报名 收书 截止」', s:2, search:true},
+    {t:'报名页写：收书 10/25 18:00 停 —— 与「市集」不同层', s:2,
+     found:{id:'S4', title:'报名小程序：收书 10/25 18:00 截止', meta:'全文'}},
+    {t:'排除 2025 年旧届次公告，不并入本次', s:2,
+     found:{id:'S3', title:'2025 秋季场公告（旧届次，仅背景）', meta:'摘要'}},
+    {t:'核对完成：支持 2 · 限定 1 · 背景 1', s:2},
+  ];
+  const NOW = [
+    '拆出可核验命题',
+    '正在查原始出处',
+    '读到一份公告，核对届次',
+    '海报与公告是同一年份吗',
+    '再查一个反向说法',
+    '发现「收书」和「市集」两个口径',
+    '排掉一条去年公告',
+    '收口，准备落印',
+  ];
+
+  function logLine(item, i){
+    const li = document.createElement('li');
+    if(item.search) li.className = 'search';
+    const mm = String(38 + Math.floor(i/3)).padStart(2,'0');
+    const ss = String((4 + i*9) % 60).padStart(2,'0');
+    li.innerHTML = '<span class="lt">21:'+mm+':'+ss+'</span><div class="lx">'+item.t+'</div>';
+    return li;
+  }
+
+  function tick(){
+    const d = Math.floor((Date.now()-t0)/1000);
+    $('#mTime').textContent = '0'+Math.floor(d/60)+':'+String(d%60).padStart(2,'0');
+  }
+
+  async function run(){
+    if(running) return;
+    running = true; cancelled = false;
+    const text = q.value.trim() || '（未填写问题）';
+    $('#runQ').textContent = text;
+    show('run','调查中');
+    $('#ledgerBody').innerHTML = '<ul class="log" id="log"></ul>';
+    $('#foundList').innerHTML = '';
+    $('#fcount').textContent = '0 份';
+    $('#usage').style.display = 'none';
+    $('#lsub').textContent = '按真实事件记录，不显示虚构进度。';
+    $('#lcount').textContent = '0 条';
+    $('#mCalls').textContent = '0';
+    t0 = Date.now(); tick();
+    clearInterval(timer); timer = setInterval(tick, 1000);
+
+    const log = $('#log');
+    for(let i=0;i<FLOW.length;i++){
+      if(cancelled) return;
+      await new Promise(r=>setTimeout(r, i===0?620:780));
+      if(cancelled) return;
+      $('#nowLine').innerHTML = NOW[i] + '<span class="dots"><i></i><i></i><i></i></span>';
+      if(FLOW[i].search){ $('#mCalls').textContent = FLOW[i].s; }
+      const li = logLine(FLOW[i], i);
+      log.appendChild(li);
+      log.lastElementChild.classList.add('hot');
+      if(log.children.length>1) log.children[log.children.length-2].classList.remove('hot');
+      $('#lcount').textContent = log.children.length + ' 条';
+      if(FLOW[i].found){
+        const f = FLOW[i].found;
+        const fl = document.getElementById('foundList');
+        const li2 = document.createElement('li');
+        li2.innerHTML = '<span class="fid">'+f.id+'</span><span class="ft">'+f.title+'</span><span class="fm">'+f.meta+'</span>';
+        fl.appendChild(li2);
+        $('#fcount').textContent = fl.children.length + ' 份';
+      }
+      // 台账滚动到底
+      const led = document.querySelector('.ledger'); led.scrollTop = led.scrollHeight;
+    }
+    if(cancelled) return;
+    clearInterval(timer);
+    running = false;
+    $('#stateWord').textContent = '已出结论';
+    $('#ledgerBody .log').lastElementChild?.classList.remove('hot');
+    document.querySelector('#ledgerBody .log')?.lastElementChild?.classList.add('hot');
+    $('#lcount').textContent = '8 条';
+    $('#lsub').textContent = '本次调查完整留痕，可逐条核对。';
+    $('#usage').style.display = 'block';
+    // 印章落定
+    const seal = document.querySelector('.sealbig');
+    seal.style.animation = 'none'; void seal.offsetWidth;
+    seal.style.animation = '';
+    show('done','已出结论');
+  }
+
+  (function(){
+    const st = new URLSearchParams(location.search).get('state');
+    if (st === 'clarify') show('clarify','需要澄清');
+  })();
+
+  $('#startBtn').addEventListener('click', run);
+
+  $('#stopBtn').addEventListener('click', ()=>{
+    if(!running) return;
+    cancelled = true; running = false;
+    clearInterval(timer);
+    stateWord.textContent = '正在停止';
+    $('#nowLine').innerHTML = '正在停止：不再排队新的检索，已发出的请求等它回…';
+    const b = $('#stopBtn');
+    b.disabled = true;
+    const usedCalls = $('#mCalls').textContent;
+    const usedTime = $('#mTime').textContent;
+    setTimeout(()=>{
+      b.disabled = false;
+      $('#cancelMeta').textContent = '已用 ' + usedCalls + ' 次检索、' + usedTime
+        + '。已发出的请求可能仍会完成并计费；已找到的材料保留在案卷里。';
+      show('cancelled','已取消');
+    }, 1000);
+  });
+
+  /* 澄清：补充或跳过，都进入调查 */
+  $('#clarifyGo').addEventListener('click', ()=>{
+    const extra = $('#clarifyInput').value.trim();
+    if (extra) q.value = q.value.replace(/[？?]?$/, '，' + extra + '？');
+    q.dispatchEvent(new Event('input'));
+    run();
+  });
+  $('#clarifySkip').addEventListener('click', ()=>{ run(); });
+
+  /* 已取消：继续用已保存材料，或复制已查到的 */
+  $('#resumeBtn').addEventListener('click', ()=>{
+    show('run','调查中');
+    $('#nowLine').innerHTML = '接着用已保存的 2 份材料继续，不从头再查';
+    $('#stopBtn').textContent = '停止调查';
+    setTimeout(()=>{ show('done','已出结论'); }, 1400);
+  });
+  $('#copyPartialBtn').addEventListener('click', async ()=>{
+    const txt = '【已查到的】\nS1 街道办 10-18 推送：市集延至 10 月 26 日（已读全文）\n'
+      + 'S2 现场海报（用户截图）\n【未完成】收书截止时间尚未确认\n【查询时间】2026-10-24 21:40';
+    try{ await navigator.clipboard.writeText(txt); $('#resumeNote').textContent = '已复制，含未完成项'; }
+    catch(e){ $('#resumeNote').textContent = '复制失败，可手动选择文字'; }
+  });
+  $('#newCaseBtn').addEventListener('click', ()=>{ show('idle','待受理'); });
+
+  $('#companionBtn').addEventListener('click', ()=>{ $('#companion').classList.add('on'); });
+  $('#companionX').addEventListener('click', ()=>{ $('#companion').classList.remove('on'); });
+
+  $('#copyBtn').addEventListener('click', async ()=>{
+    const txt = '【结论】市集确实延到 10 月 26 日，但收书 25 日 18:00 就停了。\n'
+      + '【限定】26 日仅现场派发与交换；官方未说明是否延长到晚间。\n'
+      + '【查询时间】2026-10-24 21:40\n'
+      + '【来源】S1 街道办公众号 10-18；S2 用户海报截图；S4 报名小程序';
+    try{ await navigator.clipboard.writeText(txt); $('#copyNote').textContent='已复制，含限定与出处'; }
+    catch(e){ $('#copyNote').textContent='复制失败，可手动选择文字'; }
+  });
+
+  $('#followBtn').addEventListener('click', ()=>{
+    $('#copyNote').textContent = '追问会先看已有材料，不够才补查。';
+  });
+
+  /* 键盘：⌘↵ 开查 */
+  document.addEventListener('keydown', e=>{
+    if((e.metaKey||e.ctrlKey) && e.key==='Enter' && views.idle.classList.contains('on')) run();
+  });
+  (function(){
+    const st = new URLSearchParams(location.search).get('state');
+    if (st && (RESULT_STATES[st])) {
+      renderResult(st);
+      const WORD = {empty:'无结果',partial:'部分结果',limit:'已到限',failed:'未查成',old:'旧版 · 已有更新',v2:'已更新 · v2'};
+      show('done', WORD[st] || '已出结论');
+    }
+  })();
+
+})();
+</script>
+</body>
+</html>
